@@ -1,0 +1,116 @@
+\documentclass[10pt]{article}
+\usepackage{kennyworkman}
+
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \vphantom{\big|} % pretend it's a little taller at normal size
+  \right|_{#2} % this is the delimiter
+}}
+
+\title{Hatcher: Algebraic Topology}
+\author{Kenny Workman}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{The Fundamental Group}
+
+\subsection{Basic Constructions}
+
+\begin{definition}[Path]
+A path in the space $X$ is a continuous map $f: I \to X$ where $I$ is the unit
+interval $[0, 1]$.
+\end{definition}
+
+\begin{definition}[Homotopy of paths]
+
+A continuous family of maps represented $f: I \times I \to X$ 
+
+A path in the space $X$ is a continuous map $f: I \to X$ where $I$ is the unit
+interval $[0, 1]$.
+\end{definition}
+
+\begin{example}[Linear homotopy]
+Consider two paths $f, g$ that share endpoints ($f(0) = g(0) = x_0$ and $f(1) =
+g(1) = x_1$). Any such paths are always homotopic by the homotopy 
+\[
+h_t(s) = (1-t)f(s) + (t)g(s).
+\]
+
+% TODO: show continuity with vector argument
+
+\end{example}
+
+
+\begin{proposition}[The relation of homotopy of paths with fixed endpoints is an equivalence relation]
+
+\end{proposition}
+
+
+\begin{theorem}[$\Z \cong \pi(S1)$]
+
+The map $\phi$ sending the integer $n$ to the homotopy class of the loop $\omega_n(x) = (cos2\pi nx, sin2\pi nx)$ on $S^1$ with basepoint $(1, 0)$ is an isomorphism.
+
+\end{theorem}
+
+\begin{proof}
+
+Observe that each loop $\omega_n$ can be expressed as the composition $p\tilde{\omega}_n$, where $p(s) = (cos2\pi s, sin2\pi s)$ and $\tilde{\omega}_n(s) = ns$ is the path in $\R$ from $0$ to $n$. $\tilde{\omega}_n$ is called the lift of $\omega_n$.
+
+We define the image $n \in Z$ under $\phi$ as the homotopy class represented by $pf_n$ where $f_n$ is any path in $\R$ from $0$ to $n$. Since any such $f_n$ shares endpoints with $\tilde{\omega}_n$, the paths are homotopic, and $pf_n$ and $p\tilde{\omega}_n$ are also homotopic. Then $\phi(n) = [pf_n] = [w_n]$.
+
+We quickly verify $\phi$ is a homomorphism by considering $\phi(m + n)$ as $p\tilde{\omega}_{m+n}$
+
+We now define two facts that show $\phi$ is a bijection:
+\begin{itemize}
+	\item[(a)]Given a path $f$ in $S^1$ starting at $x_0$, there exists a unique lift of the path $f$, $\tilde{f}$, in $\R$ starting at $\tilde{x_0}$ for any choice of $\tilde{x_0} \in p^{-1}{(x_0)}$.
+	\item[(b)]Given a homotopy $f_t$ in $S^1$ of paths starting at $x_0$, there exists a unique lifted homotopy $\tilde{f_t}$ of paths in $\R$ starting at $\tilde{x_0}$ for any choice of $\tilde{x_0} \in p^{-1}{(x_0)}$.
+\end{itemize}
+
+$(a)$ gives injectivity of $\phi$. Consider any loop $f$ with basepoint $(1, 0)$ reperesenting a homotopy class in $\pi_1(S^1)$. Then there exists $\tilde{f}$ starting at $0 \in p^{-1}((1, 0))$ that ends at $n \in \Z \subset p^{-1}((1, 0))$. So $\phi(n) = [f]$
+
+$(b)$ gives surjectivity of $\phi$. Consider $\phi(m) = \phi(n)$. Then the representative loops $\omega_m$ and $\omega_n$ are homotopic. Define this homotopy as $f_t$. $(b)$ gives us $\tilde{f}_t$ where $\tilde{f}_t(0) = 0$ for all $t$ (Our choice of $\tilde{x_0}$). $\tilde{f}_0(1) = m$ and $\tilde{f}_1(1) = n$, but the endpoint of the homotopy must be invariant with respect to time, so $m = n$.
+
+We observe that both of these facts are specific examples of a more general fact $(c)$
+
+\begin{itemize}
+	\item[(c)] For an arbitrary space $Y$, given $F: Y \times I \to S^1$ and a lift $\tilde{F}: Y \times \{0\} \to S^1$ of $\restr{F}{Y \times \{0\}}$, there is a unique lift $\tilde{F}: Y \times I \to S^1$ that restricts to the given $\tilde{F}$ on $Y \times \{0\}$.
+\end{itemize}
+
+Observe that $(a)$ follows trivially when we consider $Y$ to be a point. 
+To see that $(c)$ implies $(b)$, observe the homotopy of paths in $S^1$, $f_t$ given in $(b)$ connects $f_0$ and $f_1$. $(a)$ gives us a unique $\tilde{f_0}: I \times \{0\} \to S^1$, a restriction of the lifted homotopy, and $(c)$ gives us a unique lifted homotopy $\tilde{f_t}$ that restricts to $\tilde{f_0}$. Note that $\tilde{f_0}$ defines the endpoints of homotopic paths in $\R$ and is unique so $(b)$ follows.
+
+% Revisit after JC
+% We prove $(c)$ by explicitly constructing $\tilde{F}: N \times I \to \R$ for some neighborhood $N$ of any $y_0 \in Y$ and showing that $\tilde{F}(y_0, 0)$ uniquely determines $\restr{\tilde{F}}{\{y_0\}\times I}$. Then $\tilde{F}$ must be unique, and because $y_0 \in N \subset Y$ was chosen arbitrarily, we obtain a unique lift over all of $Y \times I$.
+% 
+% We will use that fact that an open cover $\{ U_{\alpha}\}$ of $S^1$ exists in our argument. In particular, that $p^{-1}(U_{\alpha})$ is a set of disjoint open sets, each of which homeomorphic to $U_{\alpha}$ for each element of this covering.
+% 
+% First, we construct $\tilde{F}: N \times I \to \R$ where $N$ is some neighborhood of $y_0 \in Y$. We can choose open sets $(y_0, t) \in N_t \times [a_t, b_t]$ for each $t$ where $F(N_t \times [a_t, b_t]) \subset U_{\alpha}$ for some $U_{\alpha}$. Then we can choose small enough $N$ where $F(N \times [a_t, b_t]) \subset U_{\alpha}$ for some $U_{\alpha}$, namely $N = \cap_t N_t$. 
+% 
+% We partition $I$ into intervals $[t_i, t_{i+1}]$ and use induction to define. Recall we are given $\restr{\tilde{F}}{Y \times \{0\}}$ and use this define $\tilde{F}$ on $[0, t_1]$. Then $\tilde{F}$ on $[t_i, t_{i+1}]$ is
+
+\end{proof}
+
+
+\begin{theorem}[Fundamental Theorem of Algebra]
+Every non constant polynomial with coefficients in $\C$ has at least one root in $\C$.
+\end{theorem}
+
+\begin{proof}
+	Assume our polynomial $p(z) = z^n + a_1z^{n-1} ... a_n$ has no roots.
+	Define the following $f_r: I \to \C$ for each real number:
+	\[
+		f_r(s) = \frac{p(re^{2\pi is}) \backslash p(r)}{\abs{p(re^{2\pi is})} \backslash \abs{p(r)}}
+	\]
+	We claim this is a loop in the unit circle $S^1$. To see this, compute some values for fixed $r$ and note for any value of $r$, $f_r(0) = 1$, $f_r(1) = 1$.
+	Note that $f_0$ is a constant map with value $1$ and is the trivial loop. Then by varying $r$ we obtain a homotopy between any $f_r$ and $0$ with (the embedded) basepoint $(1, 0)$.
+	\indent We now show that $p$ must be constant. Choose a large $r$ such that $r \geq \sum_n{\abs{a_n}} \geq 1$. Observe then $r^n = rr^{n-1} \geq (\sum_n{\abs{a_n}})r^{n-1}$.
+	This expression motivates a new homotopy for each $f_r$, let $f_{(r, t)}$ be our previous definition with $p_t(z, t) = z^n + t(z^{n-1}a_1 + ... a_n)$ substituted for each $p$. See that $f_t$ has no zeros on the circle of complex values with radius $r$ satisfying our expression (this is why we constructed it at all).
+	Note that $f_{(r, 0)} = e^{2\pi stn}$ (check). Then $f_{(r, t)}$ is a homotopy between $f_r$ and homotopy class $[w_n] \in \pi_1(S^1)$.  But $f_r$ is homotopic to $0$. Then $w_n$ is also homotopic to $0$ and $n$ must be 0. Our $p(z) = a_n$ must be constant.
+
+\end{proof}
+
+\end{document}
