@@ -45,9 +45,40 @@ h_t(s) = (1-t)f(s) + (t)g(s).
 \end{example}
 
 
-\begin{proposition}[The relation of homotopy of paths with fixed endpoints is an equivalence relation]
-
+\begin{proposition}[homotopy of paths with fixed endpoints is an equivalence relation]
 \end{proposition}
+
+\begin{definition}[The product of paths]
+
+	For paths $f, g$ where $f(1) = g(0)$, we can define the product $h = f \cdot g$ as
+
+\[ h(s) = \begin{cases} 
+      f(2s) & 0 \leq s \leq 0.5 \\
+      g(2s-1) & 0.5 \leq s \leq 1
+   \end{cases}
+\]
+
+\end{definition}
+
+
+\begin{proposition}[The fundamental group is in fact a group]
+	$\pi_1(X, x_0)$ with respect to the operator $[f]\cdot[g] = [f\cdot g]$ is a group.
+\end{proposition}
+
+\begin{definition}[Reparamterization of a path]
+	We can precompose any path $f$ with $\phi: I \to I$ such that $f\phi \simeq f$. $f\phi$ is then the reparameterization of $f$.
+\end{definition}
+
+\begin{proof}
+	To see our operator is well-defined, $[f\cdot g]$ depends only on $[f]$ and $[g]$. In other words, a homotopy exists between paths in $[f\cdot g]$ if and only if it is the composite of homotopies between paths in $[f]$ and $[g]$.
+
+	First, we verify associativity of the operator. Consider $(f \cdot g) \cdot h$. This product composes the composition of $f$ and $g$ with $h$. Visually, $h$ is the first half and $g$ and $f$ occupy the last quarters of the product path. We can construct a piecewise function to change the proportions of these components - "shrink" $h$, keep $g$ the same and "expand" $f$. $[(f \cdot g) \cdot h]\phi \simeq f \cdot (g \cdot h)$ gives us the desired equivalence.
+
+	Second, we check the identity property of the constant map $c$. $f$ can be reparameterized by the piecewise function that speeds it up for the first half of $I$ and holds it constant at $f(1)$ for the second half where $f\phi \simeq f \cdot c$.
+
+	Third, we verify the existence of an inverse for each $[f]$.
+
+\end{proof}
 
 
 \begin{theorem}[$\Z \cong \pi(S1)$]
@@ -94,6 +125,9 @@ To see that $(c)$ implies $(b)$, observe the homotopy of paths in $S^1$, $f_t$ g
 
 \end{proof}
 
+We can immediately use $\pi_1(S^1)$ to prove important theorems. The big idea is that each full rotation around the circle is a unique element of the group. This suggests, among other things, that a loop once around cannot be continuously deformed to a loop twice around.
+
+Our arguments proceed by contradiction, by assuming that our desired result does not hold and showing that this assumption implies some homotopy between loops on the circle that is not allowed.
 
 \begin{theorem}[Fundamental Theorem of Algebra]
 Every non constant polynomial with coefficients in $\C$ has at least one root in $\C$.
@@ -110,7 +144,18 @@ Every non constant polynomial with coefficients in $\C$ has at least one root in
 	\indent We now show that $p$ must be constant. Choose a large $r$ such that $r \geq \sum_n{\abs{a_n}} \geq 1$. Observe then $r^n = rr^{n-1} \geq (\sum_n{\abs{a_n}})r^{n-1}$.
 	This expression motivates a new homotopy for each $f_r$, let $f_{(r, t)}$ be our previous definition with $p_t(z, t) = z^n + t(z^{n-1}a_1 + ... a_n)$ substituted for each $p$. See that $f_t$ has no zeros on the circle of complex values with radius $r$ satisfying our expression (this is why we constructed it at all).
 	Note that $f_{(r, 0)} = e^{2\pi stn}$ (check). Then $f_{(r, t)}$ is a homotopy between $f_r$ and homotopy class $[w_n] \in \pi_1(S^1)$.  But $f_r$ is homotopic to $0$. Then $w_n$ is also homotopic to $0$ and $n$ must be 0. Our $p(z) = a_n$ must be constant.
+\end{proof}
 
+\begin{theorem}[Brouwer fixed point theorem]
+	Any continuous map $h: D^2 \to D^2$ must have a fixed point $h(x) = x$.
+\end{theorem}
+
+This theorem was initially proved by a gentleman named L.E.J. Brouwer circa 1910 and seems to be foundational to the rest of algebraic topology and other fields like differential topology.
+
+\begin{exercise}[1.3]
+
+\end{exercise}
+\begin{proof}
 \end{proof}
 
 \end{document}
