@@ -76,9 +76,23 @@ h_t(s) = (1-t)f(s) + (t)g(s).
 
 	Second, we check the identity property of the constant map $c$. $f$ can be reparameterized by the piecewise function that speeds it up for the first half of $I$ and holds it constant at $f(1)$ for the second half where $f\phi \simeq f \cdot c$.
 
-	Third, we verify the existence of an inverse for each $[f]$.
+	Third, we verify the existence of an inverse for each $[f]$. Define $[\bar{f}]$ where $\bar{f}(s) = f(1-s)$. Then $f\cdot\bar{f}$ is homotopic to the constant path. To see this construct $h_t = f_tg_t$ where $f_t = f$ on $[0, t]$ and $f_t = f(t)$ on $[1-t, 1]$ and $g_t$ is the inverse of this function. As $t$ approaches $1$, $h_t$ has a larger constant region in its image starting from the middle and growing to the endpoints until $h_1(s) = f(0) = g(1)$ is our constant map at timepoint 1.
 
 \end{proof}
+
+\begin{proposition}[The fundamental group is independent of the choice of basepoint up to isomorphism]
+	If $f$ is a loop with basepoint $x_1$ and $h$ is a path from $x_0$ to $x_1$. The map $\beta_h: \pi_1(X, x_0) \to \pi_1(X, x_1)$ defined as $\beta_h([f]) = [h \cdot f \cdot \hat{h}]$ is an isomorphism.
+\end{proposition}
+\begin{proof}
+	$\beta_h$ is well-defined. To see this, if $[f] = [f']$ implies that $f$ and $f'$ are homotopic, so certainly $h \cdot f \cdot \bar{h}$ and $h \cdot f' \cdot \bar{h}$ are homotopic and $\beta_h([f]) = \beta([f'])$.
+	$\beta_h$ is a homomorphism. $\beta_h([f \cdot g]) = [h \cdot f \cdot g \cdot \bar{h}] = [h \cdot f \cdot \cdot h \cdot \bar{h} \cdot g \cdot \bar{h}] = [h \cdot f \cdot \cdot h] \cdot [\bar{h} \cdot g \cdot \bar{h}] = \beta_h([f]) \cdot = \beta_h([g])$. 
+	$\beta_h$ is an isomorphism.
+
+\end{proof}
+
+\begin{definition}
+	A space is \textbf{simply connected} if it is path connected and has a trivial fundamental group.
+\end{definition}
 
 
 \begin{theorem}[$\Z \cong \pi(S1)$]
