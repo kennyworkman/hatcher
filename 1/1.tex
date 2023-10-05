@@ -181,6 +181,16 @@ Every non constant polynomial with coefficients in $\C$ has at least one root in
 
 This theorem was initially proved by a gentleman named L.E.J. Brouwer circa 1910 and seems to be foundational to the rest of algebraic topology and other fields like differential topology.
 
+We now introduce a theorem which proves that there must exist two places on the surface of the earth with both the same temperature and pressure.
+
+\begin{theorem}[Borsuk-Ulam theorem]
+	A continuous map $f: S^2 \to \R^2$ must have at least one pair of antipodal points, $f(x) = f(-x)$.
+\end{theorem}
+
+Lets build intuition for the two dimensional case by proving the theorem in one dimensions. For a map $f: S^1 \to \R$, construct continuous $h = f(x) - f(-x)$. Pick a point $x$, and evaluate $h$ at points $x$ and $-x$ halfway across the circle from each other. Notice $h(x) = -h(x)$, then there must exist some $y$ where $h(y) = 0 \in [h(x), -h(x)]$ by intermediate value theorem.
+
+This theorem says a few things. It tells us an n-disk can never be one-to-one with an embedding in $R^n$, so it cannot be homeomorphic with a subspace of $R^n$. Think of trying to produce such a map with the surface of a sphere, $S^2$, and the plane - one would have to introduce a hole somewhere.
+
 \begin{exercise}[1.1.2]
 
 \end{exercise}
