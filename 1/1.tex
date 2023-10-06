@@ -187,9 +187,24 @@ We now introduce a theorem which proves that there must exist two places on the 
 	A continuous map $f: S^2 \to \R^2$ must have at least one pair of antipodal points, $f(x) = f(-x)$.
 \end{theorem}
 
-Lets build intuition for the two dimensional case by proving the theorem in one dimensions. For a map $f: S^1 \to \R$, construct continuous $h = f(x) - f(-x)$. Pick a point $x$, and evaluate $h$ at points $x$ and $-x$ halfway across the circle from each other. Notice $h(x) = -h(x)$, then there must exist some $y$ where $h(y) = 0 \in [h(x), -h(x)]$ by intermediate value theorem.
+Lets build intuition for the two dimensional case by proving the theorem in one dimensions. For a map $f: S^1 \to \R$, construct continuous $h = f(x) - f(-x)$. Pick a point $x$, and evaluate $h$ at points $x$ and $-x$ halfway across the circle from each other. Notice $h(x) = -h(x)$, then there must exist some $y$ where $h(y) = 0 \in [h(x), -h(x)]$ by intermediate value theorem. We proceed with proof in two dimensions:
 
-This theorem says a few things. It tells us an n-disk can never be one-to-one with an embedding in $R^n$, so it cannot be homeomorphic with a subspace of $R^n$. Think of trying to produce such a map with the surface of a sphere, $S^2$, and the plane - one would have to introduce a hole somewhere.
+\begin{proof}
+	Define a path $\eta(s) = (\cos 2\pi s, \sin 2\pi s, 0)$ around the equator of $S^2$ and a map $g: S^2 \to S^1$ defined as $g(x) = \frac{f(x) - f(-x)}{\abs{f(x) - f(-x)}}$. Let $h = g\eta$. Check that $\eta$ is nullhomotopic (one can shrink the equator to the origin) and therefore $h$ is also nullhomotopic. 
+
+	\indent We now examine the lift $\tilde{h}$ of $h$ to see that $h$ cannot be nullhomotopic. Observe $g(x) = -g(-x)$ so $h(s) = -h(s + \frac 1 2)$ for $s \in [0, \frac 1 2]$. Then $\tilde{h}(s + \frac 1 2) = \tilde{h}(s) + \frac q 2$ for some odd integer $q$. (to visualize this, observe $h(s)$ and $-h(s + \frac 1 2)$ are on opposite sides of $S^1$, so the distance between them in the lift is a path in $\R$ that is an arbitrary number of full loops and one half loop). Then $h$ lies in the homotopy class represented by the generator of $\pi_1(S^1)$ times a nonzero integer q, so it cannot be nullhomootpic.
+\end{proof}
+
+This theorem says a few things. It tells us the surface of a sphere can never be one-to-one with an embedding in $R^2$, so it cannot be homeomorphic with a subspace of $R^2$. Think of trying to produce such a map with the surface of a sphere, $S^2$, and the plane - one would have to introduce a hole somewhere.
+
+
+\begin{theorem}[Fundamental group of a product space]
+	$\pi_1(X \times Y) \cong \pi_1(X) \times \pi_1(Y)$ if $X$ and $Y$ are path connected.
+\end{theorem}
+
+\begin{example}[Torus]
+	The fundamental group of the torus can be thought of as a pair of integers. Formally, $\pi_1(S^1 \times S^1) \cong \Z \times \Z$. 
+\end{example}
 
 \begin{exercise}[1.1.2]
 
