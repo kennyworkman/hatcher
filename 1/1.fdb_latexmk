@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1696609652 "1.tex" "1.pdf" "1" 1696609653 0
+["pdflatex"] 1696954101 "1.tex" "1.pdf" "1" 1696954102 0
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -25,6 +25,8 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/doublestroke/dsrom10.tfm" 1136768653 452 168d896d9b2ead965bf08c9db69c947f ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/doublestroke/dsrom8.tfm" 1136768653 452 dc44cdd7c88ff2b15557f125edfc277b ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1248133631 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
@@ -39,6 +41,7 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1248133631 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb" 1215737283 138258 6525c253f16cededa14c7fd0da7f67b2 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb" 1136849748 17014 61891910dfe21ad76f9789fdafdd860e ""
   "/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2023/texmf-dist/tex/generic/catchfile/catchfile.sty" 1576016007 8622 63834878edeb14dd71d58d8f22bc3e06 ""
   "/usr/local/texlive/2023/texmf-dist/tex/generic/etexcmds/etexcmds.sty" 1576625273 7734 b98cbb34c81f667027c1e3ebdbfce34b ""
@@ -120,6 +123,8 @@
   "/usr/local/texlive/2023/texmf-dist/tex/latex/base/size10.clo" 1667332637 8448 c33a4e1cb35cee9b33c2b21033b73e39 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/cancel/cancel.sty" 1388445839 7592 dd751af313a16a0308545d5bfd7aaaa2 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/cleveref/cleveref.sty" 1525128982 329481 7fc6b003158402a4c694bc0a1b729308 ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/doublestroke/Udsrom.fd" 1137110062 211 101be7da01334f0b54b41fbe634f1ce4 ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/doublestroke/dsfont.sty" 1137110062 230 7bc61880b468bfd38aedc173be7c3486 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1579991033 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/geometry/geometry.sty" 1578002852 41601 9cf6c5257b1bc7af01a58859749dd37a ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/graphics-cfg/color.cfg" 1459978653 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
@@ -155,10 +160,10 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1695598288 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1695598139 7883452 caa0a602e870c61c10cde9c3fbd49283 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "1.aux" 1696609653 355 3fb73aa991d37662a7ce31f8d133862e "pdflatex"
-  "1.pre" 1696609652 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "1.tex" 1696609652 14889 c792c67c02402220b33e31706688e853 ""
-  "kennyworkman.sty" 1696003898 3249 aec9d5e592ca384467e1ee7e8a030e9c ""
+  "1.aux" 1696954102 355 3fb73aa991d37662a7ce31f8d133862e "pdflatex"
+  "1.pre" 1696954101 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "1.tex" 1696954101 15743 db1f882f6cdff4adbbbed0794323f112 ""
+  "kennyworkman.sty" 1696952844 3269 189c4afae67b7bc590e28c69c53c0179 ""
   (generated)
   "1.aux"
   "1.log"
