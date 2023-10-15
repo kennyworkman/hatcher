@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1696954101 "1.tex" "1.pdf" "1" 1696954102 0
+["pdflatex"] 1697406426 "1.tex" "1.pdf" "1" 1697406427 0
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -35,6 +35,7 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1248133631 32362 179c33bbf43f19adbb3825bb4e36e57a ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb" 1248133631 31809 8670ca339bf94e56da1fc21c80635e2a ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
@@ -160,9 +161,9 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1695598288 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1695598139 7883452 caa0a602e870c61c10cde9c3fbd49283 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "1.aux" 1696954102 355 3fb73aa991d37662a7ce31f8d133862e "pdflatex"
-  "1.pre" 1696954101 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "1.tex" 1696954101 15743 db1f882f6cdff4adbbbed0794323f112 ""
+  "1.aux" 1697406427 355 3fb73aa991d37662a7ce31f8d133862e "pdflatex"
+  "1.pre" 1697406426 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "1.tex" 1697406425 17536 72f9f0b23c720a0dc0d9510041549e8c ""
   "kennyworkman.sty" 1696952844 3269 189c4afae67b7bc590e28c69c53c0179 ""
   (generated)
   "1.aux"

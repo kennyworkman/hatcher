@@ -219,11 +219,37 @@ We can briefly check some properties of this homomorphism. Let $\varphi, \psi$ b
 These properties of the induced homomorphism make the fundamental group a functor.
 
 The induced homomorphism allows us to describe relationships between topological spaces as relationships between fundamental groups.
+
 \begin{proposition}[]
-	For a given retraction $r: X \to A$, the induced homomorphism for the associated inclusion $i_*$ is injective. If $r$ is a deformation retraction, $i_*$ is an isomorphism.
+	For a given retraction $r: X \to A$, the induced homomorphism for the associated inclusion $i_*$ is injective. If $r$ is a deformation retraction, $i_*$ is also an isomorphism.
 \end{proposition}
 
-\begin{exercise}[1.1.2]
+\begin{proof}
+	Because $ri = \mathds{1}_A$, $r_*i_* = \mathds{1}_{A*}$ so $i_*$ is injective. To see $i_*: \pi(A) \to \pi(X)$ is also surjective, see that any loop in $X$ homotopes to a loop in $A$ by $r_tf$ if $r_t$ is a deformation retract.
+\end{proof}
+
+	An important takeaway from the above is that spaces that are continuous deformations of each other have, in some loose sense, the same number of homotopy classes of loops. In other words, their fundamental groups are isomorphic.
+
+	We will state and prove a rigorous elaboration of this fact. However, we first see that homotopies induce homomorphisms that are "essentially" the same. The homomorphism induced between any two time points of the homotopy is the same up to composition with a change of basepoint homomorphism.
+
+\begin{lemma}[]
+	Let $\varphi_t: X \to Y$ be a homotopy and $\restr{h}{x_0 \times I}$ be a path between $\varphi_0(x_0)$ and $\varphi_1(x_0)$. Then $\varphi_{0*} = \beta_h \varphi_{1*}$
+\end{lemma}
+
+\begin{note}
+	To see this, for a given loop $f$ in $X$, we can build a new homotopy $\bar{h_t} \cdot \varphi_tf \cdot h_t$. Then $\beta_h(\varphi_0([f]))$ is homotopic to $\varphi_1([f])$.
+\end{note}
+
+\begin{theorem}[The choice of basepoint between homotopy equivalent spaces is not important]
+Consider the homotopy equivalence $\varphi: X \to Y$, then $\pi_1(X, x_0) \cong \pi_1(Y, \varphi(x_0))$.
+\end{theorem}
+
+\begin{proof}
+	Consider the homotopy inverse $\psi: Y \to X$. Then $\psi\varphi \simeq \mathds{1}$. We just saw that $(\psi\varphi)_* = \beta_h(\mathds{1})_*$ for some path $h$ from $\psi\varphi(x_0)$ to $x_0$. Then $\psi_*\varphi_* = \beta_h$ is an isomorphism and $\varphi_*$ is injective.
+	Using the same argument, $\varphi\psi \simeq \mathds{1}$ and $\varphi$ is also surjective.
+\end{proof}
+
+\begin{exercise}[]
 
 \end{exercise}
 \begin{proof}
