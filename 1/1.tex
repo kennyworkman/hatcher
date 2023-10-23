@@ -230,7 +230,7 @@ The induced homomorphism allows us to describe relationships between topological
 
 	An important takeaway from the above is that spaces that are continuous deformations of each other, like those that are deformation retracts of each other, have in some loose sense, the same number of homotopy classes of loops. Their fundamental groups are isomorphic.
 
-	However, deformation retracts are rather strict examples of homotopies as they restrict to the identity map over their retracting space for all $I$ ($\restr{r_t}{A\timesI} = \mathds{1}$). In particular, any deformation retract fixes a basepoint between $X$ and $A$.
+	However, deformation retracts are rather strict examples of homotopies as they restrict to the identity map over their retracting space for all $I$ ($\restr{r_t}{A\times I} = \mathds{1}$). In particular, any deformation retract fixes a basepoint between $X$ and $A$.
 
 	Consider a homotopy $\varphi_t: X \times I \to Y$ that is not a deformation retract but fixes the basepoint in $X$ ($\varphi_t(x_0) = y_0$ for all $t$). Then $\varphi_{0*} = \varphi_{1*}$ as $[\varphi_0f] = [\varphi_1f]$. Any pair of induced homomorphisms under a basepoint preserving homotopy are equivalent.
 
@@ -269,7 +269,50 @@ Consider the homotopy equivalence $\varphi: X \to Y$, then $\pi_1(X, x_0) \cong 
 
 	Consider homotopy classes $[f], [h]$ in $X$. By definition, $\beta_h([f]) = [hfh^{-1}]$. Consider a new constant path $c = s \mapsto h(0)$ (the basepoint of $X$). Then if $\beta_c = \beta_h$, $[f] = \beta_c([f]) = \beta_h([f]) = [hfh^{-1}] = [h][f][h^{-1}]$ for any choice of $f, h$. $\pi_1(X)$ is abelian.
 
-	If $h(0) \neq h(1)$, and $h(0) = g(0)$ and $h(1) = g(1)$, then $\beta_h = \beta_g$ are equivalent because paths with the same endpoints are homotopic ($[f] = [hfh^{-1}] = [gfg^{-1}]$). If $h(0) = h(1)$, this is only true if $\pi_1(X)$ is abelian.
+	To see the reverse, consider two arbitrary paths $g, h$ (they need not be loops). Because $\pi_1(X)$ is abelian, $\beta_g([f]) = [g^{-1}fg] = [h^{-1}fh] = \beta_h([f])$ for any $h$.
+
+\end{proof}
+
+\begin{exercise}[1.1.5]
+	Let $X$ be some space. The following conditions are equivalent:
+	\begin{itemize}
+		\item{Any map $S^1 \to X$ is homotopic to a constant map}
+		\item{Any map $S^1 \to X$ extends to some map $D^2 \to X$}
+		\item{$\pi_1(X, x_0) = 0$ for any $x_0 \in X$}
+	\end{itemize}
+\end{exercise}
+
+\begin{proof}
+	To see $(c)$ implies $(a)$, consider any loop $f$. There exists a single homotopy class. Then $f$ homotopic with the constant loop, $\mathds{1}(I) = x_0$.
+	\par Now we show $(a)$ implies $(b)$. Let $f: S^1 \to X$ be our map and $h: S^1 \times I \to X$ be the homotopy relating $f$ to some constant map. Let $g: D^2 \to S^1 \times I$ be a homeomorphism. Then $hg$ is a continuous map where $\restr{hg}{S^1} = f$.
+	\par Now we show $(b)$ implies $(c)$. Let $f: S^1 \to X$ be an arbitrary loop. Let $h: S^1 \times I \to D^2$ be a homotopy relating the identify on the circle to a constant map. Let $g$ be the extension of $f$. Then $gh$ homotopes $f$ to a constant map whose image is a point in $X$.
+\end{proof}
+
+\begin{exercise}[1.1.6]
+	The canonical map $\phi: \pi(X, x_0) \to [S^1, X]$ is onto if $X$ is path connected and places the conjugacy classes of $X$ in one-to-one correspondence with $[S^1, X]$.
+\end{exercise}
+
+\begin{proof}
+	To see $\phi$ is surjective if $X$ is path connected, consider $[f]$ in $[S^1, X]$. Let $h$ be a path from $x_0$ to any point on the path $f$ (note that $h$ is constant if $x_0$ already lies on $f$). Then $\phi^{-1}([f]) = [\bar{h}fh]$.
+	\par A proof of one-to-one correspondence between $[S^1, X]$ and conjugacy classes of $\pi_1$ is equivalent to showing $\phi([f]) = \phi([g])$ iff $[f]$ conjugates $[g]$ in $\pi_1$. To see the forward direction, let $\psi_t$ be the basepoint free homotopy relating $\phi([f])$ and $\phi([g])$. Then $\psi_0 = \beta_h\psi_1$.
+
+\end{proof}
+
+\subsection{Van Kampen's Theorem}
+
+To understand free groups, lets review some definitions from group theory.
+
+\begin{definition}[Direct product of groups]
+	Given an indexed set of subgroups $\{G_{\alpha}\}$, our direct product group $\prod_{\alpha} G_{\alpha}$ is the set of functions $\{ f = \alpha \mapsto g_{\alpha} \in G_{\alpha} \}$.
+\end{definition}
+
+\begin{definition}[Direct sum of groups]
+	Our direct sum of $\{G_{\alpha}\}$ is a set of functions with the additional constraint that $f(\alpha) \neq e_\alpha$ for strictly finite $\alpha$.
+\end{definition}
+
+We show the binary operator of free groups is associative.
+
+\begin{proof}[Associativity of free groups]
 
 \end{proof}
 
