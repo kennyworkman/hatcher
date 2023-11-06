@@ -234,7 +234,7 @@ The induced homomorphism allows us to describe relationships between topological
 
 	Consider a homotopy $\varphi_t: X \times I \to Y$ that is not a deformation retract but fixes the basepoint in $X$ ($\varphi_t(x_0) = y_0$ for all $t$). Then $\varphi_{0*} = \varphi_{1*}$ as $[\varphi_0f] = [\varphi_1f]$. Any pair of induced homomorphisms under a basepoint preserving homotopy are equivalent.
 
-	Now consider homotopy equivalences that are also basepoint preserving. Let $\varphi: X \to Y$ and $\psi: Y \to X$ be such equivalences. Then $\psi\varphi \simeq \mathds{1}$ but we just saw then $(\psi\varphi)_* = \mathds{1}_*$ so $\varphi$ is injective. $\varphi$ can be shown to be surjective and thus an isomorphism by a symmetric argument.
+	Now consider homotopy equivalences that are also basepoint preserving. Let $\varphi: X \to Y$ and $\psi: Y \to X$ be such equivalences. Then $\psi\varphi \simeq \mathds{1}$ but we just saw then $(\psi\varphi)_* = \mathds{1}_*$ so $\varphi_*$ is injective. $\varphi_*$ is also surjective as $(\varphi\psi)_*$ = $\mathds{1}_*$
 
 	We can actually see this is true even if our homotopy equivalence does not fix our basepoint.
 
@@ -294,13 +294,15 @@ Consider the homotopy equivalence $\varphi: X \to Y$, then $\pi_1(X, x_0) \cong 
 
 \begin{proof}
 	To see $\phi$ is surjective if $X$ is path connected, consider $[f]$ in $[S^1, X]$. Let $h$ be a path from $x_0$ to any point on the path $f$ (note that $h$ is constant if $x_0$ already lies on $f$). Then $\phi^{-1}([f]) = [\bar{h}fh]$.
-	\par A proof of one-to-one correspondence between $[S^1, X]$ and conjugacy classes of $\pi_1$ is equivalent to showing $\phi([f]) = \phi([g])$ iff $[f]$ conjugates $[g]$ in $\pi_1$. To see the forward direction, let $\psi_t$ be the basepoint free homotopy relating $\phi([f])$ and $\phi([g])$. Then $\psi_0 = \beta_h\psi_1$.
+	\par A proof of one-to-one correspondence between $[S^1, X]$ and conjugacy classes of $\pi_1$ is equivalent to showing $\phi([f]) = \phi([g])$ iff $[f]$ conjugates $[g]$ in $\pi_1$. 
+	\par To see the forward direction, let $\psi_t$ be the basepoint free homotopy relating $\phi([f])$ and $\phi([g])$. Then $\psi_{0*} = \beta_h\psi_{1*}$, where $h$ is the path induced by the image $\psi_t(0)$. Notice that $h$ starts and ends at $x_0$ because $[f]$ and $[g]$ had basepoints of $x_0$ under the preimage of $\psi$, so $h$ is also a loop. Then $\psi_{0*} = \beta_h\psi_{1*}$ is equivalent to $[h \cdot g \cdot \bar{h}] = [f]$ which implies $[h] \cdot [g] \cdot [h]^{-1} = [f]$.
+	\par To see the reverse direction, let $[h]$ be the element of $\pi_1$ that conjugates $[f]$ and $[g]$.
 
 \end{proof}
 
 \subsection{Van Kampen's Theorem}
 
-To understand free groups, lets review some definitions from group theory.
+To understand free products, lets review some definitions from group theory.
 
 \begin{definition}[Direct product of groups]
 	Given an indexed set of subgroups $\{G_{\alpha}\}$, our direct product group $\prod_{\alpha} G_{\alpha}$ is the set of functions $\{ f = \alpha \mapsto g_{\alpha} \in G_{\alpha} \}$.
@@ -310,10 +312,42 @@ To understand free groups, lets review some definitions from group theory.
 	Our direct sum of $\{G_{\alpha}\}$ is a set of functions with the additional constraint that $f(\alpha) \neq e_\alpha$ for strictly finite $\alpha$.
 \end{definition}
 
+To use the language of category theory, the free product is the coproduct in the category of groups.
+
 We show the binary operator of free groups is associative.
 
 \begin{proof}[Associativity of free groups]
 
+\end{proof}
+
+The proof of Van Kampen's also relies on fluency with basic facts about homomorphisms and quotient groups. We derive some of these facts here to refresh the dome.
+
+
+\begin{proposition}[]
+	Consider $\phi: G \to H$ where $ker \phi = K$. If $X = \phi^{-1}(a)$ is an element of $G / K$, then for any $u \in X$, $X = \{ uk ~|~ k \in K \}$.
+\end{proposition}
+
+\begin{proof}[]
+	To see $uK \subseteq X$, observe $\phi(uk) = \phi(u)\phi(k) = \phi(u) \in X$. To see $X \subset uK$, consider $x \in X$ and notice that $\phi(u^{-1}x) = 1$. Then $u^{-1}x = k$ and $x = uk \subset uK$.
+\end{proof}
+
+\begin{proposition}[]
+	Consider $\phi: G \to H$ where $ker \phi = K$. The group operation in $G \ K$ is well-defined.
+\end{proposition}
+
+\begin{proof}[]
+	Consider arbitrary $X, Y \in G / K$ where $X = aK$ and $Y = bK$. Let $Z = XY$. To see multiplication is independent of choice of representative, pick arbitrary representatives $u \in X$ and $v \in Y$. Then $uv \in \phi^{-1}(ab)$.
+\end{proof}
+
+In fact, multiplication of quotient group elements is well defined under a more general condition - that our coset is a normal subgroup.
+
+\begin{proposition}[]
+	Let $uH, vH \in G / H$. Then $(uH)(vH) = uvH$ is well defined iff $H \trianglelefteq G$.
+\end{proposition}
+
+\begin{proof}[]
+	For the forward argument, choose arbitrary $x, x^{-1} \in G$. Then $(xH)(x^{-1}H) = H$, so $(xh)(x^{-1}1) \in H$. Then $H$ is normal as desired.
+	For the reverse argument, consider alternative representatives $u' \in uH$ and $v' \in vH$. We must show $u'v' \in uvH$. $u' = um$ and $v' = vn$ for some $m, n \in H$. Then $(um)(vn) = uvv^{-1}mvn$. But $v^{-1}mv \in H$ by assumption (denote this $n'$). Then $uvv^{-1}mvn = uvn'n \in uvH$.
 \end{proof}
 
 \end{document}
