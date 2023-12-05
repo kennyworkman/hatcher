@@ -302,24 +302,41 @@ Consider the homotopy equivalence $\varphi: X \to Y$, then $\pi_1(X, x_0) \cong 
 
 \subsection{Van Kampen's Theorem}
 
-To understand free products, lets review some definitions from group theory.
+To understand free products, lets review the direct products.
 
 \begin{definition}[Direct product of groups]
 	Given an indexed set of subgroups $\{G_{\alpha}\}$, our direct product group $\prod_{\alpha} G_{\alpha}$ is the set of functions $\{ f = \alpha \mapsto g_{\alpha} \in G_{\alpha} \}$.
 \end{definition}
 
-\begin{definition}[Direct sum of groups]
-	Our direct sum of $\{G_{\alpha}\}$ is a set of functions with the additional constraint that $f(\alpha) \neq e_\alpha$ for strictly finite $\alpha$.
-\end{definition}
+Some facts that are useful to verify:
 
-% https://math.stackexchange.com/questions/3911270/direct-product-and-commutativity-of-factors
+\begin{enumerate}
+	\item{$\bigcap G_{\alpha} = 1$. (Every element is unique in the product, even if two copies of the same group are used in the product.)}
+	\item{For each factor group, there exists a surjective "projection homomorphism" $\pi_i: G \to G_{\alpha}$ where $G_{\alpha} = \{(1 \dots g_i \dots 1) \}$. }
+	\item{ $G \backslash G_{\alpha} \cong \{ (g_1, ... g_{\alpha-1}, g_{\alpha+1}, ...  g_n) \}$ (To see this, construct a homomorphism that erases $\alpha$ component and invoke the First Isomorphism Theorem).}
+	\item{Elements of each factor group commute with each other.}
+\end{enumerate}
 
-Elements of subgroups within direct product / sum commute with each other. But we want a distinct structure where this is not true.
+% Refer to 5.1 in Dummit and Foote
 
-This will be important to distinguish, for example, $\Z \star \Z$ (disjoint circles) from $\Z \times \Z$ (linked circles or torus).
+\begin{proposition}[Proof that direct products are commutative up to isomorphism.] 
+	If $G = H \times K$, then $hk = kh$.
+\end{proposition}
+
+\begin{proof}
+	Let $\psi: G \to H \times K$ be an isomorphism carrying elements of $G$ to their tuple representation. $\psi(kh) = \psi(k)\psi(h) = (1, k)(h, 1) = (h, k) = \psi(hk).$
+\end{proof}
+
+It is helpful to think of each element of the product as embedded in some latent tuple. 
+
+Now we might want to compose a group that is not commutative amongst factors. This will help us distinguish, for example, $\Z \star \Z$ (disjoint circles) from $\Z \times \Z$ (linked circles or torus). We introduce the free group:
 
 To use the language of category theory, the free product is the coproduct in the category of groups.
 
+% TODO
+Formally:
+
+% TODO
 We show the binary operator of free groups is associative.
 
 \begin{proof}[Associativity of free groups]
@@ -402,18 +419,18 @@ What are the other homoemorphisms. It seems the first homeomorphism does what we
 
 \end{note}
 
-\begin{proof}[]
-
-\end{proof}
-
-\begin{theorem}[]
-	
-\end{theorem}
-
 We will used the fact that a punctured n-sphere is homeomorphic to the 
 
 \begin{proposition}[Proof of generalized stereographic projection]
 There exists a homeomorphism between $S^n-1$ and
 \end{proposition}
+
+\begin{exercise}[1.2.4]
+	Compute $\pi_1(\R^3 - X)$ where $X$ is the union of $n$ lines through the origin.
+\end{exercise}
+
+\begin{proof}
+	Observe the complement deformation retracts to $S^2$ with $2n$ points removed (the poles of our $n$ lines). This object is homoemorphic to $\R^2$ with $2n-1$ points removed. (maybe construct the explicit stereographic projection). We can use van kampens to show the fundamental group of this space is the free group of $2n-1$ generators.
+\end{proof}
 
 \end{document}
