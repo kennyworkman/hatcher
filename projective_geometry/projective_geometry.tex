@@ -1,0 +1,72 @@
+\documentclass[10pt]{article}
+\usepackage{kennyworkman}
+
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \vphantom{\big|} % pretend it's a little taller at normal size
+  \right|_{#2} % this is the delimiter
+}}
+
+\title{Notes on Projective Geometry}
+\author{Kenny Workman}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Basic Definitions}
+
+\subsection{Linear Subspaces}
+
+We begin by proving a result from elementary linear algebra.
+
+\begin{theorem}
+	Let $W_1$ and $W_2$ be vector spaces. Then $\dim W_1 + W_2 = \dim W_1 + \dim W_2 - \dim W_1 \cap W_2$ 
+\end{theorem}
+
+\begin{proof}
+	Let $S = \{ u_1 \cdots u_r \}$ be the basis of $W_1 + W_2$. Let $B_1 = \{ u_1 \cdots u_r v_1 \cdots v_s \}$ and $B_2 = \{ u_1 \cdots u_r w_1 \cdots w_t \}$ be $B$ extended to be the basis of $W_1$ and $W_2$ respectively. 
+	If we can show $B$ is the basis of $W_1 + W_2$, we have our result, as $\dim B = r + s + t = (r + s) + (r + t) - r = \dim W_1 + \dim W_2 - \dim W_1 \cap W_2.$
+
+	First, we show $B$ is linearly independent. Let 
+
+	\[\sum_i^r{a_iu_i} + \sum_j^s{b_jv_j} + \sum_k^t{c_kw_k} = 0\]. 
+
+	Notice if we move terms so 
+
+	\[\sum_i^r{a_iu_i} + \sum_j^s{b_jv_j} = -\sum_k^t{c_kw_k}\], 
+
+	then the LHS is in $W_1$ and the RHS is in $W_2$, so both sides represent the same element in $W_1 + W_2$. 
+
+	Then $\sum_i^r{d_iu_i} = -\sum_k^t{c_kw_k}$, where the LHS uses $B$ and the RHS uses $B_2$. Again moving terms:
+
+	\[\sum_i^r{d_iu_i} + \sum_k^t{c_kw_k} = 0\]
+
+	Where all $c_i$ must be 0 as $B_2$ is linearly independent. Then
+
+	\[\sum_i^r{a_iu_i} + \sum_j^s{b_jv_j} = 0\]
+
+	But the LHS is described by $B_1$ which is also linearly independent so all $a_i$, $b_j$ must also be 0. Then $B$ is linearly independent.
+
+	Consider any $w_1 + w_2$. 
+
+	\[w_1 = \sum_i^r{a_iu_i} + \sum_j^s{b_jv_j}\]
+	\[w_2 = \sum_i^r{d_iu_i} + \sum_k^t{c_kw_k}\]
+
+	Then
+
+	\[w_1 + w_2 = \sum_i^r{(a_i + d_i) u_i} + \sum_j^s{b_jv_j} + \sum_k^t{c_kw_k} \in \operatorname{span} W_1 + W_2 \]
+
+\end{proof}
+
+\begin{theorem}
+	In a projective plane $P(V)$, two projective lines, $P(U)$ and $P(U')$, intersect in a unique point.
+\end{theorem}
+\begin{proof}
+	From elementary linear algebra, $\dim V \geq \dim U + U'$. We have shown that $\dim U + U' = \dim U + \dim U' - \dim {U \cap U'}$.
+	Then $1 \leq \dim {U \cap U'} \leq 2$. Because $P(U)$ and $P(U')$ are distinct, $\dim {U \cap U'} = 1$. So $P(U \cap U')$ is a projective point.
+\end{proof}
+
+\end{document}
