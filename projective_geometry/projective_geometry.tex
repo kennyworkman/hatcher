@@ -18,6 +18,55 @@
 
 \section{Basic Definitions}
 
+\begin{definition}
+	Let $V$ be a vector space. The projective space $P(V)$ is the set of 1-dimensional vector subspaces of $V$.
+\end{definition}
+
+It can be useful to think of projective spaces, at least in the real case, as
+bundles of lines that pass through the origin. This reduces our space by a
+dimension, motivating the common shorthand for the reals $P^n(R) = P(R^{n+1})$. 
+
+Many sources encourage thinking about the sphere $S^n$ for a projective space
+$P^n(\R)$ to ease the visualization of a space of lines. Antipodal points on
+the sphere are identified and every such antipodal pair is injective with the
+actual elements of the projective space. 
+
+I have found it easier to just think of the vector subspaces the projective
+elements represent (projective points and lines are lines and planes through the
+origin in $\R^3$) for more natural geometric intuition.
+
+\subsection{Decomposition}
+
+The following decomposition is useful to understand the structure of theses spaces:
+
+\[P(R^n) = R^{n-1} + P(R^{n-1}) \]
+
+Essentially our goal is to take $R^n$ and partition the set of points into
+1-dim vector subspaces such that each partition has a nice representation.
+Recall:
+
+\begin{definition}
+	A representative vector is any of the non-zero vectors from the 1-dimensional subspace corresponding to a point $[v] \in P(V)$.
+\end{definition}
+
+Then if $[x] = [\lamba x] = [a]$, $x$ and $a$ are both representatives for the same projective point.
+
+We also want to define the notion of the homogoenous coordinates for each
+projective point, which are just the real points that exist in the
+corresponding vector subspace.
+
+\begin{definition}
+	The homogoenous coordinates for $[v] \in P(V)$ are the set $[(x_0 \cdots x_n)]$ equivalent under scalar multiplication by $\lambda$.
+\end{definition}
+
+If we construct a subset of homogoenous coordinates $U_0$ where $x_0 \neq 1$,
+notice that each $[(x_0 \cdots x_n)] = [1 \cdots x_n / x_0]$, so $U_0 \cong
+R^n-1$. We are left to "partition" the coordinates where $x_0 = 0$, but this is
+exactly the set of 1-dimensional subspaces of $V^n-1$, so $P(R^{n-1})$.
+
+\subsection{Applications}
+
+
 \subsection{Linear Subspaces}
 
 We begin by proving a result from elementary linear algebra.
@@ -68,5 +117,13 @@ We begin by proving a result from elementary linear algebra.
 	From elementary linear algebra, $\dim V \geq \dim U + U'$. We have shown that $\dim U + U' = \dim U + \dim U' - \dim {U \cap U'}$.
 	Then $1 \leq \dim {U \cap U'} \leq 2$. Because $P(U)$ and $P(U')$ are distinct, $\dim {U \cap U'} = 1$. So $P(U \cap U')$ is a projective point.
 \end{proof}
+
+It is useful to think about this result using our model of the projective plane as a sphere and using our decomposition.
+
+We can think of projective lines as planes in $\R^3$ that intersect the sphere
+in two great circles. These great circles intersect in a pair of antipodal
+points, which is a projective line.
+
+Alternatively
 
 \end{document}

@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1704307102 "projective_geometry.tex" "projective_geometry.pdf" "projective_geometry" 1704307103 0
+["pdflatex"] 1704393561 "projective_geometry.tex" "projective_geometry.pdf" "projective_geometry" 1704393562 2
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -35,6 +35,7 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1248133631 37944 359e864bd06cde3b1cf57bb20757fb06 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2023/texmf-dist/tex/generic/catchfile/catchfile.sty" 1576016007 8622 63834878edeb14dd71d58d8f22bc3e06 ""
   "/usr/local/texlive/2023/texmf-dist/tex/generic/etexcmds/etexcmds.sty" 1576625273 7734 b98cbb34c81f667027c1e3ebdbfce34b ""
@@ -153,9 +154,8 @@
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1695598139 7883452 caa0a602e870c61c10cde9c3fbd49283 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   "kennyworkman.sty" 1701883129 3269 189c4afae67b7bc590e28c69c53c0179 ""
-  "projective_geometry.aux" 1704307103 246 5b47fcbda464ce0d5c9bf6c5d0d3a916 "pdflatex"
-  "projective_geometry.pre" 1704307103 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "projective_geometry.tex" 1704307101 2538 b0e93caa41583fbbbcb71fc2b273450b ""
+  "projective_geometry.aux" 1704393562 457 2e3b34c5387a7c6159d423fca303cbc6 "pdflatex"
+  "projective_geometry.tex" 1704393556 4991 209e6bcad8e98079d6323770ef293641 ""
   (generated)
   "projective_geometry.aux"
   "projective_geometry.log"
