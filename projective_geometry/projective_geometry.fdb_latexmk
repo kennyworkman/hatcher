@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1704735490 "projective_geometry.tex" "projective_geometry.pdf" "projective_geometry" 1704735491 0
+["pdflatex"] 1704823773 "projective_geometry.tex" "projective_geometry.pdf" "projective_geometry" 1704823774 0
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -181,10 +181,10 @@
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1695598139 7883452 caa0a602e870c61c10cde9c3fbd49283 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   "kennyworkman.sty" 1704657336 3291 1769ac5c80d18f3f62d82557d1a3f205 ""
-  "projective_geometry.aux" 1704735491 1544 0cc95c4578fc0ff71257c76c19ba9b8a "pdflatex"
-  "projective_geometry.out" 1704735491 1189 21143e9cecf60739b349a8c9ad6c2b2f "pdflatex"
-  "projective_geometry.pre" 1704735491 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "projective_geometry.tex" 1704735490 11617 be98b8d6bd5424adeac08dd2ca2bd912 ""
+  "projective_geometry.aux" 1704823774 1544 7b29c9ac0bcd792d8edb9c67b3ae4221 "pdflatex"
+  "projective_geometry.out" 1704823774 1189 21143e9cecf60739b349a8c9ad6c2b2f "pdflatex"
+  "projective_geometry.pre" 1704823773 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "projective_geometry.tex" 1704823771 12437 8023133c1d517dc869fb6382519b3ef0 ""
   (generated)
   "projective_geometry.aux"
   "projective_geometry.log"

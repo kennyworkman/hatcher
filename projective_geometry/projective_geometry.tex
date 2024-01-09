@@ -212,6 +212,43 @@ vectors.
 
 \end{proof}
 
+\begin{note}
+Any two distinct points on the projective line are linearly independent
+vectors, so any three distinct points on the projective line are in general
+position.
+\end{note}
+
+\begin{theorem}[Desargues' Theorem]
+	Consider points $A, A', B, B', C, C' \in P(V)$, where the lines $AA', BB',
+	CC'$ are distinct and concurrent (intersect in a single point). Then the
+	three points of intersection $AB \cap A'B', BC \cap B'C', CA \cap C'A'$ are
+	collinear.
+\end{theorem}
+
+\begin{proof}
+	Denote the point of intersection between our three lines $P$. Because any
+	three points on the projective line are in general position, we can express
+	$p$ as three different linear combinations of vectors:
+
+	\[ p = a + a' = b + b' = c + c' \]
+
+	Where $a$ is a representative from $A$ and so forth in the obvious way. We
+	can make new points.
+
+	\[ c'' = a - b = b' - a' \]
+	\[ a'' = b - c = c' - b' \]
+	\[ b'' = c - a = a' - c' \]
+
+	Notice that all of $a'', c'', b''$ lie in a two-dimensional vector
+	subspace and are representatives of projective points at our desired
+	intersections: $[c''] \in AB \cap A'B'$ and so on. 
+
+	% TODO: linear independence is not convincing
+	Furthermore, notice $c'' + a'' + b'' = 0$, and this expression holds for any scaled representation of
+	these vectors, so they are linearly independent. 
+ 
+\end{proof}
+
 \subsection{Duality}
 
 We first review definitions of duality from elementary linear algebra.
