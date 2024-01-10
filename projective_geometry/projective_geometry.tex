@@ -243,10 +243,21 @@ position.
 	subspace and are representatives of projective points at our desired
 	intersections: $[c''] \in AB \cap A'B'$ and so on. 
 
-	% TODO: linear independence is not convincing
-	Furthermore, notice $c'' + a'' + b'' = 0$, and this expression holds for any scaled representation of
-	these vectors, so they are linearly independent. 
- 
+	Furthermore, notice $c'' + a'' + b'' = 0$, and this expression is $0$ for any
+	linear combination of these vectors. To see this, consider 
+	\[\lambda_c c'' + \lambda_a a'' + \lambda_b b'' = 0\] 
+	and expand this expression to 
+	\[\lambda_c (a - b) + \lambda_a (b - c) + \lambda_b (c - a) = 0\].
+	\[(\lambda_c - \lambda_b)a + (-\lambda_c + \lambda_a)b + (\lambda_a + \lambda_b)c\] 
+	We can then see we need to choose new representatives from our projective
+	lines that will lead to the desired expression.
+	\[ p = (\lambda_c - \lambda_b)a + a' = (-\lambda_c + \lambda_a)b + b' =(\lambda_a + \lambda_b) c + c' \]
+
+	Because $a'', b'', c''$ are linearly independent and each exist in a
+	two-dimensional subspace of $V$, their corresponding points in $P(V)$ are in
+	general position. Three projective points in general position define a line,
+	so these points are collinear as desired.
+
 \end{proof}
 
 \subsection{Duality}
@@ -326,5 +337,31 @@ introduce covariant and contravariant functors in Leinster.
 
 \end{proof}
 
+\begin{note}[Spherical, Cyndrical, Cartesian coordinates]
 
+	Cyndrical coordinates of a point in $\R^3$ are simply polar coordinates with
+	a z-axis. $(\theta, r, z)$:
+
+	\[ x_1 = r \cos \theta \]
+	\[ x_2 = r \sin \theta \]
+	\[ x_3 = z \]
+
+	Spherical coordinates use the same $\theta$ around the x axis but decribe the
+	point using a distance from the origin $p$ and an angle from the $z$ axis
+	$\psi$. $(\theta, \psi, p)$ is 
+
+	\[\theta = \theta \]
+	\[r = \sin \psi \]
+	\[z = \cos \psi \]
+
+	Then the cartesian coordinates for a point in spherical coordinates is:
+
+	\[x_1 = \sin \psi \cos \theta \]
+	\[x_2 = \sin \psi \sin \theta \]
+	\[x_3 = \cos \psi \]
+
+	Where $0 \leq \psi \leq \pi$ and $0 \leq \theta \leq 2\pi$
+
+\end{note}
+	
 \end{document}

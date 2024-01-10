@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.24)  9 JAN 2024 10:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.24)  10 JAN 2024 09:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -648,27 +648,27 @@ Overfull \hbox (21.64314pt too wide) in paragraph at lines 222--226
  []
 
 [3]
-Overfull \hbox (0.51195pt too wide) in paragraph at lines 282--284
+Overfull \hbox (0.51195pt too wide) in paragraph at lines 306--308
 []\OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 S \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 u[] [] u[]\OMS/cmsy/m/n/10 g$ \OT1/cmr/m/n/10 be the ba-sis of $\OML/cmm/m/it/10 W[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 W[]$\OT1/cmr/m/n/10 . Let $\OML/cmm/m/it/10 B[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 u[] [] u[]v[] [] v[]\OMS/cmsy/m/n/10 g$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 B[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 u[] [] u[]w[] [] w[]\OMS/cmsy/m/n/10 g$
  []
 
-[4] (./projective_geometry.aux)
+[4] [5] (./projective_geometry.aux)
 Package rerunfilecheck Info: File `projective_geometry.out' has not changed.
 (rerunfilecheck)             Checksum: 21143E9CECF60739B349A8C9AD6C2B2F;1189.
  ) 
 Here is how much of TeX's memory you used:
- 24218 strings out of 476025
- 471882 string characters out of 5790017
+ 24219 strings out of 476025
+ 471888 string characters out of 5790017
  1866388 words of memory out of 5000000
  44237 multiletter control sequences out of 15000+600000
  520496 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,8n,99p,422b,545s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,8n,99p,422b,533s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on projective_geometry.pdf (4 pages, 187742 bytes).
+Output written on projective_geometry.pdf (5 pages, 191988 bytes).
 PDF statistics:
- 157 PDF objects out of 1000 (max. 8388607)
- 119 compressed objects within 2 object streams
- 27 named destinations out of 1000 (max. 500000)
+ 161 PDF objects out of 1000 (max. 8388607)
+ 122 compressed objects within 2 object streams
+ 28 named destinations out of 1000 (max. 500000)
  77 words of extra memory for PDF output out of 10000 (max. 10000000)
 
