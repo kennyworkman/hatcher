@@ -262,7 +262,7 @@ position.
 
 \subsection{Duality}
 
-We first review definitions of duality from elementary linear algebra.
+We first review definitions of duality from linear algebra.
 
 \begin{definition}
 For a vector space $V$ defined over field $F$, the dual of $V$ is the vector
@@ -310,9 +310,34 @@ Because $f$ is itself a linear transformation. The kernel of $S$ is $0$ as
 there exist no non zero vector $v$ where $f(v) = 0 \forall f \in V'$. 
 
 \begin{definition}
-	The annihilator $U^{oo}$ 
+	The annihilator $U^{oo}$ for some subspace $V \subseteq U$ is defined $\{ f'
+	\in V' ~|~ f'(f) = 0, \forall f \in U^o \}$
 \end{definition}
 
+Then we claim $S(U) = U^{oo}$ for any subspace $U$. Indeed for any $u \in U$,
+$Su(f) = f(u)$ for all such $f \in U^o$, so $S(U) \subseteq U^{oo}$.
+Equality comes becuase $S$ is an isomorphism. (The notes claim this follows
+from the theorem $\dim V = \dim U + \dim U^o$, but I fail to see this)
+
+\subsection{Projective Dual Spaces}
+
+If there exists some dual $V'$ for each $V$, we want to say something about
+$P(V')$ in its relation to $P(V)$.
+
+\begin{definition}
+	A hyperplane in $P(V)$ of dimension $n$ is some $P(U)$ of dimension $n-1$.
+\end{definition}
+
+If we examine a point in the projective dual, $[f] \in P(V')$, ($f: V \to F$) we can see that
+its representative actually induces a hyperplane from its kernel.
+
+If $\dim \ker f = \dim V - \dim F$, then $\ker f = U$ where $\dim U = n-1$ as
+desired. $P(U)$ is a hyperplane. 
+
+% TODO show point is well defined (scalar multiplication does not change kernel
+% TODO show converse - hyperplane defines unique map
+
+$f: V \to F$
 
 \end{note}
 
