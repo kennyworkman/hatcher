@@ -292,6 +292,28 @@ introduce covariant and contravariant functors in Leinster.
 
 % If $A \in Set$, $F: [A, A] \to [A, A]^{op}$ k \to Set^{op}$ where if $f: X \to Y$, $Ff = 
 
+\begin{definition}
+	The dual of a dual, denoted $V''$, is a vector space of linear
+	transformations $(V \to F) \to F$. This space is isomorphic to $V$.
+\end{definition}
+
+To see this isomorphism, take $S: V \to V''$, $Sv = f \mapsto f(v)$.
+To see it is linear in $v$:
+
+\[S(\lambda_1 v_1 + \lambda_2 v_2)\] 
+\[= f \mapsto f(\lambda_1 v_1 + \lambda_2 v_2)\]
+\[= f \mapsto (\lambda_1 f(v_1) + \lambda_2 f(v_2))\]
+\[= \lambda_1 (f \mapsto f(v_1)) + \lambda_2 (f \mapsto f(v_2))\]
+\[= \lambda_1 S(v_1) + \lambda_2 S(v_2)\]
+
+Because $f$ is itself a linear transformation. The kernel of $S$ is $0$ as
+there exist no non zero vector $v$ where $f(v) = 0 \forall f \in V'$. 
+
+\begin{definition}
+	The annihilator $U^{oo}$ 
+\end{definition}
+
+
 \end{note}
 
 \subsection{The Fundamental Group of the Projective Plane}
@@ -362,6 +384,12 @@ introduce covariant and contravariant functors in Leinster.
 
 	Where $0 \leq \psi \leq \pi$ and $0 \leq \theta \leq 2\pi$
 
+\end{note}
+
+\begin{note}[Quotient space (linear algebra)]
+	Let $V$ be a vector space over the field $F$. If $N$ is a subspace of $V$, $V
+	/ N$ is the set of equivalence classes where $x \equiv y$ if $x = y + n$ for
+	some $n \in N$.
 \end{note}
 	
 \end{document}
