@@ -292,6 +292,8 @@ introduce covariant and contravariant functors in Leinster.
 
 % If $A \in Set$, $F: [A, A] \to [A, A]^{op}$ k \to Set^{op}$ where if $f: X \to Y$, $Ff = 
 
+\end{note}
+
 \begin{definition}
 	The dual of a dual, denoted $V''$, is a vector space of linear
 	transformations $(V \to F) \to F$. This space is isomorphic to $V$.
@@ -307,7 +309,9 @@ To see it is linear in $v$:
 \[= \lambda_1 S(v_1) + \lambda_2 S(v_2)\]
 
 Because $f$ is itself a linear transformation. The kernel of $S$ is $0$ as
-there exist no non zero vector $v$ where $f(v) = 0 \forall f \in V'$. 
+there exist no non zero vector $v$ where $f(v) = 0 \forall f \in V'$. Then $S$
+is a linear transformation over spaces with the same dimensions and a non-zero
+kernel, so it is an isomoprhism.
 
 \begin{definition}
 	The annihilator $U^{oo}$ for some subspace $V \subseteq U$ is defined $\{ f'
@@ -316,32 +320,53 @@ there exist no non zero vector $v$ where $f(v) = 0 \forall f \in V'$.
 
 Then we claim $S(U) = U^{oo}$ for any subspace $U$. Indeed for any $u \in U$,
 $Su(f) = f(u)$ for all such $f \in U^o$, so $S(U) \subseteq U^{oo}$.
-Equality comes becuase $S$ is an isomorphism. (The notes claim this follows
+Equality follows because $S$ is an isomorphism. (The notes claim this follows
 from the theorem $\dim V = \dim U + \dim U^o$, but I fail to see this)
+
+This fact will be useful in the next section.
 
 \subsection{Projective Dual Spaces}
 
 If there exists some dual $V'$ for each $V$, we want to say something about
-$P(V')$ in its relation to $P(V)$.
+$P(V')$ in its relation to $P(V)$ and maybe use this structure to prove
+theorems in the projective space using the dual projective space. 
+
+First, examine a point $f \in P(V')$ and notice $\ker f$ is some $U \subseteq
+V$ with $\dim U = n-1$. This point then defines, up to scalar multiplication of
+$f$, a unique subspace (ney hyperplane) of $P(V)$.
+
+This gives us a correspondence between the normal vector and dual space that is
+not possible in the non projective spaces.
 
 \begin{definition}
 	A hyperplane in $P(V)$ of dimension $n$ is some $P(U)$ of dimension $n-1$.
 \end{definition}
 
-If we examine a point in the projective dual, $[f] \in P(V')$, ($f: V \to F$) we can see that
-its representative actually induces a hyperplane from its kernel.
-
-If $\dim \ker f = \dim V - \dim F$, then $\ker f = U$ where $\dim U = n-1$ as
-desired. $P(U)$ is a hyperplane. 
-
-% TODO show point is well defined (scalar multiplication does not change kernel
-% TODO show converse - hyperplane defines unique map
-
-$f: V \to F$
-
-\end{note}
-
 \subsection{The Fundamental Group of the Projective Plane}
+
+\subsection{Exercises}
+
+Solutions to selected exercises from Hitchin's notes.
+
+\begin{exercise}
+
+	Denote the set of 1-dimensional subspaces of $\{ \operatorname{span} \{x, y\} | x \in U_1,
+y \in U_2 \}$ as $A$. Denote the set of 1-dimensional subspaces of $U_1 +
+U_2$ as $B$.
+
+To see $A \subseteq B$, for $a \in A$, a one-dimensional subspace of
+$\operatorname{span} \{x, y\}$ can be represented by $x + y$, and this is clearly a
+one-dimensional subspace of $U_1 + U_2$.
+
+To see $B \subseteq A$, choose some basis vector from $b \in B$, then $b = x'
++ y'$, then it is a one-dimensional subspace of some element of $A$ as
+desired.
+
+Note that $A$ is exactly the set of projective points defined by all lines
+through $X \in P(U_1)$ and $Y \in P(U_2)$. And $B$ follows from the definition
+of $P(U_1 + U_2)$. Their equivalence proves our result.
+
+\end{exercise}
 
 \subsection{Appendix}
 
@@ -415,6 +440,16 @@ $f: V \to F$
 	Let $V$ be a vector space over the field $F$. If $N$ is a subspace of $V$, $V
 	/ N$ is the set of equivalence classes where $x \equiv y$ if $x = y + n$ for
 	some $n \in N$.
+\end{note}
+
+\begin{note}[Small theorem on isomorphisms]
+	\begin{theorem}
+	$T: V \to W$ where $\dim V = \dim W$. If $ker T = 0$, $T$ is an isomorphism. 
+	\end{theorem}
+		\begin{proof}
+	$T$ is injective. $T(v) = T(v') \implies T(v) - T(v') = 0 \implies T(v - v') = 0 \implies v - v' = 0 \implies v = v'$.
+	$T$ is surjective. $\dim V =  \dim \ker T + \dim \im T$. Then $n = 0 + \dim \im T$ so $\im T = W$.
+		\end{proof}
 \end{note}
 	
 \end{document}
