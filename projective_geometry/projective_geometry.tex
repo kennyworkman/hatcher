@@ -16,6 +16,12 @@
 
 \maketitle
 
+History
+
+Beautiful results that touch quantum physics, algebraic topology that begin to
+become accessible.
+
+
 \section{Basic Definitions}
 
 \begin{definition}
@@ -343,6 +349,44 @@ not possible in the non projective spaces.
 \end{definition}
 
 \subsection{The Fundamental Group of the Projective Plane}
+
+This was all to become more comfortable with the projective real plane 
+
+Computing $\pi(P^2(\R), x_0) \cong \Z_2$ is actually straightforward from Van
+Kampen's applied to 2-dimensional cell complexes, but understanding the result
+geometrically is more challenging.
+
+Recall the following result from Hatcher:
+
+\begin{theorem}[Van Kampen's applied to 2-dimensional cell complexes]
+	Consider a 1-skeleton $X$. If we attach a collection of 2-cells to $X$ with
+	maps $\varphi_{\alpha}$, we obtain a 2-skeleton $Y$. Let $N = <
+\gamma_{\alpha} \varphi_{\alpha} \bar{\gamma_{\alpha}} >$ be the loops around
+the attaching 2-cells (where the $\gamma_{\alpha}$ connect the loops to the
+basepoint in $X$). Then $\pi(X) / N \cong \pi(Y)$.
+\end{theorem}
+
+The proof of this theorem gives us a general strategy for computing $\pi(X)$
+and we will use this to solve $\pi(P^2(\R))$.
+
+Let 
+
+
+% Thinking of loops on a mobius band
+
+Pick a basepoint on the mobius band and construct a loop by traversing the band
+until you have arribed back at the basepoint. See this is not nullhomotopic.
+
+Now continue from the same basepoint and trace the same path. See that the
+combined loop is now nullhomotopic.
+
+% Undestanding two-skeleton argument from hatcher
+
+% Small connection to Spinors. Two 
+% https://en.wikipedia.org/wiki/Plate_trick
+
+%% https://groupoids.org.uk/popmath/cpm/sculpture/movies/mobius100.mp4
+%% https://www.youtube.com/watch?v=mOO_IQznZCQ
 
 \subsection{Exercises}
 
