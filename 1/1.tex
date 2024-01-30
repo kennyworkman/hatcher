@@ -458,9 +458,9 @@ There exists a homeomorphism between $S^n-1$ and
 
 \begin{exercise}[1.2.6]
 	Supppose a space $Y$ is obtained from a path-connected space $X$ by attaching
-	$n$-cells for a fixed $n \geq 3$. Then the inclusion $X
-	\xhookrightarrow{} Y$ induces an isomorphism on $\pi_1$. Use this to show
-	that the complement of a discrete subspace of $R^n$ is simply-connected of $n
+	$n$-cells for a fixed $n \geq 3$. Then show the inclusion $X
+	\xhookrightarrow{} Y$ induces an isomorphism on $\pi_1$. Use this result to
+	then show	that the complement of a discrete subspace of $R^n$ is simply-connected if $n
 	\geq 3$.
 \end{exercise}
 
@@ -481,6 +481,40 @@ There exists a homeomorphism between $S^n-1$ and
 	interior of the $n$-cell (if $n \geq 3$). Any $i_{BA}(\omega)$ is trivially
 	contractible, being included into an open subset of an $n$-cell with no
 	holes. Then $\pi_1(Y) \cong \pi_1(X)$.
+
+	% https://math.stackexchange.com/questions/1188062/why-is-the-complement-of-a-discrete-subspace-of-mathbbrn-n-ge-3-simpl
+
+	To prove our last result, let $X$ be our space of interest (the complement of
+	some discrete subspace of $R^n$), we can obtain a covering $\{ A_{\alpha} \}_{\alpha}$
+	where each $A_{\alpha} = X - x_{\alpha}$ is the complement of each point in the discrete
+	subspace. See each $A_{\alpha}$ is open. Then $\pi_1(Z) = \star \pi_1(A_{\alpha}) / N$.
+
 \end{proof}
+
+\begin{exercise}[1.2.7]
+	Construct a cell complex for the two-sphere with north and south poles
+	identified and use this to compute the fundamental group of this space.
+\end{exercise}
+
+\begin{proof}
+	We first construct the cell complex. Begin with a 0-cell $x$ and attach a
+	1-cell $e$ to $x$ to form a circle. Then take a 2-disk $\sigma$ and attach
+	its boundary circle $\delta \sigma$ to $e$ in two pieces, $\delta_1 \sigma$
+	traces one endpoint to the other and attaches to $e$, while $\delta_2 \sigma$
+	completes the circle in the same orientation but attaches to $\bar{e}$.
+
+	Then, by van Kampen's, our fundamental group is isomorphic to $< a ~|~ a a^{-1}
+	>$, but this is just the free group on one generator, so $\pi_1(X) \cong \Z$.
+
+\end{proof}
+
+Seeing that the cell complex is the same as the sphere with north and south
+poles identified was not immediately obvious.
+
+\href{https://math.stackexchange.com/questions/1194611/cw-complex-structure-on-standard-sphere-identifying-the-south-pole-and-north-pol}{This
+post} was helpful (notation was taken from Lee Mosher's solution) and viewing
+our space as the quotient map $f: D_2 \to X$ performing exactly two
+identifications. Seeing that $S^2$ is simply $D_2$ attached along $e$ and
+$\bar{e}$, where $e$ is an arc connecting the poles, was crucial.
 
 \end{document}
