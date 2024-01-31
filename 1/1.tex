@@ -225,16 +225,25 @@ The induced homomorphism allows us to describe relationships between topological
 \end{proposition}
 
 \begin{proof}
-	Because $ri = \mathds{1}_A$, $r_*i_* = \mathds{1}_{A*}$ so $i_*$ is injective. To see $i_*: \pi(A) \to \pi(X)$ is also surjective, see that any loop in $X$ homotopes to a loop in $A$ by $r_tf$ if $r_t$ is a deformation retract.
+	Because $ri = \mathds{1}_A$, $r_*i_* = \mathds{1}_{A*}$ so $i_*$ is
+	injective. To see $i_*: \pi(A) \to \pi(X)$ is also surjective, see that any
+	loop $[x] \in \pi_1(X)$ homotopes to a loop in $A$ by $r_t$ if $r_t$ is a deformation
+	retract, so $i_*^{-1}([r_tx]) \in \pi_1(A)$.
 \end{proof}
 
-	An important takeaway from the above is that spaces that are continuous deformations of each other, like those that are deformation retracts of each other, have in some loose sense, the same number of homotopy classes of loops. Their fundamental groups are isomorphic.
+So spaces that are deformation retracts have isomorphic fundamental groups.
 
-	However, deformation retracts are rather strict examples of homotopies as they restrict to the identity map over their retracting space for all $I$ ($\restr{r_t}{A\times I} = \mathds{1}$). In particular, any deformation retract fixes a basepoint between $X$ and $A$.
+Note that deformation retracts are rather strict examples of homotopies as not
+only do they fix a basepoint between $X$ and $A$ for all timepoints, but they
+restrict to the identity map over their retracting space for all $I$
+($\restr{r_t}{A\times I} = \mathds{1}$). 
 
-	Consider a homotopy $\varphi_t: X \times I \to Y$ that is not a deformation retract but fixes the basepoint in $X$ ($\varphi_t(x_0) = y_0$ for all $t$). Then $\varphi_{0*} = \varphi_{1*}$ as $[\varphi_0f] = [\varphi_1f]$. Any pair of induced homomorphisms under a basepoint preserving homotopy are equivalent.
+Lets work towards an induced isomorphism under the more general condition of
+homotopy equivalence.
 
-	Now consider homotopy equivalences that are also basepoint preserving. Let $\varphi: X \to Y$ and $\psi: Y \to X$ be such equivalences. Then $\psi\varphi \simeq \mathds{1}$ but we just saw then $(\psi\varphi)_* = \mathds{1}_*$ so $\varphi_*$ is injective. $\varphi_*$ is also surjective as $(\varphi\psi)_*$ = $\mathds{1}_*$
+Consider a homotopy $\varphi_t: X \times I \to Y$ that is not a deformation retract but fixes the basepoint in $X$ ($\varphi_t(x_0) = y_0$ for all $t$). Then $\varphi_{0*} = \varphi_{1*}$ as $[\varphi_0f] = [\varphi_1f]$. Any pair of induced homomorphisms under a basepoint preserving homotopy are equivalent.
+
+Now consider homotopy equivalences that are also basepoint preserving. Let $\varphi: X \to Y$ and $\psi: Y \to X$ be such equivalences. Then $\psi\varphi \simeq \mathds{1}$ but we just saw then $(\psi\varphi)_* = \mathds{1}_*$ so $\varphi_*$ is injective. $\varphi_*$ is also surjective as $(\varphi\psi)_*$ = $\mathds{1}_*$
 
 	We can actually see this is true even if our homotopy equivalence does not fix our basepoint.
 
@@ -512,9 +521,18 @@ Seeing that the cell complex is the same as the sphere with north and south
 poles identified was not immediately obvious.
 
 \href{https://math.stackexchange.com/questions/1194611/cw-complex-structure-on-standard-sphere-identifying-the-south-pole-and-north-pol}{This
-post} was helpful (notation was taken from Lee Mosher's solution) and viewing
-our space as the quotient map $f: D_2 \to X$ performing exactly two
-identifications. Seeing that $S^2$ is simply $D_2$ attached along $e$ and
-$\bar{e}$, where $e$ is an arc connecting the poles, was crucial.
+post} was helpful (notation was taken from Lee Mosher's solution), viewing our
+space as the quotient map $f: D_2 \to X$ performing exactly two
+identifications. 2-disks can take different forms equivalent up to
+homeomorphism and their boundaries can simply be circles. Seeing that $S^2$ is
+simply $D_2$ attached along $e$ and $\bar{e}$, where $e$ is an arc connecting
+the poles, was crucial.
+
+
+\begin{exercise}[1.2.8]
+
+% https://math.solverer.com/library/allen_hatcher/algebraic_topology/exercise_1-2-9
+
+\end{exercise}
 
 \end{document}
