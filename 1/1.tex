@@ -36,16 +36,11 @@ From this, we conclude there are two ways to tell if two circles are linked:
 \subsection{Basic Constructions}
 
 \begin{definition}[Path]
-A path in the space $X$ is a continuous map $f: I \to X$ where $I$ is the unit
-interval $[0, 1]$.
+A path in the space $X$ is a continuous map $f: I \to X$ where $I$ is the unit interval $[0, 1]$.
 \end{definition}
 
 \begin{definition}[Homotopy of paths]
-
-A continuous family of maps represented $f: I \times I \to X$ 
-
-A path in the space $X$ is a continuous map $f: I \to X$ where $I$ is the unit
-interval $[0, 1]$.
+A continuous family of maps represented by the continuous map $f: I \times I \to X$ 
 \end{definition}
 
 \begin{example}[Linear homotopy]
@@ -110,7 +105,7 @@ h_t(s) = (1-t)f(s) + (t)g(s).
 \end{definition}
 
 
-\begin{theorem}[$\Z \cong \pi(S1)$]
+\begin{theorem}[$\Z \cong \pi_1(S^1)$]
 
 The map $\phi$ sending the integer $n$ to the homotopy class of the loop $\omega_n(x) = (cos2\pi nx, sin2\pi nx)$ on $S^1$ with basepoint $(1, 0)$ is an isomorphism.
 
@@ -118,11 +113,21 @@ The map $\phi$ sending the integer $n$ to the homotopy class of the loop $\omega
 
 \begin{proof}
 
-Observe that each loop $\omega_n$ can be expressed as the composition $p\tilde{\omega}_n$, where $p(s) = (cos2\pi s, sin2\pi s)$ and $\tilde{\omega}_n(s) = ns$ is the path in $\R$ from $0$ to $n$. $\tilde{\omega}_n$ is called the lift of $\omega_n$.
+Observe that each loop $\omega_n$ can be expressed as the composition
+$p\tilde{\omega}_n$, where $p(s) = (cos2\pi s, sin2\pi s)$ and
+$\tilde{\omega}_n(s) = ns$ is the path in $\R$ from $0$ to $n$.
+$\tilde{\omega}_n$ is called the \textbf{lift} of $\omega_n$.
 
-We define the image $n \in Z$ under $\phi$ as the homotopy class represented by $pf_n$ where $f_n$ is any path in $\R$ from $0$ to $n$. Since any such $f_n$ shares endpoints with $\tilde{\omega}_n$, the paths are homotopic, and $pf_n$ and $p\tilde{\omega}_n$ are also homotopic. Then $\phi(n) = [pf_n] = [w_n]$.
+We define the image of $n \in Z$ under $\phi$ as the homotopy class represented
+by $pf_n$ where $f_n$ is any path in $\R$ from $0$ to $n$. Since any such $f_n$
+shares endpoints with $\tilde{\omega}_n$, the paths are homotopic, and $pf_n$
+and $p\tilde{\omega}_n$ are also homotopic. Then $\phi(n) = [pf_n] = [w_n]$.
+This gives an "extended" definition of $\phi$ that will be useful in showing surfjectivity and injectivity.
 
-We quickly verify $\phi$ is a homomorphism by considering $\phi(m + n)$ as $p\tilde{\omega}_{m+n}$
+We quickly verify $\phi$ is a homomorphism by considering $\phi(m + n)$ as
+$p\tilde{\omega}_{m+n} = p(\tilde{\omega_n} \cdot t_n(\tilde{\omega_m})) =
+\omega_m \cdot \omega_n = \phi(m) \cdot \phi(n)$ where $t_n(s) = s + n$ is just
+shifts our path in $\R$.
 
 We now define two facts that show $\phi$ is a bijection:
 \begin{itemize}
@@ -130,7 +135,10 @@ We now define two facts that show $\phi$ is a bijection:
 	\item[(b)]Given a homotopy $f_t$ in $S^1$ of paths starting at $x_0$, there exists a unique lifted homotopy $\tilde{f_t}$ of paths in $\R$ starting at $\tilde{x_0}$ for any choice of $\tilde{x_0} \in p^{-1}{(x_0)}$.
 \end{itemize}
 
-$(a)$ gives injectivity of $\phi$. Consider any loop $f$ with basepoint $(1, 0)$ reperesenting a homotopy class in $\pi_1(S^1)$. Then there exists $\tilde{f}$ starting at $0 \in p^{-1}((1, 0))$ that ends at $n \in \Z \subset p^{-1}((1, 0))$. So $\phi(n) = [f]$
+$(a)$ gives injectivity of $\phi$. Consider any loop $f$ with basepoint $(1,
+0)$ reperesenting a homotopy class in $\pi_1(S^1)$. Then there exists
+$\tilde{f}$ starting at $0 \in p^{-1}((1, 0))$ that ends at some $n \in \Z
+\subset p^{-1}((1, 0))$. So exists some $n$ where $\phi(n) = [f]$.
 
 $(b)$ gives surjectivity of $\phi$. Consider $\phi(m) = \phi(n)$. Then the representative loops $\omega_m$ and $\omega_n$ are homotopic. Define this homotopy as $f_t$. $(b)$ gives us $\tilde{f}_t$ where $\tilde{f}_t(0) = 0$ for all $t$ (Our choice of $\tilde{x_0}$). $\tilde{f}_0(1) = m$ and $\tilde{f}_1(1) = n$, but the endpoint of the homotopy must be invariant with respect to time, so $m = n$.
 
@@ -531,8 +539,20 @@ the poles, was crucial.
 
 \begin{exercise}[1.2.8]
 
+Consider a surface $M_g$ of genus $g$ that is split into two closed surfaces
+$M_h$ and $M_k$ by a circle $C$. $M'_h$ and $M'_k$ are constructed by deleting an open disk
+from each. Show that neither $M'_h$ or $M'_k$ retract to
+their boundary circle, but both (and all of $M_g$) retract to a lateral $C'$.
+
 % https://math.solverer.com/library/allen_hatcher/algebraic_topology/exercise_1-2-9
+% https://math.stackexchange.com/questions/479371/how-to-construct-a-genus-2-surface-from-8-gon
+% https://analysis-situs.math.cnrs.fr/Classification-des-surfaces-triangulees-par-reduction-a-une-forme-normale.html
 
 \end{exercise}
+
+More familiarity with the two torus is needed to tackle this problem.
+
+\begin{proof}
+\end{proof}
 
 \end{document}
