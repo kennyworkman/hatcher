@@ -1037,6 +1037,11 @@ INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/doublestroke/dsrom10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/doublestroke/dsrom8.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/doublestroke/dsrom8.tfm
+INPUT ./two-torus-hilbert.png
+INPUT ./two-torus-hilbert.png
+INPUT two-torus-hilbert.png
+INPUT ./two-torus-hilbert.png
+INPUT ./two-torus-hilbert.png
 INPUT 1.aux
 INPUT ./1.out
 INPUT ./1.out
