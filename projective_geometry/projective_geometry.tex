@@ -1,0 +1,625 @@
+\documentclass[10pt]{article}
+\usepackage{kennyworkman}
+
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \vphantom{\big|} % pretend it's a little taller at normal size
+  \right|_{#2} % this is the delimiter
+}}
+
+\title{Notes on Projective Geometry \\
+	\large Towards computing the fundamental group of the real projective plane}
+\author{Kenny Workman}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+Projective geometry is a branch of mathematics that study
+the properties of geometric objects that remain the same
+under diffferent perspectives (such properties are invariant with respect to projective
+transformation). 
+
+The subject formalizes ideas from perspective art, such as implicit horizon
+points or lines "at infinity" that induce perspective. In a perspective drawing, two
+parallel lines meet at a distant horizon point that is not in the picture. (These points and
+lines at infinity that guide perspective drawings are called "idealized
+directions" and "idealized points" respectively.)
+
+The study of projective geometry dates back to the Greek mathematician 
+\href{https://en.wikipedia.org/wiki/Pappus_of_Alexandria}{Pappus of Alexandria}
+in the 3rd century. There was a revival of the subject amongst French
+mathematicians, beginning with Desargues in the early 1600s and continuing with
+\href{https://en.wikipedia.org/wiki/Jean-Victor_Poncelet}{Poncelet} and
+\href{https://en.wikipedia.org/wiki/Lazare_Carnot}{Carnot} (where Carnot was
+balancing a foundational exposition on the subject with leadership position in
+Robespierre's Committee of Public Safety. One would be suprised but cannot
+expect an less from a French mathematician).
+
+As the projective literature grew, it began to make contributions to new fields
+of analytical and algebraic geometry, as well as gain popularity amongst
+mathematical physicists in the development of quantum mechanics. In fact,
+Dirac would often \href{https://www.nature.com/articles/437323a.pdf}{draw
+projective diagrams} of his equations to develop intuition before formalizing
+them algebraically and would leave this diagrams out of print because they were
+expensive and he assumed many physicists were unfamiliar with the subject.
+\href{https://en.wikipedia.org/wiki/Erlangen_program}{Klein's Erlangen program} also developed projective geometry, in addition to Euclidean and affine geometry, around this time (1872).
+
+We are interested in deriving the basic axioms and properties of generalized
+projective spaces, initially following \href{https://people.maths.ox.ac.uk/hitchin/files/LectureNotes/Projective_geometry/Chapter_1_Projective_geometry.pdf}{notes from Hitchin}, towards computing the fundamental group of the real
+projective plane. We will discover beautiful results that touch quantum physics
+and traditional Binasuan dancing in addition to algebraic topology.
+
+\section{Basic Definitions}
+
+\begin{definition}
+	Let $V$ be a vector space. The projective space $P(V)$ is the set of 1-dimensional vector subspaces of $V$.
+\end{definition}
+
+It can be useful to think of projective spaces, at least in the real case, as
+bundles of lines that pass through the origin. This reduces our space by a
+dimension, motivating the common shorthand for the reals $P^n(R) = P(R^{n+1})$. 
+
+Many sources encourage thinking about the sphere $S^n$ for a projective space
+$P^n(\R)$ to ease the visualization of a space of lines. Antipodal points on
+the sphere are identified and every such antipodal pair is injective with the
+actual elements of the projective space. 
+
+I have found it easier to just think of the vector subspaces the projective
+elements represent (projective points and lines are lines and planes through the
+origin in $\R^3$) for more natural geometric intuition.
+
+\subsection{Decomposition}
+
+The following decomposition is useful to understand the structure of theses spaces:
+
+\[P(R^n) = R^{n-1} + P(R^{n-1}) \]
+
+Essentially our goal is to take $R^n$ and partition the set of points into
+1-dim vector subspaces such that each partition has a nice representation.
+Recall:
+
+\begin{definition}
+	A representative vector is any of the non-zero vectors from the 1-dimensional subspace corresponding to a point $[v] \in P(V)$.
+\end{definition}
+
+Then if $[x] = [\lambda x] = [a]$, $x$ and $a$ are both representatives for the same projective point.
+
+We also want to define the notion of the homogoenous coordinates for each
+projective point, which are just the real points that exist in the
+corresponding vector subspace.
+
+\begin{definition}
+	The homogoenous coordinates for $[v] \in P(V)$ are the set $[(x_0 \cdots x_n)]$ equivalent under scalar multiplication by $\lambda$.
+\end{definition}
+
+If we construct a subset of homogoenous coordinates $U_0$ where $x_0 \neq 1$,
+notice that each $[(x_0 \cdots x_n)] = [1 \cdots x_n / x_0]$, so $U_0 \cong
+R^n-1$. We are left to "partition" the coordinates where $x_0 = 0$, but this is
+exactly the set of 1-dimensional subspaces of $V^n-1$, so $P(R^{n-1})$.
+
+\subsection{Applications}
+
+
+\subsection{Linear Subspaces}
+
+We begin by proving a result from elementary linear algebra.
+
+% IIT Notes - https://web.iitd.ac.in/~ritumoni/lecture%2011%20&%2012.pdf.
+
+\begin{theorem}
+	Let $W_1$ and $W_2$ be vector spaces. Then $\dim W_1 + W_2 = \dim W_1 + \dim W_2 - \dim W_1 \cap W_2$ 
+\end{theorem}
+
+\begin{theorem}
+	In a projective plane $P(V)$, two projective lines, $P(U)$ and $P(U')$, intersect in a unique point.
+\end{theorem}
+\begin{proof}
+	From elementary linear algebra, $\dim V \geq \dim U + U'$. We have shown that $\dim U + U' = \dim U + \dim U' - \dim {U \cap U'}$.
+	Then $1 \leq \dim {U \cap U'} \leq 2$. Because $P(U)$ and $P(U')$ are distinct, $\dim {U \cap U'} = 1$. So $P(U \cap U')$ is a projective point.
+\end{proof}
+
+It is useful to think about this result using our model of the projective plane as a sphere and using our decomposition.
+
+We can think of projective lines as planes in $\R^3$ that intersect the sphere
+in two great circles. These great circles intersect in a pair of antipodal
+points, which is a projective line.
+
+Alternatively
+
+% TODO
+
+\subsection{Projective Transformations}
+
+Given a linear transformation $T: V \to W$, we might want to recover a bijective map $\tau: P(V) \to P(W)$.
+
+\begin{definition}
+	If $T$ is invertible, $\tau$ is a projective transformation between
+	projective spaces.
+\end{definition}
+
+This is a map of lines to lines.
+
+It seems natural to define $\tau$ as $[x] \mapsto [T(x)]$ for any $x \in P(V)$.
+But notice that because there is no $0$ in $P(W)$ (as the collection of 1-dimensional subspaces), 
+$\dim T([x]) = 1$ if $\tau$ is to be well-defined over its codomain. Then $T$
+must be invertible.
+
+\begin{note}
+	It is not immediately obvious that projective transformations describe
+	bijections (or isomorphisms between underlying vector spaces). However, a $T$
+	that takes any $U$ in $V$ to $0$ induces an ill-defined $\tau$ (no $0$ in
+	$P(W)$). Furthermore, if $T(U) = T(U')$ for distinct $U, U'$, $T$ cannot be
+	invertible so there will exist some $U''$ where $T(U'')$ goes to $0$. So the
+	requirement that $T$ be invertible is really a requirment that $\tau$ needs
+	to be a well-defined map with only 1-dimensional subspaces in its codomain.
+\end{note}
+
+\begin{note}
+	Projective transformations are also called
+	\textit{homographies} and have roots
+	in the non abstract origins of projective geometry as a tool to study
+	perspective. In broad strokes, a homography just describes a
+	transformation of perpsectives of the same underlying object.
+\end{note}
+
+In fact, projective transformations descibe a collection of linear
+transformations $T$ that are equivalent up to scalar multiplication.
+
+\begin{proposition}
+	If $T, T': V \to W$ define the same projective transformation, $T = \lambda T'$.
+\end{proposition}
+
+\begin{proof}
+	If $V$ is generated by basis $\{ v_1 \cdots v_n \}$, then $[Tv_i] = [T'v_i]$
+	by assumption. Certainly for each basis element, $Tv_i = \lambda_i T'v_i$.
+	For an arbitrary element, $\sum Tv_i = \sum \lambda_i T'v_i$, our assumption tells us $T(\sum v_i) = \lambda
+	T'(\sum v_i)$.
+	Then, by linearity: \[ \lambda T'(\sum v_i) = T(\sum v_i) = \sum Tv_i = \sum \lambda_i T'v_i\].
+	So $\lambda = \lambda_i$. Because $\lambda x = \lambda \sum v_i$, $T = \lambda T'$.
+\end{proof}
+
+In the real projective plane, there is very a natural geometric picture one can
+construct to see these transformations are bundles of lines related by a
+disjoint "observing point".
+
+\begin{example}
+Consider two projective lines $P(U)$ and $P(U')$ in the projective plane
+$P(V)$. If there exists a point $K \in P(V)$ disjoint from both lines, this
+point induces a natural projective transformation $\tau$. For each point (line) in
+$P(U)$, draw a line through $K$, and where it meets $P(U')$ is its image under
+$\tau$.
+
+We can see this is indeed a projective transformation by proving the underlying
+linear transformation $T: U \to U'$ is invertible. If $W$ is the subspace
+corresponding to $K$, any $a \in U$ can be uniquely expressed as $w +
+a'$ from $W \bigoplus U'$ ($W$ is disjoint from both $U$ and $U'$). Then $a' =
+a - w$ where the $w$ component guarantees that $\ker T = 0$.
+
+\end{example}
+
+\begin{note}
+	As outlined \href{https://en.wikipedia.org/wiki/Homography#Geometric_motivation}{here},
+visualizing the above example in $\R^2$ leads to a natural image of an observer
+(our extra point) connecting two planes together using their perspective. In
+fact, this transformation is also called a perspectivity in computer graphics for this
+reason.
+\end{note}
+
+In vanilla linear algebra, we can fully characterize a linear transformation from an
+$n$ dimensional space by observing what it does to $n$ linearly independent
+vectors. 
+
+\begin{definition}
+	 Points $X_1 \cdots X_{n+1} \in P(V)$ are in general position if any subset
+	 of $n$ points have representative vectors that are linearly independent.
+\end{definition}
+
+\begin{theorem}
+	 If $X_1 \cdots X_{n+2} \in P(V)$ (in $n$ dimensional $P(V)$) are in general
+	 position in $P(V)$ and $Y_1 \cdots Y_{n+2}$ are in general position in
+	 $P(W)$, then there is a unique projective transformation such that
+	 $\tau(X_i) = Y_i$.
+\end{theorem}
+
+\begin{proof}
+
+	We can choose representatives, $v_i \in V$, such that $n+1$ representatives
+	form a basis of $V$. We can choose representatives such that
+	$v_{n+2} = \sum_{i=0}^{n+1} v_i$. Note that the sum of vectors is unique by
+	linear indpendence and must exist because $( v_i )_i$ form a basis for $V$.
+
+	Similarly, we can choose representatives from $W$ such that $w_{n+2} =
+	\sum_{i=0}^{n+1} w_i$. Again this sum of elements is unique.
+
+	Then there exists a unique and invertible $T: V \to W$ described by the mapping of basis
+	elements (where $T(v_i) = w_i$) that induces a projective transform with the
+	desired properties
+
+	To see uniqueness, consider an alternative $T': V \to W$ such that $T'(v_i) =
+	\mu_i w_i$, taking our basis elements to a different representative of a point in $P(W)$.
+
+	Then $T'(v_{n+2}) = \mu_{n+2} w_{n+2} = \sum_{i=0}^{n+2} \mu_i w_i =
+	\sum_{i=0}^{n+2} T'(v_i)$. Because $w_{n+2}$, is the unique sum of
+	representatives expressed earlier, $\frac{\mu_i}{\mu_{n+2}} = 1$. So $\mu_i =
+	\mu_{n+2}$ and $T = \mu_{n+2}T'$.
+
+\end{proof}
+
+\begin{note}
+Any two distinct points on the projective line are linearly independent
+vectors, so any three distinct points on the projective line are in general
+position.
+\end{note}
+
+\begin{theorem}[Desargues' Theorem]
+	Consider points $A, A', B, B', C, C' \in P(V)$, where the lines $AA', BB',
+	CC'$ are distinct and concurrent (intersect in a single point). Then the
+	three points of intersection $AB \cap A'B', BC \cap B'C', CA \cap C'A'$ are
+	collinear.
+\end{theorem}
+
+\begin{proof}
+	Denote the point of intersection between our three lines $P$. Because any
+	three points on the projective line are in general position, we can express
+	$p$ as three different linear combinations of vectors:
+
+	\[ p = a + a' = b + b' = c + c' \]
+
+	Where $a$ is a representative from $A$ and so forth in the obvious way. We
+	can make new points.
+
+	\[ c'' = a - b = b' - a' \]
+	\[ a'' = b - c = c' - b' \]
+	\[ b'' = c - a = a' - c' \]
+
+	Notice that all of $a'', c'', b''$ lie in a two-dimensional vector
+	subspace and are representatives of projective points at our desired
+	intersections: $[c''] \in AB \cap A'B'$ and so on. 
+
+	Furthermore, notice $c'' + a'' + b'' = 0$, and this expression is $0$ for any
+	linear combination of these vectors. To see this, consider 
+	\[\lambda_c c'' + \lambda_a a'' + \lambda_b b'' = 0\] 
+	and expand this expression to 
+	\[\lambda_c (a - b) + \lambda_a (b - c) + \lambda_b (c - a) = 0\].
+	\[(\lambda_c - \lambda_b)a + (-\lambda_c + \lambda_a)b + (\lambda_a + \lambda_b)c\] 
+	We can then see we need to choose new representatives from our projective
+	lines that will lead to the desired expression.
+	\[ p = (\lambda_c - \lambda_b)a + a' = (-\lambda_c + \lambda_a)b + b' =(\lambda_a + \lambda_b) c + c' \]
+
+	Because $a'', b'', c''$ are linearly independent and each exist in a
+	two-dimensional subspace of $V$, their corresponding points in $P(V)$ are in
+	general position. Three projective points in general position define a line,
+	so these points are collinear as desired.
+
+\end{proof}
+
+\subsection{Duality}
+
+We first review definitions of duality from linear algebra.
+
+\begin{definition}
+For a vector space $V$ defined over field $F$, the dual of $V$ is the vector
+space $V'$ with elements that are linear transformations $f: V \to F$.
+\end{definition}
+
+\begin{definition}
+If the basis of $V$ is $\{ v_1 \cdots v_n \}$, $V'$ has a corresponding basis
+where for each $v_i$, $f_i(v_i) = 1$ and $f_i(v_j) = 0$ for all $j \neq i$.
+\end{definition}
+
+Given a linear transformation $T: V \to W$ over vector spaces, there is a
+canonical linear transformation induced over its duals $T': W' \to V'$,
+given by $T'(f) = f(T)$. Indeed $T'f = fT: V \to F$ and $T'f = fT = v_i \mapsto
+f(T(v_i))$.
+
+\begin{note}
+
+We can use the language of contravariant functors to illustrate the
+correspondance between linear transformations in their vector and dual spaces.
+
+% TODO commutative diagram
+
+The correspondence of a category of functions to another category with the
+domain and codmain swapped is ubituiquitous in category theory and is used to
+introduce covariant and contravariant functors in Leinster. 
+
+% If $A \in Set$, $F: [A, A] \to [A, A]^{op}$ k \to Set^{op}$ where if $f: X \to Y$, $Ff = 
+
+\end{note}
+
+\begin{definition}
+	The dual of a dual, denoted $V''$, is a vector space of linear
+	transformations $(V \to F) \to F$. This space is isomorphic to $V$.
+\end{definition}
+
+To see this isomorphism, take $S: V \to V''$, $Sv = f \mapsto f(v)$.
+To see it is linear in $v$:
+
+\[S(\lambda_1 v_1 + \lambda_2 v_2)\] 
+\[= f \mapsto f(\lambda_1 v_1 + \lambda_2 v_2)\]
+\[= f \mapsto (\lambda_1 f(v_1) + \lambda_2 f(v_2))\]
+\[= \lambda_1 (f \mapsto f(v_1)) + \lambda_2 (f \mapsto f(v_2))\]
+\[= \lambda_1 S(v_1) + \lambda_2 S(v_2)\]
+
+Because $f$ is itself a linear transformation. The kernel of $S$ is $0$ as
+there exist no non zero vector $v$ where $f(v) = 0 \forall f \in V'$. Then $S$
+is a linear transformation over spaces with the same dimensions and a non-zero
+kernel, so it is an isomoprhism.
+
+\begin{definition}
+	The annihilator $U^{oo}$ for some subspace $V \subseteq U$ is defined $\{ f'
+	\in V' ~|~ f'(f) = 0, \forall f \in U^o \}$
+\end{definition}
+
+Then we claim $S(U) = U^{oo}$ for any subspace $U$. Indeed for any $u \in U$,
+$Su(f) = f(u)$ for all such $f \in U^o$, so $S(U) \subseteq U^{oo}$.  Equality
+follows because $S$ is an isomorphism. (The notes claim this instead follows
+from the theorem $\dim V = \dim U + \dim U^o$, but I fail to see this)
+
+This fact will be useful in the next section.
+
+\subsection{Projective Dual Spaces}
+
+If there exists some dual $V'$ for each $V$, we want to say something about
+$P(V')$ in its relation to $P(V)$ and maybe use this structure to prove
+theorems in the projective space using the dual projective space. 
+
+The simplest example of this is "two distinct points define a unique line" has
+an equivalent dual analogue "two distinct lines define a unique point" (and note that in
+projective spaces, this statement of course holds for parallel lines).
+
+First, examine a point $f \in P(V')$ and notice $\ker f$ is some $U \subseteq
+V$ with $\dim U = n-1$. ($f: V' \to F$ and $\dim \ker f = \dim V' - \dim F$).
+This point then defines, up to scalar multiplication of $f$, a unique subspace
+of $P(V)$, a hyperplane. This gives us a correspondence between the vector and dual space that is
+not possible in the non projective spaces.
+
+\begin{definition}
+	A hyperplane in $P(V)$ of dimension $n$ is some $P(U)$ of dimension $n-1$.
+\end{definition}
+
+\begin{theorem}
+	A subspace $P(W)\subseteq P(V')$ of dimension m (where $P(V')$ is dimension
+	n) corresponds to a set of hyperplanes in $P(V)$ that share some fixed
+	subspace $P(U)$ of dimension $n - m - 1$
+\end{theorem}
+
+Projective dual spaces give us an intepretation of the space of lines in $\R^2$.
+Recall the familiar decomposition $P^2(\R) = \R^2 \cup P(\R)$, where every
+projective line that is not the line at infinity intersects $\R^2$ in a
+straight line. Then we need only to remove the line at infinity to describe the
+space of straight lines, or a point in the dual space.
+
+We parameterize our sphere with spherical coordinates but restrict the range of
+$\theta$ to exclude the north and south poles.
+
+\[x_1 = \sin\theta\cos\phi, x2 = \sin\theta\sin\phi, x3 = \cos\theta ; 0 <
+\theta < \pi, 0  \leq \phi \leq 2\pi \]
+
+With antipodal map is $(\theta, \phi) \mapsto (\pi - \theta, \pi + \phi)$.
+
+Then to represent the space of lines, we need only to sketch the set of
+antipodal points. Consider $(\theta, \phi) \in (0, \pi) \times [0, 2\pi]$
+(gemoetrically this is a half sphere without poles). We
+only need to identify the bottom edges of this square as the restriction over
+$\phi$ means the only antipodal points are of the form $(\theta, 0)$ and
+$(\theta, \pi)$.
+
+This identification of the top and bottom edge of the square, in reverse
+orientation, yields the mobius strip.
+
+Why was it important that we removed the poles? In other words, why do we need
+an open set $\theta \in (0, \pi)$ as the bottom edge of our square?
+
+% TODO
+
+Need to return to this.
+
+
+\subsection{The Fundamental Group of the Projective Plane}
+
+This was all to become more comfortable with the projective real plane 
+
+Computing $\pi(P^2(\R), x_0) \cong \Z_2$ is actually straightforward from van
+Kampen's applied to 2-dimensional cell complexes, but understanding the result
+geometrically is more challenging.
+
+Recall the following result from Hatcher:
+
+\begin{theorem}[van Kampen's applied to 2-dimensional cell complexes]
+	Consider a 1-skeleton $X$. If we attach a collection of 2-cells to $X$ with
+	maps $\varphi_{\alpha}$, we obtain a 2-skeleton $Y$. Let $N = <
+\gamma_{\alpha} \varphi_{\alpha} \bar{\gamma_{\alpha}} >$ be the loops around
+the attaching 2-cells (where the $\gamma_{\alpha}$ connect the loops to the
+basepoint in $X$). Then $\pi(X) / N \cong \pi(Y)$.
+\end{theorem}
+
+The proof of this theorem gives us a general strategy for computing $\pi(X)$
+and we will use this to solve $\pi(P^2(\R))$.
+
+Consider $P^2(\R)$ as a CW complex, where the 1-skeleton is $S^1$ and the
+2-skeleton is the open disk $D^2$ attached to $S^1$ along the loop $a a^{-1}$.
+
+Let $B$ be the attached disk and $A$ be the entire projective plane with a hole in
+it. Then $P^2(\R) = A \cup B$ where both $A$ and $B$ are open, so van Kampen's
+tells us $\pi_1(P^2(\R)) \cong (\pi_1(A) \star \pi_1(B)) / N$, where $N$ is
+generated by the loops of the attachment map.
+
+$\pi_1(B)$ is 0 as the open disk is contractible, while $A$ deformation
+retracts to the circle so $\pi_1(A) \cong \Z$. What is left is to describe $N$,
+but we know from our theorem that $\varphi: S^1 \to S^1$, that describes how to "glue" our disk to
+our 1-skeleton, is also a loop that generates $N$, and this is just $a^2$.
+
+Another way to see that $N = < a^2 >$ is to compute it. 
+$N = \{ i_{AB}(\omega)i_{BA}(\omega) ~|~ \omega \in \pi_1(A \cap B) \}$, where
+$i_{AB}: \pi_1(A \cap B) \to \pi_1(A)$. But because the image of $i_{BA}$ is
+trivial, $N$ is generated by just the loops $i_{AB}(\omega)$. These loops are
+not trivial because they are included in $A$ and must be pushed to the boundary
+of the space, so they homotope to the loop that follows the edges of the
+attached disk, and this is $a^2$.
+
+% I have found this to be useful. 
+% https://math.stackexchange.com/questions/386805/need-help-understanding-statement-of-van-kampens-theorem-and-using-it-to-comput
+
+% TODO: difference between \pi A and \pi A \cap B - why is A just Z but A \cap
+% B must respect the orientation of gluing
+
+So our result is the group free in one generator modulo the relation $aa^1$:
+
+\[\pi_1(P^2(\R)) \cong < a ~|~ a^2 > \cong \Z_2.\]
+
+Now we should think a bit about what this result means.
+
+\begin{note}[Geometric interpretation of loops on mobius band]
+
+(What the fuck was I trying to say?)
+
+Pick a basepoint on the mobius band and construct a loop by traversing the band
+until you have arrived back at the basepoint. See this is not nullhomotopic.
+
+Now continue from the same basepoint and trace the same path. See that the
+combined loop is now nullhomotopic.
+
+%% https://groupoids.org.uk/popmath/cpm/sculpture/movies/mobius100.mp4
+
+\end{note}
+
+\subsection{Application}
+
+It can be shown that $\pi_1(SO(3)) \cong \Z_2 \cong \pi_1(P^3(\R))$ and the
+2-skeleton of $\pi_1(P^3(\R)$ agrees with $\pi_1(P^2(\R))$ (using techniques I
+do not yet understand so will just take at face value for the time being).
+
+But this result means that the group of rotational symmetries of an object is
+isomorphic to $Z_2$. In other words, a rotation of an object \textit{with
+strings attached} by 360 degrees does not yield the same object, but another rotation does. 
+
+In physics, this is called the \textbf{Feynman plate trick} (or Dirac belt trick), illustrated extending ones
+arm with a plate on it and rotating the arm in a full rotation. The plate will
+be in the same orientation upon the first rotation but the arm will be twisted.
+Twisting the arm again will yield both the plate and arm in the original
+orientation.
+
+\begin{note}{Binasuan Dance}
+	There is a traditional Phillipine dance where the performers will hold glasses
+of rice wine and elegantly twist their limbs without spillling the liquid.
+\end{note}
+
+\begin{itemize}
+	\item{\href{https://en.wikipedia.org/wiki/Plate_trick}{Feynman's plate trick}}
+	\item{\href{https://www.youtube.com/watch?v=mOO_IQznZCQ}{Binasuan Dance}}
+	\item{\href{https://www.youtube.com/watch?v=fTlbVLGBm3Q}{An arm rotating a glass}}
+\end{itemize}
+
+\subsection{Exercises}
+
+Solutions to selected exercises from Hitchin's notes.
+
+\begin{exercise}
+
+	Denote the set of 1-dimensional subspaces of $\{ \operatorname{span} \{x, y\} | x \in U_1,
+y \in U_2 \}$ as $A$. Denote the set of 1-dimensional subspaces of $U_1 +
+U_2$ as $B$.
+
+To see $A \subseteq B$, for $a \in A$, a one-dimensional subspace of
+$\operatorname{span} \{x, y\}$ can be represented by $x + y$, and this is clearly a
+one-dimensional subspace of $U_1 + U_2$.
+
+To see $B \subseteq A$, choose some basis vector from $b \in B$, then $b = x'
++ y'$, then it is a one-dimensional subspace of some element of $A$ as
+desired.
+
+Note that $A$ is exactly the set of projective points defined by all lines
+through $X \in P(U_1)$ and $Y \in P(U_2)$. And $B$ follows from the definition
+of $P(U_1 + U_2)$. Their equivalence proves our result.
+
+\end{exercise}
+
+\subsection{Appendix}
+
+\begin{theorem}
+	$\dim W_1 + W_2 = \dim W_1 + \dim W_2$
+\end{theorem}
+
+\begin{proof}
+	Let $S = \{ u_1 \cdots u_r \}$ be the basis of $W_1 + W_2$. Let $B_1 = \{ u_1 \cdots u_r v_1 \cdots v_s \}$ and $B_2 = \{ u_1 \cdots u_r w_1 \cdots w_t \}$ be $B$ extended to be the basis of $W_1$ and $W_2$ respectively. 
+	If we can show $B$ is the basis of $W_1 + W_2$, we have our result, as $\dim B = r + s + t = (r + s) + (r + t) - r = \dim W_1 + \dim W_2 - \dim W_1 \cap W_2.$
+
+	First, we show $B$ is linearly independent. Let 
+
+	\[\sum_i^r{a_iu_i} + \sum_j^s{b_jv_j} + \sum_k^t{c_kw_k} = 0\]. 
+
+	Notice if we move terms so 
+
+	\[\sum_i^r{a_iu_i} + \sum_j^s{b_jv_j} = -\sum_k^t{c_kw_k}\], 
+
+	then the LHS is in $W_1$ and the RHS is in $W_2$, so both sides represent the same element in $W_1 + W_2$. 
+
+	Then $\sum_i^r{d_iu_i} = -\sum_k^t{c_kw_k}$, where the LHS uses $B$ and the RHS uses $B_2$. Again moving terms:
+
+	\[\sum_i^r{d_iu_i} + \sum_k^t{c_kw_k} = 0\]
+
+	Where all $c_i$ must be 0 as $B_2$ is linearly independent. Then
+
+	\[\sum_i^r{a_iu_i} + \sum_j^s{b_jv_j} = 0\]
+
+	But the LHS is described by $B_1$ which is also linearly independent so all $a_i$, $b_j$ must also be 0. Then $B$ is linearly independent.
+
+	Consider any $w_1 + w_2$. 
+
+	\[w_1 = \sum_i^r{a_iu_i} + \sum_j^s{b_jv_j}\]
+	\[w_2 = \sum_i^r{d_iu_i} + \sum_k^t{c_kw_k}\]
+
+	Then
+
+	\[w_1 + w_2 = \sum_i^r{(a_i + d_i) u_i} + \sum_j^s{b_jv_j} + \sum_k^t{c_kw_k} \in \operatorname{span} W_1 + W_2 \]
+
+\end{proof}
+
+\begin{note}[Spherical, Cyndrical, Cartesian coordinates]
+
+	Cyndrical coordinates of a point in $\R^3$ are simply polar coordinates with
+	a z-axis. $(\theta, r, z)$:
+
+	\[ x_1 = r \cos \theta \]
+	\[ x_2 = r \sin \theta \]
+	\[ x_3 = z \]
+
+	Spherical coordinates use the same $\theta$ around the x axis but decribe the
+	point using a distance from the origin $p$ and an angle from the $z$ axis
+	$\psi$. $(\theta, \psi, p)$ is 
+
+	\[\theta = \theta \]
+	\[r = \sin \psi \]
+	\[z = \cos \psi \]
+
+	Then the cartesian coordinates for a point in spherical coordinates is:
+
+	\[x_1 = \sin \psi \cos \theta \]
+	\[x_2 = \sin \psi \sin \theta \]
+	\[x_3 = \cos \psi \]
+
+	Where $0 \leq \psi \leq \pi$ and $0 \leq \theta \leq 2\pi$
+
+\end{note}
+
+\begin{note}[Quotient space (linear algebra)]
+	Let $V$ be a vector space over the field $F$. If $N$ is a subspace of $V$, $V
+	/ N$ is the set of equivalence classes where $x \equiv y$ if $x = y + n$ for
+	some $n \in N$.
+\end{note}
+
+\begin{note}[Small theorem on isomorphisms]
+	\begin{theorem}
+	$T: V \to W$ where $\dim V = \dim W$. If $ker T = 0$, $T$ is an isomorphism. 
+	\end{theorem}
+		\begin{proof}
+	$T$ is injective. $T(v) = T(v') \implies T(v) - T(v') = 0 \implies T(v - v') = 0 \implies v - v' = 0 \implies v = v'$.
+	$T$ is surjective. $\dim V =  \dim \ker T + \dim \im T$. Then $n = 0 + \dim \im T$ so $\im T = W$.
+		\end{proof}
+\end{note}
+	
+\end{document}

@@ -36,16 +36,11 @@ From this, we conclude there are two ways to tell if two circles are linked:
 \subsection{Basic Constructions}
 
 \begin{definition}[Path]
-A path in the space $X$ is a continuous map $f: I \to X$ where $I$ is the unit
-interval $[0, 1]$.
+A path in the space $X$ is a continuous map $f: I \to X$ where $I$ is the unit interval $[0, 1]$.
 \end{definition}
 
 \begin{definition}[Homotopy of paths]
-
-A continuous family of maps represented $f: I \times I \to X$ 
-
-A path in the space $X$ is a continuous map $f: I \to X$ where $I$ is the unit
-interval $[0, 1]$.
+A continuous family of maps represented by the continuous map $f: I \times I \to X$ 
 \end{definition}
 
 \begin{example}[Linear homotopy]
@@ -110,7 +105,7 @@ h_t(s) = (1-t)f(s) + (t)g(s).
 \end{definition}
 
 
-\begin{theorem}[$\Z \cong \pi(S1)$]
+\begin{theorem}[$\Z \cong \pi_1(S^1)$]
 
 The map $\phi$ sending the integer $n$ to the homotopy class of the loop $\omega_n(x) = (cos2\pi nx, sin2\pi nx)$ on $S^1$ with basepoint $(1, 0)$ is an isomorphism.
 
@@ -118,11 +113,21 @@ The map $\phi$ sending the integer $n$ to the homotopy class of the loop $\omega
 
 \begin{proof}
 
-Observe that each loop $\omega_n$ can be expressed as the composition $p\tilde{\omega}_n$, where $p(s) = (cos2\pi s, sin2\pi s)$ and $\tilde{\omega}_n(s) = ns$ is the path in $\R$ from $0$ to $n$. $\tilde{\omega}_n$ is called the lift of $\omega_n$.
+Observe that each loop $\omega_n$ can be expressed as the composition
+$p\tilde{\omega}_n$, where $p(s) = (cos2\pi s, sin2\pi s)$ and
+$\tilde{\omega}_n(s) = ns$ is the path in $\R$ from $0$ to $n$.
+$\tilde{\omega}_n$ is called the \textbf{lift} of $\omega_n$.
 
-We define the image $n \in Z$ under $\phi$ as the homotopy class represented by $pf_n$ where $f_n$ is any path in $\R$ from $0$ to $n$. Since any such $f_n$ shares endpoints with $\tilde{\omega}_n$, the paths are homotopic, and $pf_n$ and $p\tilde{\omega}_n$ are also homotopic. Then $\phi(n) = [pf_n] = [w_n]$.
+We define the image of $n \in Z$ under $\phi$ as the homotopy class represented
+by $pf_n$ where $f_n$ is any path in $\R$ from $0$ to $n$. Since any such $f_n$
+shares endpoints with $\tilde{\omega}_n$, the paths are homotopic, and $pf_n$
+and $p\tilde{\omega}_n$ are also homotopic. Then $\phi(n) = [pf_n] = [w_n]$.
+This gives an "extended" definition of $\phi$ that will be useful in showing surfjectivity and injectivity.
 
-We quickly verify $\phi$ is a homomorphism by considering $\phi(m + n)$ as $p\tilde{\omega}_{m+n}$
+We quickly verify $\phi$ is a homomorphism by considering $\phi(m + n)$ as
+$p\tilde{\omega}_{m+n} = p(\tilde{\omega_n} \cdot t_n(\tilde{\omega_m})) =
+\omega_m \cdot \omega_n = \phi(m) \cdot \phi(n)$ where $t_n(s) = s + n$ is just
+shifts our path in $\R$.
 
 We now define two facts that show $\phi$ is a bijection:
 \begin{itemize}
@@ -130,7 +135,10 @@ We now define two facts that show $\phi$ is a bijection:
 	\item[(b)]Given a homotopy $f_t$ in $S^1$ of paths starting at $x_0$, there exists a unique lifted homotopy $\tilde{f_t}$ of paths in $\R$ starting at $\tilde{x_0}$ for any choice of $\tilde{x_0} \in p^{-1}{(x_0)}$.
 \end{itemize}
 
-$(a)$ gives injectivity of $\phi$. Consider any loop $f$ with basepoint $(1, 0)$ reperesenting a homotopy class in $\pi_1(S^1)$. Then there exists $\tilde{f}$ starting at $0 \in p^{-1}((1, 0))$ that ends at $n \in \Z \subset p^{-1}((1, 0))$. So $\phi(n) = [f]$
+$(a)$ gives injectivity of $\phi$. Consider any loop $f$ with basepoint $(1,
+0)$ reperesenting a homotopy class in $\pi_1(S^1)$. Then there exists
+$\tilde{f}$ starting at $0 \in p^{-1}((1, 0))$ that ends at some $n \in \Z
+\subset p^{-1}((1, 0))$. So exists some $n$ where $\phi(n) = [f]$.
 
 $(b)$ gives surjectivity of $\phi$. Consider $\phi(m) = \phi(n)$. Then the representative loops $\omega_m$ and $\omega_n$ are homotopic. Define this homotopy as $f_t$. $(b)$ gives us $\tilde{f}_t$ where $\tilde{f}_t(0) = 0$ for all $t$ (Our choice of $\tilde{x_0}$). $\tilde{f}_0(1) = m$ and $\tilde{f}_1(1) = n$, but the endpoint of the homotopy must be invariant with respect to time, so $m = n$.
 
@@ -225,16 +233,25 @@ The induced homomorphism allows us to describe relationships between topological
 \end{proposition}
 
 \begin{proof}
-	Because $ri = \mathds{1}_A$, $r_*i_* = \mathds{1}_{A*}$ so $i_*$ is injective. To see $i_*: \pi(A) \to \pi(X)$ is also surjective, see that any loop in $X$ homotopes to a loop in $A$ by $r_tf$ if $r_t$ is a deformation retract.
+	Because $ri = \mathds{1}_A$, $r_*i_* = \mathds{1}_{A*}$ so $i_*$ is
+	injective. To see $i_*: \pi(A) \to \pi(X)$ is also surjective, see that any
+	loop $[x] \in \pi_1(X)$ homotopes to a loop in $A$ by $r_t$ if $r_t$ is a deformation
+	retract, so $i_*^{-1}([r_tx]) \in \pi_1(A)$.
 \end{proof}
 
-	An important takeaway from the above is that spaces that are continuous deformations of each other, like those that are deformation retracts of each other, have in some loose sense, the same number of homotopy classes of loops. Their fundamental groups are isomorphic.
+So spaces that are deformation retracts have isomorphic fundamental groups.
 
-	However, deformation retracts are rather strict examples of homotopies as they restrict to the identity map over their retracting space for all $I$ ($\restr{r_t}{A\times I} = \mathds{1}$). In particular, any deformation retract fixes a basepoint between $X$ and $A$.
+Note that deformation retracts are rather strict examples of homotopies as not
+only do they fix a basepoint between $X$ and $A$ for all timepoints, but they
+restrict to the identity map over their retracting space for all $I$
+($\restr{r_t}{A\times I} = \mathds{1}$). 
 
-	Consider a homotopy $\varphi_t: X \times I \to Y$ that is not a deformation retract but fixes the basepoint in $X$ ($\varphi_t(x_0) = y_0$ for all $t$). Then $\varphi_{0*} = \varphi_{1*}$ as $[\varphi_0f] = [\varphi_1f]$. Any pair of induced homomorphisms under a basepoint preserving homotopy are equivalent.
+Lets work towards an induced isomorphism under the more general condition of
+homotopy equivalence.
 
-	Now consider homotopy equivalences that are also basepoint preserving. Let $\varphi: X \to Y$ and $\psi: Y \to X$ be such equivalences. Then $\psi\varphi \simeq \mathds{1}$ but we just saw then $(\psi\varphi)_* = \mathds{1}_*$ so $\varphi$ is injective. $\varphi$ can be shown to be surjective and thus an isomorphism by a symmetric argument.
+Consider a homotopy $\varphi_t: X \times I \to Y$ that is not a deformation retract but fixes the basepoint in $X$ ($\varphi_t(x_0) = y_0$ for all $t$). Then $\varphi_{0*} = \varphi_{1*}$ as $[\varphi_0f] = [\varphi_1f]$. Any pair of induced homomorphisms under a basepoint preserving homotopy are equivalent.
+
+Now consider homotopy equivalences that are also basepoint preserving. Let $\varphi: X \to Y$ and $\psi: Y \to X$ be such equivalences. Then $\psi\varphi \simeq \mathds{1}$ but we just saw then $(\psi\varphi)_* = \mathds{1}_*$ so $\varphi_*$ is injective. $\varphi_*$ is also surjective as $(\varphi\psi)_*$ = $\mathds{1}_*$
 
 	We can actually see this is true even if our homotopy equivalence does not fix our basepoint.
 
@@ -294,26 +311,333 @@ Consider the homotopy equivalence $\varphi: X \to Y$, then $\pi_1(X, x_0) \cong 
 
 \begin{proof}
 	To see $\phi$ is surjective if $X$ is path connected, consider $[f]$ in $[S^1, X]$. Let $h$ be a path from $x_0$ to any point on the path $f$ (note that $h$ is constant if $x_0$ already lies on $f$). Then $\phi^{-1}([f]) = [\bar{h}fh]$.
-	\par A proof of one-to-one correspondence between $[S^1, X]$ and conjugacy classes of $\pi_1$ is equivalent to showing $\phi([f]) = \phi([g])$ iff $[f]$ conjugates $[g]$ in $\pi_1$. To see the forward direction, let $\psi_t$ be the basepoint free homotopy relating $\phi([f])$ and $\phi([g])$. Then $\psi_0 = \beta_h\psi_1$.
+	\par A proof of one-to-one correspondence between $[S^1, X]$ and conjugacy classes of $\pi_1$ is equivalent to showing $\phi([f]) = \phi([g])$ iff $[f]$ conjugates $[g]$ in $\pi_1$. 
+	\par To see the forward direction, let $\psi_t$ be the basepoint free homotopy relating $\phi([f])$ and $\phi([g])$. Then $\psi_{0*} = \beta_h\psi_{1*}$, where $h$ is the path induced by the image $\psi_t(0)$. Notice that $h$ starts and ends at $x_0$ because $[f]$ and $[g]$ had basepoints of $x_0$ under the preimage of $\psi$, so $h$ is also a loop. Then $\psi_{0*} = \beta_h\psi_{1*}$ is equivalent to $[h \cdot g \cdot \bar{h}] = [f]$ which implies $[h] \cdot [g] \cdot [h]^{-1} = [f]$.
+	\par To see the reverse direction, let $[h]$ be the element of $\pi_1$ that conjugates $[f]$ and $[g]$.
 
 \end{proof}
 
 \subsection{Van Kampen's Theorem}
 
-To understand free groups, lets review some definitions from group theory.
+To understand free products, lets review the direct products.
 
 \begin{definition}[Direct product of groups]
 	Given an indexed set of subgroups $\{G_{\alpha}\}$, our direct product group $\prod_{\alpha} G_{\alpha}$ is the set of functions $\{ f = \alpha \mapsto g_{\alpha} \in G_{\alpha} \}$.
 \end{definition}
 
-\begin{definition}[Direct sum of groups]
-	Our direct sum of $\{G_{\alpha}\}$ is a set of functions with the additional constraint that $f(\alpha) \neq e_\alpha$ for strictly finite $\alpha$.
-\end{definition}
+Some facts that are useful to verify:
 
+\begin{enumerate}
+	\item{$\bigcap G_{\alpha} = 1$. (Every element is unique in the product, even if two copies of the same group are used in the product.)}
+	\item{For each factor group, there exists a surjective "projection homomorphism" $\pi_i: G \to G_{\alpha}$ where $G_{\alpha} = \{(1 \dots g_i \dots 1) \}$. }
+	\item{ $G \backslash G_{\alpha} \cong \{ (g_1, ... g_{\alpha-1}, g_{\alpha+1}, ...  g_n) \}$ (To see this, construct a homomorphism that erases $\alpha$ component and invoke the First Isomorphism Theorem).}
+	\item{Elements of each factor group commute with each other.}
+\end{enumerate}
+
+% Refer to 5.1 in Dummit and Foote
+
+\begin{proposition}[Proof that direct products are commutative up to isomorphism.] 
+	If $G = H \times K$, then $hk = kh$.
+\end{proposition}
+
+\begin{proof}
+	Let $\psi: G \to H \times K$ be an isomorphism carrying elements of $G$ to their tuple representation. $\psi(kh) = \psi(k)\psi(h) = (1, k)(h, 1) = (h, k) = \psi(hk).$
+\end{proof}
+
+It is helpful to think of each element of the product as embedded in some latent tuple. 
+
+Now we might want to compose a group that is not commutative amongst factors. This will help us distinguish, for example, $\Z \star \Z$ (disjoint circles) from $\Z \times \Z$ (linked circles or torus). We introduce the free group:
+
+To use the language of category theory, the free product is the coproduct in the category of groups.
+
+% TODO
+Formally:
+
+% TODO
 We show the binary operator of free groups is associative.
 
 \begin{proof}[Associativity of free groups]
 
 \end{proof}
+
+The proof of Van Kampen's also relies on basic facts about homomorphisms and quotient groups. We derive some of these facts here to refresh the dome.
+
+\begin{proposition}[]
+	Consider $\phi: G \to H$ where $ker \phi = K$. If $X = \phi^{-1}(a)$ is an element of $G / K$, then for any $u \in X$, $X = \{ uk ~|~ k \in K \}$.
+\end{proposition}
+
+\begin{proof}[]
+	To see $uK \subseteq X$, observe $\phi(uk) = \phi(u)\phi(k) = \phi(u) \in X$. To see $X \subset uK$, consider $x \in X$ and notice that $\phi(u^{-1}x) = 1$. Then $u^{-1}x = k$ and $x = uk \subset uK$.
+\end{proof}
+
+\begin{proposition}[]
+	Consider $\phi: G \to H$ where $ker \phi = K$. The group operation in $G / K$ is well-defined.
+\end{proposition}
+
+\begin{proof}[]
+	Consider arbitrary $X, Y \in G / K$ where $X = aK$ and $Y = bK$. Let $Z = XY$. To see multiplication is independent of choice of representative, pick arbitrary representatives $u \in X$ and $v \in Y$. Then $uv \in \phi^{-1}(ab)$.
+\end{proof}
+
+In fact, multiplication of quotient group elements is well defined under a more general condition - that our coset is a normal subgroup.
+
+\begin{proposition}[]
+	Let $uH, vH \in G / H$. Then $(uH)(vH) = uvH$ is well defined iff $H \trianglelefteq G$.
+\end{proposition}
+
+\begin{proof}[]
+	For the forward argument, choose arbitrary $x, x^{-1} \in G$. Then $(xH)(x^{-1}H) = H$, so $(xh)(x^{-1}1) \in H$. Then $H$ is normal as desired.
+	For the reverse argument, consider alternative representatives $u' \in uH$ and $v' \in vH$. We must show $u'v' \in uvH$. $u' = um$ and $v' = vn$ for some $m, n \in H$. Then $(um)(vn) = uvv^{-1}mvn$. But $v^{-1}mv \in H$ by assumption (denote this $n'$). Then $uvv^{-1}mvn = uvn'n \in uvH$.
+\end{proof}
+
+\begin{theorem}[Van Kampen's Theorem]
+
+	Let $i_{\alpha\beta}: \pi_1(A_{\alpha} \cap A_{\beta}) \to \pi_1(A_{\alpha})$ be the homomorphism induced by the inclusion $A_{\alpha} \cap A_{\beta} \xhookrightarrow{} A_{\alpha}$ and $j_{\alpha}: \pi_1(A_{\alpha}) \to \pi_1(X)$ be the homomorphism induced by $A_{\alpha} \xhookrightarrow{} X$.
+
+	Observe $\phi(i_{\alpha\beta}(\omega)i_{\beta\alpha}(\omega)^{-1}) = j_{\alpha}i_{\alpha\beta}(\omega)j_{\beta}i_{\beta\alpha}(\omega)^{-1} = 1$ because $j_{\alpha}i_{\alpha\beta} = j_{\beta}i_{\beta\alpha}$. (Recall $\phi$ is the inclusion homomorphism applied to each letter in the word). Clearly all such elements of the free group are in the kernel of $\phi$. We will show the normal group generated by such elements are exactly the kernel of $\phi$.
+
+\end{theorem}
+
+\begin{proof}
+
+	To see $N$ is the kernel of $\phi$, we show that $\star_{\alpha} \pi_1(A_{\alpha}) \backslash N \cong \pi_1(X)$.
+	Observe $[f_i]_{\alpha}N = [f_i]_{\beta}N$ by the definition of $N$ ($[f_i]_{\alpha}[f_i]_{\beta}^{-1} \in N$). Furthermore $[f_1][f_i]_{\alpha}[f_2]N = [f_1][f_i]_{\beta}[f_2]N$ as $N$ is normal so the group operation is well defined on cosets.
+
+	% explicitly define isomorphism
+	% - well defined
+	% - homomorphic
+	% - injective
+	% 
+	% show injectivity explicitly 
+\end{proof}
+
+\begin{note}
+
+Van Kampen's allows us to treat the fundamental group of wedge sums as the free group of summands.
+
+It gives us the isomorphism $\star_{\alpha} \pi_1(X_{\alpha}) \cong \pi_1(A_{\alpha})$
+
+$\pi_1(X_{\alpha}) \cong \pi_1(A_{\alpha})$
+
+where $A_{\alpha} = U_{\alpha} \bigvee_{\beta \neq \alpha} X_{\beta}$.
+
+% Why is this not trivial? Why construct these neighborhoods?
+% https://math.stackexchange.com/questions/4415409/fundamental-group-of-a-wedge-sum
+% https://en.wikipedia.org/wiki/Hawaiian_earring
+\end{note}
+
+\begin{note}Group descriptions of basic objects
+	\begin{itemize}
+		\item{$\pi_1(S^1) \cong \Z$}
+		\item{$\pi_1(S^2) \cong 0$}
+		\item{The fundamental group of a torus is $\pi_1(S^1 \times S^1) \cong \Z \star \Z$}
+	\end{itemize}
+\end{note}
+
+Van Kampen's can be used to derive a powerful result about 2-dimensional complexes. If we consider the decomposition of such a complex as a 1-skeleton (wedge sum of circles) with a collection of attached 2-cells, then the fundamental group of this complex is the free group on some number of generators corresponding to the number of circles in the 1-skeleton modulo a normal group generated by loops where the 2-cells are attached. Recall 2-dimensional complexes includes quite a broad group of objects we are familiar with, such as the orientable surfaces of genus 2 ($M_2$ being the torus) and the non-orientable surfaces like the mobius strip and klein bottle.
+
+\begin{theorem}[van Kampen's applied to 2-dimensional cell complex]
+	Let $X$ be some path connected space and $Y$ be the result of attaching a
+	collection of 2-cells $\{e_{\alpha}\}$. Then the isomomorphism induced by the
+	inclusion $\pi(X) \to \pi(Y)$ has a kernel that is exactly $N = <
+	\bar{\gamma_{\alpha}}\varphi_{\alpha}\gamma_{\alpha} >$. Then, (by van
+	Kampen's), $\pi(X) / N \cong \pi(Y)$
+\end{theorem}
+
+We can use this theorem to compute the fundamental group of the torus from the abelianization of the free group in two generators. Let $X = S^1 \vee S^1$ and $Y = S^1 \times S^1$ and observe that $X$ is the one-skeleton of the torus and $Y$ is obtained by attaching a 2-cell to this skeleton along the loop $a^{-1}b^{-1}ab$ (trace the edges of a rectangle).
+
+We know $\Z \star \Z / [\Z, \Z]  \cong \Z \times \Z$. Because $\pi(X) \cong \Z \star \Z$ and $\pi(Y) = \Z \times \Z$, it remains to see that $N \cong [\Z, \Z]$ to have our result. 
+
+% TODO show the connection between commmutator subgroup and loops in the complex
+
+\begin{theorem}
+	If $g \neq h$, then $\pi_1(M_g)$ and $pi_1(M_h)$ are not isomoprhic. Nor are the spaces homotopy equivalent.
+\end{theorem}
+
+\begin{proof}
+	If $M_g \simeq M_h$, then their fundamental groups are isomorphic. These groups are the abelianizations of free groups in $2g$ and $2h$ generators respectively (this is immediate from the previous result). Because these groups are isomorphic, $g$ and $h$ must be the same.
+\end{proof}
+
+% Problems
+
+We will used the fact that a punctured n-sphere is homeomorphic to the 
+
+\begin{proposition}[Proof of generalized stereographic projection]
+There exists a homeomorphism between $S^n-1$ and
+\end{proposition}
+
+\begin{exercise}[1.2.4]
+	Compute $\pi_1(\R^3 - X)$ where $X$ is the union of $n$ lines through the origin.
+\end{exercise}
+
+\begin{proof}
+	Observe the complement deformation retracts to $S^2$ with $2n$ points removed (the poles of our $n$ lines). This object is homoemorphic to $\R^2$ with $2n-1$ points removed. (maybe construct the explicit stereographic projection). We can use van kampens to show the fundamental group of this space is the free group of $2n-1$ generators.
+\end{proof}
+
+\begin{exercise}[1.2.6]
+	Supppose a space $Y$ is obtained from a path-connected space $X$ by attaching
+	$n$-cells for a fixed $n \geq 3$. Then show the inclusion $X
+	\xhookrightarrow{} Y$ induces an isomorphism on $\pi_1$. Use this result to
+	then show	that the complement of a discrete subspace of $R^n$ is simply-connected if $n
+	\geq 3$.
+\end{exercise}
+
+\begin{proof}
+
+	We proceed using the structure of the proof of $1.26$. Let $A$ be $Y$ with a
+	hole in each of the attached $n$-cells. Let $B$ be the union of the attached
+	$n$-cells. See that $A$ and $B$ are both open and $Y = A \cup B$, so we
+	invoke van Kampen's theorem: $\pi_1(Y) = \pi_1(A) \star \pi_1(B) / N$ where
+	$N$ is defined in the usual way.
+
+	As before, $A$ deformation retracts onto $X$, so $\pi_1(A) \cong \pi_1(X)$,
+	and $B$ is contractible, so $\pi_1(B) = 0$. Then it remains to show that $N$
+	generated by $\{ i_{AB}(\omega) i_{BA}(\omega)^{-1} | \omega \in \pi_1(A \cap
+	B) \}$ is trivial (where the map $i_{AB}$ is defined as $i_{AB}: \pi_1(A \cap
+	B) \to \pi_1(A)$). See that any loop $i_{AB}(\omega)$ is contractible,
+	because despite introducing a hole, the loop can homotope around it within the
+	interior of the $n$-cell (if $n \geq 3$). Any $i_{BA}(\omega)$ is trivially
+	contractible, being included into an open subset of an $n$-cell with no
+	holes. Then $\pi_1(Y) \cong \pi_1(X)$.
+
+	% https://math.stackexchange.com/questions/1188062/why-is-the-complement-of-a-discrete-subspace-of-mathbbrn-n-ge-3-simpl
+
+	To prove our last result, let $X$ be our space of interest (the complement of
+	some discrete subspace of $R^n$), we can obtain a covering $\{ A_{\alpha} \}_{\alpha}$
+	where each $A_{\alpha} = X - x_{\alpha}$ is the complement of each point in the discrete
+	subspace. See each $A_{\alpha}$ is open. Then $\pi_1(Z) = \star \pi_1(A_{\alpha}) / N$.
+
+\end{proof}
+
+\begin{exercise}[1.2.7]
+	Construct a cell complex for the two-sphere with north and south poles
+	identified and use this to compute the fundamental group of this space.
+\end{exercise}
+
+\begin{proof}
+	We first construct the cell complex. Begin with a 0-cell $x$ and attach a
+	1-cell $e$ to $x$ to form a circle. Then take a 2-disk $\sigma$ and attach
+	its boundary circle $\delta \sigma$ to $e$ in two pieces, $\delta_1 \sigma$
+	traces one endpoint to the other and attaches to $e$, while $\delta_2 \sigma$
+	completes the circle in the same orientation but attaches to $\bar{e}$.
+
+	Then, by van Kampen's, our fundamental group is isomorphic to $< a ~|~ a a^{-1}
+	>$, but this is just the free group on one generator, so $\pi_1(X) \cong \Z$.
+
+\end{proof}
+
+Seeing that the cell complex is the same as the sphere with north and south
+poles identified was not immediately obvious.
+
+\href{https://math.stackexchange.com/questions/1194611/cw-complex-structure-on-standard-sphere-identifying-the-south-pole-and-north-pol}{This
+post} was helpful (notation was taken from Lee Mosher's solution), viewing our
+space as the quotient map $f: D_2 \to X$ performing exactly two
+identifications. 2-disks can take different forms equivalent up to
+homeomorphism and their boundaries can simply be circles. Seeing that $S^2$ is
+simply $D_2$ attached along $e$ and $\bar{e}$, where $e$ is an arc connecting
+the poles, was crucial.
+
+
+\begin{exercise}[1.2.8]
+
+Consider a surface $M_g$ of genus $g$ that is split into two closed surfaces
+$M_h$ and $M_k$ by a circle $C$. $M'_h$ and $M'_k$ are constructed by deleting an open disk
+from each. Show that neither $M'_h$ or $M'_k$ retract to
+their boundary circle, but both (and all of $M_g$) retract to a lateral $C'$.
+
+% https://math.solverer.com/library/allen_hatcher/algebraic_topology/exercise_1-2-9
+% https://math.stackexchange.com/questions/479371/how-to-construct-a-genus-2-surface-from-8-gon
+% https://analysis-situs.math.cnrs.fr/Classification-des-surfaces-triangulees-par-reduction-a-une-forme-normale.html
+
+\end{exercise}
+
+More familiarity with the two torus (really genus g surfaces in general) and
+practice with abelianization is needed to tackle this problem.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=90mm]{two-torus-hilbert.png}
+\caption{The geometry of the two torus. Hilbert's \textit{Geometry and the Imagination} \label{overflow}}
+\end{figure}
+
+\begin{note}[Abelianization of $\pi_1(M_1)$]
+	Consider $\pi_1(M_1) = < a, b ~|~ [a, b]$ as the familiar free group on two
+	generators modulo the commutator (where $[a, b] = aba^{-1}b^{-1}$).
+
+	The abelianization of $\pi_1(M_1)$ is then $\pi_1(M_1) \ [\pi_1(M_1), \pi_1(M_1)]$
+\end{note}
+
+\subsection{Covering Spaces}
+
+\begin{definition}
+
+	A covering space $\tilde{X}$ if there exists some map $p: \tilde{X} \to X$
+	and some open cover $\{ U_{\alpha} \}$ of $X$ where each $p^{-1}(U_{\alpha}$
+	is a disjoint union of open sets in $X$ each homeomorphic to $U_{\alpha}$.
+
+\end{definition}
+
+\subsection{Appendix}
+
+Commutators and derived subgroups appear frequently to describe the structure
+of fundamental groups of cell complexes. We will review some definitions and
+proofs from elementary algebra (because we are self taught and dumb).
+
+\begin{definition}
+	The \textbf{commutator} of two elements $a, b \in G$ is $a^{-1}b^{-1}ab$ and
+	is denoted $[a, b]$.
+\end{definition}
+
+\begin{definition}
+	$a^x$ is the conjugate of $a$ by $x$ ($xax^{1}$).
+\end{definition}
+
+Clearly the commutator is the identity element if $a$ and $b$ commute in $G$
+(hence its name). We derive some pedagogical identities that will be useful.
+
+\begin{definition}
+	$[a, b]^x = [a^x,b^x]$
+\end{definition}
+\begin{proof}
+	$xa^{-1}b^{-1}abx^{-1} = xa^{-1}x^{-1}xb^{-1}x^{-1}xax^{-1}xbx^{-1} = [a^x,b^x]$
+\end{proof}
+
+\begin{note}
+	The set of commutators need not be closed over the group operation.
+
+	Consider the free group on four generators. Then $[a, b][c, d] =
+	a^{-1}b^{-1}abc^{-1}d^{-1}cd$. This is not a commutator in this group (there
+	are no two elements $x, y$ such that $[x, y] = [a, b][c, d]$.
+\end{note}
+
+Even though products of commutators are not themselves commutators in general,
+the subgroup \textit{generated} by all commutators in a group is certainly closed over
+the group operation. This leads naturally to the derived subgroup.
+
+\begin{definition}
+	The group generated by all of the commutators in $G$ is the \textbf{derived
+	subgroup} of $G$, denoted $[G, G]$ or $G'$.
+\end{definition}
+
+\begin{theorem}
+	$[G, G] \trianglelefteq G$
+\end{theorem}
+
+\begin{proof}
+	$([a, b] \cdots [e, f])^x = ([a^x, b^x] \cdots [e^x, f^x])$
+\end{proof}
+
+
+\begin{theorem}
+	If the quotient group $G / N$ is abelian, then $[G, G] \subseteq N$. In other
+	words, the derived subgroup the smallest subgroup that abelianizes $G$.
+\end{theorem}
+
+\begin{proof}
+	First show that $x[G, G]y[G, G] = y[G, G]x[G, G]$
+\end{proof}
+
+\begin{definition}
+	$G / [G, G]$ is the abelianization of $G$ and sometimes denoted $G^{ab}$.
+\end{definition}
 
 \end{document}
