@@ -658,10 +658,15 @@ F(X) / N$.
 % 
 % https://math.stackexchange.com/questions/3255411/universal-property-for-presentations
 
+\begin{note}[Free Groups]
+	See the \textbf{myasnikov.1.free.groups.pdf} for a category theory flavored exposition on free
+	groups, their universal property and role in presentations.
+\end{note}
+
 \begin{note}[Universal Property of Free Groups]
-Let $S$ be the generating set of a free group $F(S)$ and $G$ be some group. Then given the map $f:
-S \to G$, there exists a universal $f'$ such that the following diagram
-commutes:
+Let $S$ be the generating set of a group $F(S)$. For any group $G$ and associated
+map $f: S \to G$ (note $f$ is not a homomorphism and is just mapping symbols
+into a group), $f$ extends to a unique (homomorphism) $f': F(S) \to G$ that commutes in the following diagram.
 
 \[
 \begin{tikzcd}
@@ -670,15 +675,72 @@ F(S) \arrow[ru, "f'"']           &
 \end{tikzcd}
 \]
 
-As an example, let $S = \{ x, y \}$ and $G = < x, y ~|~ x^2 = y^3, x = y^2>$
-(so $G \cong D_3$).
+We proceed with a brief proof and then an example.
 
-Then $i$ can be completely described by $i(x) = x$ and $i(y) = y$,
-$f'i(\{x, y \}) = f(\{ x, y \})$ for these one letter words (ie. $f'$ and $f$
-must agree over $S$ by commutativity) but it can be uniquely extended over
-the rest of $G$ by defining $f'(x^iy^j) = f(x)^if(y)^j$.
+If we consider $F(S)$ as reduced words in letters of $S$, let $f' =
+f(s_1)\cdots f(s_n)$ and claim this is our extended homomorphism.
+
+Uniqueness can be seen becauase $f'$ must agree with $f$ for each $s \in S$.
 
 \end{note}
+
+Lets construct two isomomorphisms between presentations and groups to understand
+what a quotient of this enormous free group and almost just as enormous normal
+subgroup actually mean in the context of groups we already understand.
+
+\begin{itemize}
+	\item{$\Z \times \Z \cong <a,b~|~[a,b]>$}
+	\item{$\S_3 \cong <a,b~|~a^2=b^3=aba^{-1}b^2>$}
+\end{itemize}
+
+\begin{proposition}
+	$D_3 \cong <x,y~|~x^3=y^2=xyx^{-2}y>$
+\end{proposition}
+
+\begin{proof}
+
+	Lets begin by invoking the universal property:
+	\[
+	\begin{tikzcd}
+	{\{x, y\}} \arrow[rd, "f"'] \arrow[r, "i"] & {F(x, y)} \arrow[d, "\phi"] \\
+																						 & D_3                        
+	\end{tikzcd}
+	\]
+
+	Where $F(x, y)$ is our free group on two generator, $i$ is the inclusion map,
+	$f$ is a map from our generators to letters in the dihedral group. The
+	diagram commutes ($f = \phi i$).
+
+	By definition, our presentation is $F(x, y) / << x^2, y^3, xyx^{-2}y >>$
+	(where the $<<->>$ denotes the normal closure). I claim that our universal
+	$\theta$ gives us the desired isomorphism when restricted to the quotient
+	group.
+
+	Let us expand our commutative diagram by factoring $\phi$ through the
+	quotient group:
+
+	\[
+	\begin{tikzcd}
+	{\{x, y\}} \arrow[rd, "f"'] \arrow[r, "i"] & {F(x, y)} \arrow[d, "\pi"]   \\
+																						 & D_3 / N \arrow[d, "\phi'"] \\
+																						 & D_3                         
+	\end{tikzcd}
+	\]
+
+	Where $pi = w \to w << x^2, y^3, xyx^{-2}y >>$ projects words onto
+	their cosets and $\phi' = wN \to \phi(w)$. Notice $\phi'$ is well defined as
+	the image of every element of the normal closure is the identity ("$\phi$
+	respects the relations").
+
+	Then $\phi'$ is surjective as $\phi$ is surjective (every element of $D_3$ is
+	word of letters in the image of $f$). To see $\phi'$ is injective, consider
+	distinct cosets $aN \neq bN$. Then $\phi'(aN) = \phi'(a)\phi'(N) = \phi'(a) =
+	\phi(a)$. Similarly, $\phi'(bN) = \phi(b)$. 
+
+
+
+\end{proof}
+
 
 \begin{note}
 	\textbf{Tietze transforms} define operations on presentations that do not
