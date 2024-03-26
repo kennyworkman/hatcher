@@ -568,13 +568,44 @@ practice with abelianization is needed to tackle this problem.
 
 \subsection{Covering Spaces}
 
+Covering spaces let us (1) calculate fundamental groups of structures and (2)
+think about algebraic properties using geometric intuition. (I do not really
+understand how yet, so revisit this explanation after some exercise.)
+
 \begin{definition}
 
-	A covering space $\tilde{X}$ if there exists some map $p: \tilde{X} \to X$
-	and some open cover $\{ U_{\alpha} \}$ of $X$ where each $p^{-1}(U_{\alpha}$
-	is a disjoint union of open sets in $X$ each homeomorphic to $U_{\alpha}$.
+	Given some space $X$, the space $\tilde{X}$, along with map $p: \tilde{X} \to
+	X$, is a \textbf{covering space} if for each $x \in X$ and any open neighborhood
+	$U$ of $x$, $p^{-1}(U)$ is a disjoint union of open sets (called
+	\textbf{sheets} in $\tilde{X}$ where each sheet is homeomorphic to $U$.
+	
+	$p^{-1}(U)$ is allowed to be empty, so $p$ need not be surjective.
 
 \end{definition}
+
+The helicoid (denoted $S$) is a good example that is easy to visualize. The helicoid can be
+parameterized as: 
+
+\[x = s \cos 2\pi t \]
+\[y = s \sin 2\pi t \]
+\[z = t \]
+
+for $s \in (0, \inf), t \in \R$
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=90mm]{./helicoid.png}
+\caption{}
+\end{figure}
+
+Then $p: S \to \R \setminus \{0\}$ given by $(x, y, z) \mapsto (x, y)$ defines a
+covering space.
+
+I found this is best seen by looking at single line segments extending radially
+from the origin. Consider $X = (0.5, 1.5) \times \{0\}$. $p^{-1}(X)$ is a
+collection of disjoint segments. Our parameterization allows this segment of
+the x axis to exist whenever we make one full rotation around the circle. There
+are an infinite number of these segments and each maps to $X$ homeomorphically.
 
 \section{Appendix}
 
@@ -729,66 +760,13 @@ subgroup actually mean in the context of groups we already understand.
 
 	Where $pi = w \to w << x^2, y^3, xyx^{-2}y >>$ projects words onto
 	their cosets and $\phi' = wN \to \phi(w)$. Notice $\phi'$ is well defined as
-	the image of every element of the normal closure is the identity ("$\phi'$
-	respects the relations") $\phi'(wn) = \phi'(wn')$ where $n, n' \in << x^2,
-	y^3, xyx^{-2}y >>$.
+	the image of every element of the normal closure is the identity ("$\phi$
+	respects the relations").
 
 	Then $\phi'$ is surjective as $\phi$ is surjective (every element of $D_3$ is
 	word of letters in the image of $f$). To see $\phi'$ is injective, consider
 	distinct cosets $aN \neq bN$. Then $\phi'(aN) = \phi'(a)\phi'(N) = \phi'(a) =
-	\phi(a)$. Similarly, $\phi'(bN) = \phi(b)$. 
-
-\end{proof}
-
-What is interesting about this proof is it does not really use any structure of
-the group.
-
-\begin{note}
-I also found
-\href{https://math.stackexchange.com/questions/3255411/universal-property-for-presentations}{this
-problem} on StackExchange entitled "Universal Property for Presentations" and
-felt compelled to understand. I could not find references to such a universal
-property anywhere, but the intuition is that a homomorphism can be constructed
-between groups by thinking of the cosets induced by relations and mapping these
-cosets to each other.
-\end{note}
-
-\begin{theorem}[Universal property of presentations]
-	
-	Let $G = <R~|~S>$ with associated $f: S \to G$. If there exists some $H$,
-	with map $h: S \to H$ and associated morphism $\hat{h}: F(S) \to H$ sending
-	$R$ to $e_H$, then there exists a unique morphism $g: G \to H$ satisfying $h
-	= gf$
-
-\end{theorem}
-
-\begin{proof}
-
-	We begin by building a diagram of our situation.
-
-	\[
-\begin{tikzcd}
-S \arrow[rd, "i"] \arrow[rrd, "f", bend left] \arrow[rrdd, "h"', bend right] &                                                 &                  \\
-                                                                             & F(S) \arrow[r, "\hat{f}"] \arrow[rd, "\hat{h}"] & G \arrow[d, "g"] \\
-                                                                             &                                                 & H               
-\end{tikzcd}
-\]
-
-And proceed by first explicitly constructing $g$ then showing commutativity and
-uniqueness.
-
-See that $\hat{f}$ and $\hat{g}$ give us quotients of $F(S)$ in terms of $<< R
->>$ and $\ker \hat{h}$ (really a superset of $<< R >>$). So let $g$ simply map
-these cosets to each other.
-
-Let $R' = << R >>$  and $K' = \ker \hat{h}$, we claim $g = wR' \mapsto K'$. We
-see this is well-defined: $wR' = w'R' \implies w^{-1}w' \in R' \implies w^{-1}w' \in \ker
-\hat{h} \implies g(wR') = wK'e = wK'w^{-1}w'K' = w'K' = g(wR')$.
-
-$g$ is a homomorphism as the group operation on cosets is well defined.
-
-$h = gi$ iff $\hat{h} = g\hat{f}$ as maps $S \to H$, but both maps send $s$ to
-$sK$, so commutativity follows. Uniqueness 
+	\phi(a)$. Similarly, $\phi'(bN) = \phi(b)$. $\phi(a) \neq \phi(b)$
 
 \end{proof}
 
