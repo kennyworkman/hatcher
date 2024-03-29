@@ -577,7 +577,7 @@ understand how yet, so revisit this explanation after some exercise.)
 	Given some space $X$, the space $\tilde{X}$, along with map $p: \tilde{X} \to
 	X$, is a \textbf{covering space} if for each $x \in X$ and any open neighborhood
 	$U$ of $x$, $p^{-1}(U)$ is a disjoint union of open sets (called
-	\textbf{sheets} in $\tilde{X}$ where each sheet is homeomorphic to $U$.
+	\textbf{sheets} in $\tilde{X}$) where each sheet is homeomorphic to $U$.
 	
 	$p^{-1}(U)$ is allowed to be empty, so $p$ need not be surjective.
 
@@ -606,6 +606,40 @@ from the origin. Consider $X = (0.5, 1.5) \times \{0\}$. $p^{-1}(X)$ is a
 collection of disjoint segments. Our parameterization allows this segment of
 the x axis to exist whenever we make one full rotation around the circle. There
 are an infinite number of these segments and each maps to $X$ homeomorphically.
+
+Once place to see the utility of covering spaces is with oriented graphs.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=90mm]{./2-oriented.png}
+\caption{}
+\end{figure}
+
+
+Let $X$ (Fig. 3) be basepoint with two loops labeled $a$ and $b$. Now consider any
+graph, $\tilde{X}$, where edge vertex has four edges. If we label, with $a$ or
+$b$, and orient each edge we obtain a structure that looks like $X$ (respecting
+orientation!) as we zoom into each vertex. We can call this an \textbf{2-oriented graph}.
+
+If we construct a map $p: \tilde{X} \to X$, where the interior of each edge in 
+$\tilde{X}$ maps homeomorphically to corresponding labeled edge in $X$
+following the orientation of both edges, we satisfy the properties for a covering
+space. It follows both that every oriented graph is a covering space of $X$ and
+every covering space of $X$ can be 2-oriented (every vertex has 4 edges that
+can be labeled so the local picture looks like $X$).
+
+We are given a table of some of these $\tilde{X}$.
+
+\begin{theorem}
+	$\pi(X) \cong < a, b^2, bab^{-1} >$
+\end{theorem}
+
+\begin{proof}
+Hatcher instructs us that we can use Van Kampen's or "generators of the image
+subgroup". We will do both.
+\end{proof}
+
+
 
 \section{Appendix}
 
