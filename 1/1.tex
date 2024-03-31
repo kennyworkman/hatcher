@@ -635,11 +635,30 @@ We are given a table of some of these $\tilde{X}$.
 \end{theorem}
 
 \begin{proof}
-Hatcher instructs us that we can use Van Kampen's or "generators of the image
-subgroup". We will do both.
+Hatcher instructs us that we can use Van Kampen's.
+
+% TODO - use the open sets from my notebook
 \end{proof}
 
+When we consider the fundamental group of the covering space as the "image
+subgroup" of $\pi_1(X)$, $p_*(\pi_1(\tilde{X})) \leq \pi_1(X)$, we recover yet
+another beautiful correspondence between algebra and geometry - there is a 
+one to one correspondence between the subgroups $\pi_1(X)$ and covering spaces of $X$. 
 
+A few more algebraic interpretations of covering spaces:
+
+\begin{itemize}
+	\item{If we change our basepoint in a covering space that is otherwise the
+		same, $p_*(\pi_1(\tilde{X}, x_1))$ is a conjugacy subgroup of
+		$p_*(\pi_1(\tilde{X}, x_0))$ in $\pi(X)$ where the conjugating element is the
+	loop connecting the basepoints.}
+\item{If a \textbf{symmetry} is an automorphism on a graph that preserves
+		labels and orientations, then a graph can be "more" symmetric if it has
+		more automorphisms and "the most" symmetric if every possible permutation
+		of the graph vertexes have automorphisms with the desired properties. We
+		will show that "the most symmetric" graphs are exactly those induced subgroups that
+	are normal in $\pi_1(X)$.}
+\end{itemize}
 
 \section{Appendix}
 
