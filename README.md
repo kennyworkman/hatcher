@@ -8,6 +8,9 @@ Notes and solutions from Allen Hatcher's Algebraic Topology.
 - [Projective Geometry Notes](./projective_geometry/projective_geometry.pdf)
 
 
-- [The Fundamental Group - Basic Constructions, Van Kampen's Theorem and Covering Spaces](./projective_geometry/projective_geometry.pdf)
+- [The Fundamental Group - Basic Constructions](./1/1.pdf)
+- [Van Kampen's Theorem](./1/1.pdf)
+- [Covering Spaces](./1/1.pdf)
+- [Appendix on unfamiliar algebra, geometry, etc.](./1/1.pdf)
 
 Send corrections to kenny@latch.bio.
