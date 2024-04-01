@@ -660,6 +660,41 @@ A few more algebraic interpretations of covering spaces:
 	are normal in $\pi_1(X)$.}
 \end{itemize}
 
+We now define three \textbf{lifting properties} of covering spaces and show
+some applications.
+
+\begin{proposition}[Homotopy lifting property]
+	Given a covering space $p: \tilde{X} \to X$, a homotopy $f_t: Y \to X$ and a
+	lift of timepoint 0 of the homotopy $\tilde{f_0}: Y \to \tilde{X}$, there
+	exists a \textit{unique} lift of the entire homotopy $\tilde{f_t}: Y \to X$.
+\end{proposition}
+
+When $Y$ is a point, this tells us that paths in $X$ induce unique paths in the
+covering space.
+
+When $Y$ is $I$, this tells us that homotopies in $X$ induce unique homotopies
+in the covering space.
+
+We will use this to show $p_*$ is injective.
+\begin{proposition}
+	The induced homomorphism $p_*: \pi_1(\tilde{X}, \tilde{x_0}) \to \pi_1(X,
+	x_0)$ is injective. The image subgroup $p_*(\pi_1(\tilde{X}, \tilde{x_0}))$
+	consists of loops 
+\end{proposition}
+
+\begin{proof}
+	To prove injectivity, consider two distinct homotopy classes, $[\tilde{f'_0}]$
+	and $[\tilde{f''_0}]$, that have the same image under $p_*$, so
+	$p_*([\tilde{f'_0}]) = p_*([\tilde{f'_0}])$. Indeed $p\tilde{f'_0} \simeq
+	p\tilde{f''_0}$, given by some homotopy $f_t$, so our homotopy lifting
+	property gives us a lifted homotopy $\tilde{f_t}$ where $\tilde{f'_0} \simeq
+	\tilde{f''_0}$. Then $[\tilde{f'_0}] = [\tilde{f''_0}]$, so $p_*$ is
+	injective.
+
+	(This is a bit more explicit than Hatcher's proof using the kernel of $p_*$)
+\end{proof}
+
+
 \section{Appendix}
 
 \subsection{Presentations}
