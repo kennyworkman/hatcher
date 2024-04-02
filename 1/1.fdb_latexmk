@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1711990974 "1.tex" "1.pdf" "1" 1711990975 0
+["pdflatex"] 1712075307 "1.tex" "1.pdf" "1" 1712075308 0
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -188,10 +188,10 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1695598288 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1695598139 7883452 caa0a602e870c61c10cde9c3fbd49283 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "1.aux" 1711990975 2105 caee87b0a4758e00d3b572bf2ec2ab78 "pdflatex"
-  "1.out" 1711990975 1059 3c55f07c5edf645d06ca3ecf4d15e0c0 "pdflatex"
-  "1.pre" 1711990974 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "1.tex" 1711990971 48306 970a75f266bc5d5b666383e44ca1b7e5 ""
+  "1.aux" 1712075308 2105 84f33ac8d641e06a8e76225634668ff0 "pdflatex"
+  "1.out" 1712075308 1059 3c55f07c5edf645d06ca3ecf4d15e0c0 "pdflatex"
+  "1.pre" 1712075307 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "1.tex" 1712075304 49576 8e616caf8414758030b04b2c86b22c7d ""
   "2-oriented.png" 1711919119 31326 c3801acee2a6b9cd4b09b00bd1aee6fd ""
   "helicoid.png" 1711919119 248956 c34fddecc61fb5bc045ba68f3cc179b1 ""
   "kennyworkman.sty" 1711919085 3419 f3da5bbb0099aa7d9f09de4ba27ae004 ""

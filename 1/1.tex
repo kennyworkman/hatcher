@@ -661,7 +661,9 @@ A few more algebraic interpretations of covering spaces:
 \end{itemize}
 
 We now define three \textbf{lifting properties} of covering spaces and show
-some applications.
+some applications. Given some covering space and a map into $X$, these
+properties tell us when a lift of a homotopy exists, when a regular lift exists
+and when lifts are unique.
 
 \begin{proposition}[Homotopy lifting property]
 	Given a covering space $p: \tilde{X} \to X$, a homotopy $f_t: Y \to X$ and a
@@ -676,10 +678,12 @@ When $Y$ is $I$, this tells us that homotopies in $X$ induce unique homotopies
 in the covering space.
 
 We will use this to show $p_*$ is injective.
+
 \begin{proposition}
 	The induced homomorphism $p_*: \pi_1(\tilde{X}, \tilde{x_0}) \to \pi_1(X,
 	x_0)$ is injective. The image subgroup $p_*(\pi_1(\tilde{X}, \tilde{x_0}))$
-	consists of loops 
+	consists of loops with baspoint $x_0$ that lift to loops in $\tilde{X}$ with
+	basepoint $\tilde{x_0}$.
 \end{proposition}
 
 \begin{proof}
@@ -692,6 +696,37 @@ We will use this to show $p_*$ is injective.
 	injective.
 
 	(This is a bit more explicit than Hatcher's proof using the kernel of $p_*$)
+
+	The second statement is a bit bizarre, because should every element in the
+	% TODO
+	image subgroup, represented as $p_*\tilde{f}$, admit a straightforward lift
+	$\tilde{f}$.
+\end{proof}
+
+\begin{proposition}
+	The number of sheets in a covering space $p$ is equal to the index of
+	$p_*(\pi_1(\tilde{X}, \tilde{x_0}))$ in $\pi_1(X, x_0)$
+\end{proposition}
+
+\begin{proof}
+\end{proof}
+
+We have two more properties. One will show when a lift exists and another will
+show when lifts are unique.
+
+\begin{proposition}[Lifting criterion]
+	Given a covering space $p: \tilde{X} \to X$ and some map $f: Y \to X$, there
+	exists a lift of this map, denoted $\tilde{f}: Y \to \tilde{X}$, iff $f_*(\pi_1(Y, y_0)) \subseteq
+	p_*((\tilde{X}, \tilde{x_0}))$.
+\end{proposition}
+
+This makes sense intuitively. $p$ need not be surjective, so our map 
+
+\begin{proof}
+	The necessary condition is straightforward. The existence of a lift implies
+	that $f = p\tilde{f}$, then $f_* = p_*\tilde{f_*}$.
+
+	The sufficient condition is less straighforward.
 \end{proof}
 
 
