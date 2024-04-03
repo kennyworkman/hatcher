@@ -697,10 +697,13 @@ We will use this to show $p_*$ is injective.
 
 	(This is a bit more explicit than Hatcher's proof using the kernel of $p_*$)
 
+	A loop in $X$ with basepoint $x_0$ that lifts to a loop in $\tilde{X}$ with
+	basepoint $\tilde{x_0}$ is by definition an element of $p_*(\pi_1(\tilde{X},
+	\tilde{x_0}))$.
+
 	The second statement is a bit bizarre, because should every element in the
-	% TODO
 	image subgroup, represented as $p_*\tilde{f}$, admit a straightforward lift
-	$\tilde{f}$.
+	$\tilde{f}$. I do not see where I have to invoke homotopy lifting.
 \end{proof}
 
 \begin{proposition}
@@ -709,6 +712,19 @@ We will use this to show $p_*$ is injective.
 \end{proposition}
 
 \begin{proof}
+	Let $g$ be a loop in $\pi_1(X, x_0)$. $\tilde{g}$ is its lift by the homotopy
+	lifting property. Note that $\tilde{g}$ need not be a loop! Consider the lift
+	of a single wrap around the circle in $p: \R \to S^1$.
+
+	Each representative of our coset, $H = p_*(\pi_1(\tilde{X}, \tilde{x}))$,
+	$H[g] = h\cdot g$ has a lift $\tilde{h}\cdot\tilde{g}$. Notice that this lift
+	is a path that starts at $\tilde{x_0}$ and ends at $\tilde{g}(1)$.
+
+	We construct a bijection $\phi: H[g] \to p^{-1}(x_0)$ defined as $H[g] \to
+	\tilde{g}(1)$. Because $\tilde{X}$ is path connected, for each point in
+	$p^{-1}(x_0)$, we can draw a path to it from $\tilde{x_0}$. Notice that the
+	projection of this path is always a loop at $x_0$ by definition of $p$. Then
+	$\phi$ is surjective.
 \end{proof}
 
 We have two more properties. One will show when a lift exists and another will
