@@ -662,8 +662,8 @@ A few more algebraic interpretations of covering spaces:
 
 We now define three \textbf{lifting properties} of covering spaces and show
 some applications. Given some covering space and a map into $X$, these
-properties tell us when a lift of a homotopy exists, when a regular lift exists
-and when lifts are unique.
+properties tell us when a lift of a homotopy exists, when a lift of a regular
+map exists and when lifts are unique.
 
 \begin{proposition}[Homotopy lifting property]
 	Given a covering space $p: \tilde{X} \to X$, a homotopy $f_t: Y \to X$ and a
@@ -676,6 +676,16 @@ covering space.
 
 When $Y$ is $I$, this tells us that homotopies in $X$ induce unique homotopies
 in the covering space.
+
+The key idea here is that these homotopies are unique. If we consider the lift
+of a constant path, this implies that the lifted path is also constant 
+
+\begin{note}
+Check this. If $p\tilde{f} = f$ and $f$ is constant, if $\tilde{f}$ had anything
+other than $\tilde{f}(0)$ in its image, what does that imply about the set of
+allowed $\tilde{f}$s? If $\tilde{f}$ is itself constant, then $p\tilde{f} = f$
+obvioulsy holds. 
+\end{note}
 
 We will use this to show $p_*$ is injective.
 
@@ -703,7 +713,10 @@ We will use this to show $p_*$ is injective.
 
 	The second statement is a bit bizarre, because should every element in the
 	image subgroup, represented as $p_*\tilde{f}$, admit a straightforward lift
-	$\tilde{f}$. I do not see where I have to invoke homotopy lifting.
+	$\tilde{f}$. I do not see where I have to invoke homotopy lifting, unless you
+	consider some other representative of each homotopy class $g \simeq
+	p\tilde{f}$, then $\tilde{g} \simeq \tilde{f}$, so the representative admits
+	the desired lift.
 \end{proof}
 
 \begin{proposition}
@@ -716,7 +729,7 @@ We will use this to show $p_*$ is injective.
 	lifting property. Note that $\tilde{g}$ need not be a loop! Consider the lift
 	of a single wrap around the circle in $p: \R \to S^1$.
 
-	Each representative of our coset, $H = p_*(\pi_1(\tilde{X}, \tilde{x}))$,
+	Each representative of our coset, where $H = p_*(\pi_1(\tilde{X}, \tilde{x}))$,
 	$H[g] = h\cdot g$ has a lift $\tilde{h}\cdot\tilde{g}$. Notice that this lift
 	is a path that starts at $\tilde{x_0}$ and ends at $\tilde{g}(1)$.
 
@@ -724,7 +737,10 @@ We will use this to show $p_*$ is injective.
 	\tilde{g}(1)$. Because $\tilde{X}$ is path connected, for each point in
 	$p^{-1}(x_0)$, we can draw a path to it from $\tilde{x_0}$. Notice that the
 	projection of this path is always a loop at $x_0$ by definition of $p$. Then
-	$\phi$ is surjective.
+	$\phi$ is surjective. If $\theta(H[g]) = \theta(H[g'])$, then $g(1) = g'(1)$
+	and $g \cdot \bar{g'}$ lifts to a loop in $\tilde{X}$ with basepoint
+	$\tilde{x_0}$. Then $[g \cdot \bar{g'}] \in H$ and $H[g] = H[g']$ ($\theta$ is
+	injective).
 \end{proof}
 
 We have two more properties. One will show when a lift exists and another will
@@ -733,14 +749,17 @@ show when lifts are unique.
 \begin{proposition}[Lifting criterion]
 	Given a covering space $p: \tilde{X} \to X$ and some map $f: Y \to X$, there
 	exists a lift of this map, denoted $\tilde{f}: Y \to \tilde{X}$, iff $f_*(\pi_1(Y, y_0)) \subseteq
-	p_*((\tilde{X}, \tilde{x_0}))$.
+	p_*(\pi_1(\tilde{X}, \tilde{x_0}))$.
 \end{proposition}
 
 This makes sense intuitively. $p$ need not be surjective, so our map 
 
+
 \begin{proof}
 	The necessary condition is straightforward. The existence of a lift implies
-	that $f = p\tilde{f}$, then $f_* = p_*\tilde{f_*}$.
+	that $f = p\tilde{f}$, then $f_* = p_*\tilde{f_*}$, so certainly
+	$f_*(\pi_1(Y, y_0)) \subseteq p_*(\pi_1(\tilde{X}, \tilde{x_0}))$ (TODO:
+	really make sure I understand)
 
 	The sufficient condition is less straighforward.
 \end{proof}
