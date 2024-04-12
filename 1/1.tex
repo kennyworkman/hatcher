@@ -1006,4 +1006,51 @@ the group operation. This leads naturally to the derived subgroup.
 	$G / [G, G]$ is the abelianization of $G$ and sometimes denoted $G^{ab}$.
 \end{definition}
 
+
+\subsection{Continuity}
+
+I found myself confused about the equivalence between the $\delta \epsilon$
+definition of continuity from calculus and the topological definition using
+open sets. The direction of the implications is what is not obvious.
+
+Recall the conceptual meat of continuity is that small perturbations in the
+range can always be . 
+
+More specifically the preimage of some small interval in the range
+always exists in the domain if we
+
+\begin{definition}
+	A function is continuous at $x$ if for all $\epsilon$ there exists an
+	$\delta$ where
+	\[\abs{x - x_0} < \delta \implies \abs{f(x) - f(x_0)} < \epsilon\]
+\end{definition}
+
+The structure of this implication is crucial. We can construct arbitrarily
+small intervals of the range and always recover some $\delta$ about $x_0$ that
+entirely maps within this interval. Simple piecewise discontinuous funcions
+from analysis illustrate how clearly discontinuous maps (they have big holes)
+map onto this delta epsilon definition. We will walk through one for the sake of
+pedagogy.
+
+\begin{example}
+Consider
+\[ \begin{cases} 
+      x^2 - 3 & x\leq 0 \\
+			\sin x & x > 0
+   \end{cases}
+\]
+
+Consider continuity at $x = 0$. For $\epsilon = 2$, there exists no value of
+$\delta$ where $\abs{x - 0} \implies \abs{f(x) - f(0)} < 2$.
+\end{example}
+
+% https://math.stackexchange.com/questions/2823758/why-is-the-topological-definition-of-continuous-the-way-it-is
+
+Continuity is defined differently in topology:
+
+\begin{definition}
+	Let $f: X \to Y$ be a continuous map. Then for each open $U\in Y$,
+	$f^{-1}(U)$ is open in $X$.
+\end{definition}
+
 \end{document}
