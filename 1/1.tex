@@ -764,6 +764,28 @@ This makes sense intuitively. $p$ need not be surjective, so our map
 	The sufficient condition is less straighforward.
 \end{proof}
 
+\begin{proposition}[Unique lifting property]
+	Given a covering space $p: \tilde{X} \to X$ and some map $f: Y \to X$, if
+	$\tilde{f_1}$ and $\tilde{f_2}$ agree on one point of $Y$ and $Y$ is
+	connected, they agree on all of $Y$.
+\end{proposition}
+
+\begin{proof}
+	For a point $y \in Y$ let $U$ be an evenly-covered neighborhood of $f(y)$
+	(recall this means that $p^{-1}(U)$ is a set of open sets in $\tilde{X}$ each
+	mapping homeomorphically to $U$). Let $\tilde{U_1}$ and $\tilde{U_2}$ be the
+	open sets that $\tilde{f_1}(y)$ and $\tilde{f_2}(y)$ reside in respectively.
+
+	If $\tilde{f_1}(y) \neq \tilde{f_2}(y)$, then $\tilde{U_1} \neq \tilde{U_2}$
+	so these sheets are disjoint.
+
+	Consider an open $N$ about $y$ that maps into $\tilde{U_1}$ and $\tilde{U_2}$
+	by each lift. Such an $N$ exists because of continuity. If $\tilde{f_1}(y)
+	= \tilde{f_2}(y)$, then $N$ must map into the same $\tilde{U}$. Because
+	$p\tilde{f_1} = p\tilde{f_2}$ and $p$ is injective over over $\tilde{U}$ (it
+	is homeomorphic with $U$), these lifts agree over $N$.
+\end{proof}
+
 
 \section{Appendix}
 
