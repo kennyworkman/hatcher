@@ -752,16 +752,44 @@ show when lifts are unique.
 	p_*(\pi_1(\tilde{X}, \tilde{x_0}))$.
 \end{proposition}
 
-This makes sense intuitively. $p$ need not be surjective, so our map 
-
-
 \begin{proof}
 	The necessary condition is straightforward. The existence of a lift implies
 	that $f = p\tilde{f}$, then $f_* = p_*\tilde{f_*}$, so certainly
-	$f_*(\pi_1(Y, y_0)) \subseteq p_*(\pi_1(\tilde{X}, \tilde{x_0}))$ (TODO:
-	really make sure I understand)
+	$f_*(\pi_1(Y, y_0)) \subseteq p_*(\pi_1(\tilde{X}, \tilde{x_0}))$
 
-	The sufficient condition is less straighforward.
+	The sufficient condition is less straighforward. We proceed by constucting
+	our lift $\tilde{f}$ explicitly. Let $\tilde{f} = y \mapsto \tilde{f\gamma}$,
+	where $\gamma$ is any path from $y_0$ to $y$. We will show that this function
+	is well-defined - that it does not matter what path we draw to $y$. 
+
+	Consider another path $\gamma'$. We build a loop $\gamma \cdot \bar{\gamma'}$.
+	Consider $f(\gamma \bar{\gamma'})$. By our assumption, this is some element
+	of $p_*(\pi_1(\tilde{X}, \tilde{x_0}))$, call it $[ x ]$, so $f(\gamma
+	\bar{\gamma'})$ homotopes to $x$. Because $x$ lifts to a loop with basepoint $\tilde{x_0}$, by the homotopy
+	lifting property, $f(\gamma \bar{\gamma'})$ itself lifts to a loop with
+	basepoint $\tilde{x_0}$. 
+
+	We also know that this lifted path must be unique (by the same homotopy
+	lifting property when considering a path as a homotopy of points, see the
+	note above). Then $\tilde{f(\gamma \bar{\gamma'})} = \tilde{f(\gamma)} \cdot
+	\tilde{f(\gamma')^{-1}}$. The equivalence comes from properties of the
+	induced homomorphism and the lifts of the "half paths" each exist by the homotopy
+	lifting property. The LHS is a loop so certainly the half paths must meet at
+	their endpoints and $\tilde{f\gamma}(1) = \tilde{f\gamma'}(1)$ as desired.
+
+	We must also check for continuity. Consider $y \in Y$, and let $U$ be a
+	neighborhood about $f(y)$. Let $\tilde{U}$ be the sheet that covers
+	$\tilde{f}(y)$ with a homeomorphism $p: \tilde{U} \to U$. 
+
+	Let $N$ be a neighborhood about $y$ such that $f(N) \subseteq U$ by
+	continuity. For any $y' \in N$, let $\gamma \cdot \eta$ be a path from $y_0$
+	to $y'$, where $\gamma$ goes from $y_0$ to $y$ and $\eta$ goes from $y$ to
+	$y'$. $\tilde{f}$ is defined by the endpoint of the lifted path $\gamma
+	\eta$. But $\tilde{f \eta}$ is given by $p^{-1}f$ as it agrees with at least
+	$\tilde{f y}$, the junction of $\gamma$ and $\eta$, so it cannot lie in some other sheet.
+
+	Then restricted to $N$, $\tilde{f} = p^{-1}f$. This is true for
+	arbitrary $N$ so $\tilde{f}$ is continuous.
 \end{proof}
 
 \begin{proposition}[Unique lifting property]
