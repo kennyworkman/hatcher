@@ -815,11 +815,70 @@ show when lifts are unique.
 	is homeomorphic with $U$), these lifts agree over $N$.
 \end{proof}
 
+\begin{definition}[semilocal simple connectedness]
+	For each point $x \in X$, there exists $U$, where $\pi_1(U) \xhookrightarrow
+	\pi_1(X)$ is trivial.
+\end{definition}
+
+Notice that this does not mean that $U$ itself is simply connected, rather that
+loops within $U$ can homotope throughout the whole space to $X$. Local simple
+connectedness is a much stronger condition.
+
+\begin{definition}[local simple connectedness]
+	For each point $x \in X$	the
+\end{definition}
+
+\begin{example}
+	Let $X_{m,n}$ be the quotient space of a cylinder $S^1 \times I$ with the
+	identifications $(z, 0) \simeq (e^{\frac{2\pi i}{m}z}$
+\end{example}
+
 \begin{exercise}[1.3.1]
+	This is an exercise is basic definitions from point-set topology.
+
+	For arbitrary $x \in A \subseteq X$, let $U$ be a neighborhood satisfying the
+	covering space property when $x$ is considered a member of $X$. Namely, $U$
+	is both open and $p^{-1}(U)$ is a collection of disjoint open subsets of
+	$\tilde{X}$ that map homeomoprhically to $X$ by $p$.
+
+	Then $U$ is open in the subspace $A$ by the definition of a subspace.
+	If under the unrestricted map, $p^{-1}(U)$ is a collection of open and disjoint
+	sets in $tilde{X}$ where each is homemorphic to $U$. It is easy to see that
+	$p^{-1}(U \cap A)$ each is disjoint and has the desired homeomorphic
+	correspondence. 
+
+	%TODO - show openness
+\end{exercise}
+
+\begin{exercise}[1.3.3]
 \end{exercise}
 
 
 \section{Appendix}
+
+\subsection{Point Set Topology}
+
+\begin{definition}[Basis]
+
+	A basis for a topology $\mathscr{T}$ on $X$ is a collection $\mathscr{B}
+	\subseteq \mathscr{T}$ such that every open set of the topology can be
+	represented as a union of elements in $\mathscr{B}$.
+
+	Equivalently, for each $U \in \mathscr{T}$ and $x \in U$, $\mathscr{B}$
+	is the collection of $B$ where $x \in B \subseteq U$.
+
+\end{definition}
+
+It is straightforward to show these definitions are equivalent (check).
+
+Bases then admit two properties:
+\begin{itemize}
+	\item{$\mathscr{B}$ covers $X$ ($X$ is certainly an open set that can be
+		represented as a union of basis elements)}
+\item{For each $x \in X$ and neighborhoods $B_1, B_2 \in \mathscr{B}$, there exists $B_3 \in
+	\mathscr{B}$ where $x \in B_3 \in B_1 \cap B_2$ (As finite intersections of
+open sets are open, we need basis elements to fit inside each intersection)}
+\end{itemize}
 
 \subsection{Presentations}
 
