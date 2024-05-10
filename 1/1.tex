@@ -893,9 +893,8 @@ connectedness is a much stronger condition.
 \begin{example}
 	Let $X_{m,n}$ be the quotient space of a cylinder $S^1 \times I$ with the
 identifications $(z, 0) \simeq (e^{\frac{2\pi i}{m}}z, 0)$ and $(z, 1) \simeq
-(e^{\frac{2\pi i}{n}}z, 1)$. Here $z$ is a complex representation of a point on
-the circle, so the transformation $e^{\frac{2\pi i}{m}}z$ is rotating it by
-$\frac{2\pi}{m}$.
+(e^{\frac{2\pi i}{n}}z, 1)$. Note $z$ is a complex coordinate and the
+transformation is a $\frac{1}{n}$ twist.
 
 	$A$ and $B$ are subspaces of $X$ and the quotients of $S^1 \times [0, \frac{1}{2}]$ and $S^1
 	\times [\frac{1}{2}, 1]$ respectively. One end of each half cylinder is just
@@ -909,9 +908,36 @@ $\frac{2\pi}{m}$.
 	% - The boundary of a mobius strip is homeomorphic to circle
 	% - In fact the boundary of each of 1.29 is a circle
 	% - Walk through connection between projective plane and mobius strip
+  %   Helpful! https://www.youtube.com/watch?v=B6vEdfk7SWU
 	% ( https://www.groupoids.org.uk/outofline/motion.html#motion )
 
 \end{example}
+
+\begin{theorem}
+	For each $H \leq \pi_1(X, x_0)$, there exists a covering space $p_*: X_H \to
+	X$ where $p_*(\pi_1(X_H, \tilde{x_0})) = H$ for a suitably chosen basepoint
+	$\tilde{x_0}$. 
+\end{theorem}
+
+So not only do we have a simply connected universal cover, but we have a cover
+for every possible subgroup of our space. 
+
+\begin{proof}
+
+	Our strategy is to construct a quotient space out of our universal cover so
+	that the points 
+
+	First we define an equivalence class as $[\gamma] \sim [\gamma']$ if and only
+	if $[\gamma \cdot \bar{\gamma'}] \in H$. We omit the proof of reflexivity,
+	transitivity and symmetry as it is easy to see.
+
+	We then take our universal cover $tilde{X}$ and identify points that belong
+	in this equivalence class. Observe that this 
+
+	For $[\gamma] = [c \cdot \gamma] \in H$ (where $[c]$ is the equivalence class
+	of the identity), then $[c] \sim [\gamma]$.
+
+\end{proof}
 
 % https://www.groupoids.org.uk/outofline/motion.html#motion
 
@@ -933,10 +959,48 @@ $\frac{2\pi}{m}$.
 \end{exercise}
 
 \begin{exercise}[1.3.3]
+
+	Consider $p: \tilde{X} \to X$ where for each $x \in X$, $p^{-1}(x)$ is
+	non-empty and finite.
+
+	Show that $\tilde{X}$ is compact and Hausdorff iff $X$ is compact and
+	Hausdorff.
 \end{exercise}
+
+\begin{solution}
+
+	For the forward condition, consider $U, V$ about $x, y \in X$ respectively
+	that are covered by sheets $U_{\alpha}\}$ and $V_{\alpha}\}$. Pick a pair of sheets
+	$U_{\alpha}$ and $V_{\alpha}$. We can then identify separating neighborhoods
+	$A$ and $B$ about $p^{-1}(x) \cap U_{\alpha}$ and $p^{-1}(y) \cap V_{\alpha}$
+	in $U_{\alpha} \cup V_{\alpha}$ (in fact if $U_{\alpha} \cup V_{\alpha} =
+	\emptyset$ then $A = U_{\alpha}$ and $B = V_{\alpha}$). This shows that $X$
+	is Hausdroff.
+
+	To see compactness, consider a cover $\mathcal{U}$ of $X$. For each $U \in
+	\mathcal{U}$, we cannot say that it is covered by sheets, but we can say that
+	each $x \in U$ has some $A$ that is covered by sheets. Then $\cup_x A_x$
+	covers $U$. Repeating this procedure for each $U$, $\cup_U \cup_x A_x$ covers $X$ and $\cup_U \cup_x p^{-1}(A_x)$ is an open cover of $\tilde{X}$, as we chose each $A_x$ to be that which admits sheets under its preimage. $\tilde{X}$ is compact, so there exists a finite subcover $\mathcal{U'} \subset \cup_U \cup_x
+	p^{-1}(A_x)$. $p(\mathcal{U'}) \cap \mathcal{U}$ is our finite subcover as
+	desired.
+
+\end{solution}
 
 
 \section{Appendix}
+
+\subsection{Geoemtry}
+
+Practice with timeless objects that are the study of algebraic topology.
+
+\begin{note}[Real projective plane]
+	$\R P^2$
+Awesome explanation. https://www.youtube.com/watch?v=B6vEdfk7SWU
+\end{note}
+
+\begin{note}[Genus-g surfaces]
+Denoted $\Sigma_g$. $g$ tori strung together.
+\end{note}
 
 \subsection{Point Set Topology}
 
