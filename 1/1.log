@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.29)  10 MAY 2024 09:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.29)  17 MAY 2024 10:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -653,62 +653,33 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 18.
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [2] [3]
-LaTeX Font Info:    Trying to load font information for U+dsrom on input line 225.
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [2]
+LaTeX Font Info:    Trying to load font information for U+dsrom on input line 205.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-) [4] [5] [6] [7]
-<two-torus-hilbert.png, id=138, 551.05875pt x 353.32pt>
+) [3] [4] [5] [6] [7]
+<two-torus-hilbert.png, id=143, 551.05875pt x 353.32pt>
 File: two-torus-hilbert.png Graphic file (type png)
 <use two-torus-hilbert.png>
-Package pdftex.def Info: two-torus-hilbert.png  used on input line 558.
+Package pdftex.def Info: two-torus-hilbert.png  used on input line 538.
 (pdftex.def)             Requested size: 256.0748pt x 164.18967pt.
- [8 <./two-torus-hilbert.png>]
-<./helicoid.png, id=148, 642.4pt x 487.8225pt>
+<./helicoid.png, id=145, 642.4pt x 487.8225pt>
 File: ./helicoid.png Graphic file (type png)
 <use ./helicoid.png>
-Package pdftex.def Info: ./helicoid.png  used on input line 598.
+Package pdftex.def Info: ./helicoid.png  used on input line 578.
 (pdftex.def)             Requested size: 256.0748pt x 194.46306pt.
-<./2-oriented.png, id=149, 395.4775pt x 161.60374pt>
+<./2-oriented.png, id=146, 395.4775pt x 161.60374pt>
 File: ./2-oriented.png Graphic file (type png)
 <use ./2-oriented.png>
-Package pdftex.def Info: ./2-oriented.png  used on input line 615.
+Package pdftex.def Info: ./2-oriented.png  used on input line 602.
 (pdftex.def)             Requested size: 256.0748pt x 104.64171pt.
- [9 <./helicoid.png> <./2-oriented.png>] [10]
-Overfull \hbox (3.72075pt too wide) in paragraph at lines 850--856
+ [8 <./two-torus-hilbert.png>] [9 <./helicoid.png> <./2-oriented.png>] [10]
+Overfull \hbox (3.72075pt too wide) in paragraph at lines 837--843
 []\OT1/cmr/m/n/10 We now must de-fine a topol-ogy on $[]$. Ob-serve first that the col-lec-tion $\U/rsfs/m/n/10 U \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 U \OMS/cmsy/m/n/10 j \OML/cmm/m/it/10 ^^Y[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 U\OT1/cmr/m/n/10 ) [] []\OMS/cmsy/m/n/10 g$
  []
 
-[11]
-
-./1.tex:970: LaTeX Error: Environment solution undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.970 \begin{solution}
-                      
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[12]
-
-./1.tex:987: LaTeX Error: \begin{document} ended by \end{solution}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.987 \end{solution}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-Overfull \hbox (15.3025pt too wide) in paragraph at lines 997--999
+[11] [12]
+Overfull \hbox (15.3025pt too wide) in paragraph at lines 999--1001
 []\OT1/cmr/bx/n/10 Note \OT1/cmr/m/n/10 (Real pro-jec-tive plane)\OT1/cmr/bx/n/10 . []$\U/msb/m/n/10 R\OML/cmm/m/it/10 P[]$ \OT1/cmr/m/n/10 Awe-some ex-pla-na-tion. https://www.youtube.com/watch?v=B6vEdfk7SWU 
  []
 
@@ -718,21 +689,21 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `1.out' has not changed.
-(rerunfilecheck)             Checksum: 19299631A643182EF42935CE50691FF9;1418.
+(rerunfilecheck)             Checksum: 72E87A58528992AF5689FE5BF6205EF7;1554.
  ) 
 Here is how much of TeX's memory you used:
  24769 strings out of 474116
- 477508 string characters out of 5743682
- 1950187 words of memory out of 5000000
- 46604 multiletter control sequences out of 15000+600000
+ 477480 string characters out of 5743682
+ 1951187 words of memory out of 5000000
+ 46602 multiletter control sequences out of 15000+600000
  567890 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,15n,111p,691b,1056s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on 1.pdf (16 pages, 726748 bytes).
+Output written on 1.pdf (16 pages, 727263 bytes).
 PDF statistics:
- 328 PDF objects out of 1000 (max. 8388607)
- 261 compressed objects within 3 object streams
- 100 named destinations out of 1000 (max. 500000)
- 116 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 333 PDF objects out of 1000 (max. 8388607)
+ 266 compressed objects within 3 object streams
+ 102 named destinations out of 1000 (max. 500000)
+ 124 words of extra memory for PDF output out of 10000 (max. 10000000)
 
