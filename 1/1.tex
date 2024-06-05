@@ -233,7 +233,8 @@ with proof in two dimensions:
 	$S^2$ and a map $g: S^2 \to S^1$ defined as $g(x) = \frac{f(x) -
 	f(-x)}{\abs{f(x) - f(-x)}}$. Let $h = g\eta$. Check that $\eta$ is
 	nullhomotopic (one can shrink the equator to one of the poles) and therefore
-	$h$ is also nullhomotopic. Why??
+	$h$ is also nullhomotopic. (If $\eta \simeq 1$ by $\psi: I \times I \to S^2$,
+	then $g\eta \simeq g 1$ by $g \psi : I \times I \to S^1$)
 
 	See that because $g(-x) = -g(x)$ and $\eta(s + \frac 1 2) = -\eta(s)$,
 	$g\eta(s + \frac 1 2) = g(-\eta(s)) = -g\eta(s)$, so $h(s + \frac 1 2) =
@@ -262,6 +263,10 @@ with proof in two dimensions:
 
 % TODO, really see the role of Borsuk Ulam in the above proof
 
+Reflecting on the structure of this proof for a moment, it is the existence of
+some continuous map $g: S^2 \to S^1$. Intuition tells us that the nullhomotopy
+sliding the equator to a pole should do nothing when embedded in $S^1$
+
 This theorem says a few things. It tells us the surface of a sphere can never
 be one-to-one with an embedding in $R^2$, as two of the points always collapse,
 so it cannot be homeomorphic with a subspace of $R^2$. This is obvious when you
@@ -274,17 +279,41 @@ to prove in general.
 \end{exercise}
 
 \begin{proof}
+	We can't do the exact same thing as the proof for $S^2$ because loops on the surface of the
+	torus are not nullhomotopic.
+
+	Consider the stereographic projection $p$ of the torus resting on the $0XY$
+	plane to this plane. This map is continuous. Each point, denoted $(x, y)$ on
+	the torus that share an image on the plane must lie on the same meridian
+	circle, so must share the first coordinate. Then there cannot be antipodal points
+	that satisfy $p((x, y)) = p((-x, -y))$. ($x = 0$ does not lie on $S^1$).
 \end{proof}
 
+The above problem is mostly an exercise in visualizing geometry. 
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=90mm]{meridian-longitude-torus.jpeg}
+\caption{A refresher on the meridian and longitude of the torus.}
+\end{figure}
 
 \begin{theorem}[Fundamental group of a product space]
 	$\pi_1(X \times Y) \cong \pi_1(X) \times \pi_1(Y)$ if $X$ and $Y$ are path connected.
 \end{theorem}
 
+\begin{proof}
+	Recall a map into a product space $f: Z \to X \times Y$ is continuous iff
+	constituent maps $g: Z \to X$ and $h: Z \to Y$ are continuous. Then each loop
+	$\omega: I \to X \times Y$ has equivalent pairs of loops $\omega_X: I \to X$
+	and $\omega_Y: I \to Z$. Similarly, homotopies of loops the product space
+	have equivalent homotopies in the constituent spaces, which we can use to
+	show that $\phi: \pi_1(X, Y) \to \pi_1(X) \times \pi_1(Y)$ defined as $[f]
+	\mapsto ([g], [h])$ is a group homomorphism.
+\end{proof}
+
 \begin{example}[Torus]
 	The fundamental group of the torus can be thought of as a pair of integers. Formally, $\pi_1(S^1 \times S^1) \cong \Z \times \Z$. 
 \end{example}
-
 
 \begin{definition}[Induced homomorphism]
 	The map $\varphi: X \to Y$ where $\varphi(x_0) = y_0$ induces a homomorphism $\varphi_*: \pi_1(X, x_0) \to \pi_1(Y, y_0)$ defined as $\varphi_*([f]) = [\varphi f]$

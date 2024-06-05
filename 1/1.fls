@@ -334,6 +334,11 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+INPUT ./meridian-longitude-torus.jpeg
+INPUT ./meridian-longitude-torus.jpeg
+INPUT ./meridian-longitude-torus.jpeg
+INPUT ./meridian-longitude-torus.jpeg
+INPUT ./meridian-longitude-torus.jpeg
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/doublestroke/Udsrom.fd
