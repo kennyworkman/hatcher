@@ -275,27 +275,49 @@ to prove in general.
 
 \begin{exercise}[8]
 	Does the Borsuk-Ulam Theorem hold for the torus? For some continuous $f: S^1
-	\times S^1 \to R^2$, does there always exist $(x, y)$ and $(-x, -y)$ where $f((x, y)) = f((-x, -y))$.
+	\times S^1 \to \R^2$, does there always exist $(x, y)$ and $(-x, -y)$ where $f((x, y)) = f((-x, -y))$.
 \end{exercise}
-
-\begin{proof}
-	We can't do the exact same thing as the proof for $S^2$ because loops on the surface of the
-	torus are not nullhomotopic.
-
-	Consider the stereographic projection $p$ of the torus resting on the $0XY$
-	plane to this plane. This map is continuous. Each point, denoted $(x, y)$ on
-	the torus that share an image on the plane must lie on the same meridian
-	circle, so must share the first coordinate. Then there cannot be antipodal points
-	that satisfy $p((x, y)) = p((-x, -y))$. ($x = 0$ does not lie on $S^1$).
-\end{proof}
-
-The above problem is mostly an exercise in visualizing geometry. 
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=90mm]{meridian-longitude-torus.jpeg}
 \caption{A refresher on the meridian and longitude of the torus.}
 \end{figure}
+
+\begin{proof}
+	We can't do the exact same thing as the proof for $S^2$ because loops on the surface of the
+	torus are not nullhomotopic.
+
+	Consider the stereographic projection $p$ of the torus resting on the $0XY$
+	plane to this plane. This map is continuous. Each point, denoted $(x, y) \in
+	S^1 \times S^1$ on the torus that share an image on the plane must lie on the same meridian
+	circle, so must share the first coordinate. Then there cannot be antipodal points
+	that satisfy $p((x, y)) = p((-x, -y))$. ($x = 0$ does not lie on $S^1$).
+\end{proof}
+
+\begin{note}[Explicit parameterization of torus]
+The above problem is mostly an exercise in visualizing geometry and explicit
+equations are useful to understand the shape under study.
+
+For $0 \leq \theta \leq 2\pi, 0 \leq \phi \leq 2\pi$ and $r, R$ constants
+(the radius of the meridian tube and distance from origin to center of the
+meridian tube respectively)
+\[z = r \sin \theta \]
+\[y = (R + r \cos \theta) \sin \phi \]
+\[x = (R + r \cos \theta) \cos \phi \]
+
+See the below figure.
+
+Then continuous $(x, y, z) \mapsto (x, y)$, always maps $(x, y, z)$ and $(-x,
+-y, z)$ to different points.
+\end{note}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=90mm]{torus_parameterization.jpg}
+\caption{Illustration of paramterization of torus}
+\end{figure}
+
 
 \begin{theorem}[Fundamental group of a product space]
 	$\pi_1(X \times Y) \cong \pi_1(X) \times \pi_1(Y)$ if $X$ and $Y$ are path connected.
@@ -305,10 +327,34 @@ The above problem is mostly an exercise in visualizing geometry.
 	Recall a map into a product space $f: Z \to X \times Y$ is continuous iff
 	constituent maps $g: Z \to X$ and $h: Z \to Y$ are continuous. Then each loop
 	$\omega: I \to X \times Y$ has equivalent pairs of loops $\omega_X: I \to X$
-	and $\omega_Y: I \to Z$. Similarly, homotopies of loops the product space
+	and $\omega_Y: I \to Y$. Similarly, homotopies of loops the product space
 	have equivalent homotopies in the constituent spaces, which we can use to
 	show that $\phi: \pi_1(X, Y) \to \pi_1(X) \times \pi_1(Y)$ defined as $[f]
 	\mapsto ([g], [h])$ is a group homomorphism.
+\end{proof}
+
+\begin{exercise}[1.1.10]
+	From the isomorphism $\pi_1(X \times Y, (x_0, y_0) \cong \pi_1(X, x_0) \times
+	\pi_1(Y, y_0)$, it follows that loops in $X \times \{y_0\}$ and $\{x_0\}
+	\times Y$ represent commuting elements in $\pi_1(X \times Y, (x_0, y_0))$.
+	Construct an explicit homotopy demonstrating this.
+\end{exercise}
+
+\begin{proof}
+	Consider arbitrary loops $(g, 1): I \times I \to X \times \{y_0\}$ and $(1, h): I
+	\times I \to \{ x_0 \} \times Y$. Our goal is to construct the homotopy that
+	shows $[(g, 1)] \cdot [(1, h)] = [(1, h)] \cdot [(g, 1)]$.
+
+	Denote our isomorphism as $\phi$, then $\phi([(g, 1)] \cdot [(1, h)]) =
+	([g], [1]) \cdot ([1], [h])$. This element is equivalent to $([g \cdot 1], [1
+	\cdot h] = ([1], [h]) \cdot ([g], [1])$ by the homotopy $(F_X, F_Y): (I
+	\times I \to X, I \times I \to Y)$. Because $\phi([(1, h)]\cdot[(g, 1)]) =
+	([1], [h]) \cdot ([g], [1]), F_{X\timesY}: I \times (I \times I) \to X \times
+	Y = (t, (s_g, s_h)) \mapsto (F_X((t, s_g)), F_Y((t, s_h))$ is the explicit
+	homotopy in $\pi(X \times Y, (x_0, y_0))$ (where $t$ is some point in time
+	$I$ and $s_g, s_h$ are points in the domain of loops $g$ and $h$) that shows
+	$[(g, 1)]\cdot[(1,h)]\simeq [(1, h)]\cdot[(g, 1)]$. This homotopy induces
+	commutativity and can be constructed from arbitrary $(g, 1)$ and $(1, h)$.
 \end{proof}
 
 \begin{example}[Torus]
@@ -326,7 +372,34 @@ We can briefly check some properties of this homomorphism. Let $\varphi, \psi$ b
 \end{itemize}
 These properties of the induced homomorphism make the fundamental group a functor.
 
-The induced homomorphism allows us to describe relationships between topological spaces as relationships between fundamental groups.
+The induced homomorphism allows us to describe relationships between
+topological spaces as relationships between fundamental groups. Showing there
+exist continuous maps between shapes of interest and a shape that admits a
+trivial fundamental group is then a useful tool in computing the fundamental
+group of the original shape. Some examples follow.
+
+\begin{theorem}
+	$\pi_1(S^n)$ is trivial if $n \geq 2$
+\end{theorem}
+
+\begin{proof}
+	We use Lemma 1.15 but omit its proof. Given a loop $f$ with basepoint $x_0$ in $X$, and some
+	decomposition of $X$ into open $A_{\alpha}$ where $X = \bigcup_{\alpha}
+	A_{\alpha}$, $x_0 \in A_{\alpha}$ and $A_{\alpha} \cap A_{\beta}$ is path
+	connected. There exists a homotopy from $f$ to a product of loops in each
+	$A_{\alpha}$.
+
+	Consider $S^n = A_1 \cap A_2$ where $A_1 = S^n - \{y\}$ and $A_2 = S^n -
+	\{z\}$ for $y, z$ antipodal on $S^n$. $A_1, A_2 \approx R^{n-1}$. Then every
+	$f$ in $S^n$ is the product $g \cdot h$, where $g$ and $h$ are loops in $A_1$
+	and $A_2$ respectively. Let $\psi: A_1 \to \R^{n-1}, \phi: A_2 \to \R^{n-1}$
+	be homeomorphisms, and because $\pi_1(\R^{n-1})$ is trivial, $[g], [h]$ are
+	nullhomotopic in $\pi_1(A_1), \pi_1(A_2)$ under $\psi_*, \phi_*$. So $[f] =
+	[g] \cdot [h] = 1$ for any $f$.
+\end{proof}
+
+\begin{exeercise}[1.1.12]
+\end{exercise}
 
 \begin{proposition}[]
 	For a given retraction $r: X \to A$, the induced homomorphism for the associated inclusion $i_*$ is injective. If $r$ is a deformation retraction, $i_*$ is also an isomorphism.
@@ -699,7 +772,7 @@ for $s \in (0, \infty), t \in \R$
 \caption{}
 \end{figure}
 
-Then $p: S \to \R \setminus \{0\}$ given by $(x, y, z) \mapsto (x, y)$ defines a
+Then $p: S^1 \to \R \setminus \{0\}$ given by $(x, y, z) \mapsto (x, y)$ defines a
 covering space of $\R - \{ 0 \}$.
 
 I found this is best seen by looking at single line segments extending radially

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.29)  5 JUN 2024 09:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.29)  30 JUN 2024 15:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -657,40 +657,82 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 <meridian-longitude-torus.jpeg, id=96, 325.215pt x 155.58125pt>
 File: meridian-longitude-torus.jpeg Graphic file (type jpg)
 <use meridian-longitude-torus.jpeg>
-Package pdftex.def Info: meridian-longitude-torus.jpeg  used on input line 296.
+Package pdftex.def Info: meridian-longitude-torus.jpeg  used on input line 283.
 (pdftex.def)             Requested size: 256.0748pt x 122.51375pt.
  [4 <./meridian-longitude-torus.jpeg>]
-LaTeX Font Info:    Trying to load font information for U+dsrom on input line 325.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/doublestroke/Udsrom.fd
+<torus_parameterization.jpg, id=103, 325.215pt x 246.9225pt>
+File: torus_parameterization.jpg Graphic file (type jpg)
+<use torus_parameterization.jpg>
+Package pdftex.def Info: torus_parameterization.jpg  used on input line 317.
+(pdftex.def)             Requested size: 256.0748pt x 194.44118pt.
+
+./1.tex:352: Undefined control sequence.
+l.352 	([1], [h]) \cdot ([g], [1]), F_{X\timesY
+                                               }: I \times (I \times I) \to ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    Trying to load font information for U+dsrom on input line 371.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-) [5] [6] [7] [8]
-<two-torus-hilbert.png, id=150, 551.05875pt x 353.32pt>
+) [5 <./torus_parameterization.jpg>]
+
+./1.tex:401: LaTeX Error: Environment exeercise undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.401 \begin{exeercise}
+                       [1.1.12]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./1.tex:402: LaTeX Error: \begin{document} ended by \end{exercise}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.402 \end{exercise}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[6] [7] [8] [9]
+<two-torus-hilbert.png, id=159, 551.05875pt x 353.32pt>
 File: two-torus-hilbert.png Graphic file (type png)
 <use two-torus-hilbert.png>
-Package pdftex.def Info: two-torus-hilbert.png  used on input line 658.
+Package pdftex.def Info: two-torus-hilbert.png  used on input line 731.
 (pdftex.def)             Requested size: 256.0748pt x 164.18967pt.
- [9 <./two-torus-hilbert.png>]
-<./helicoid.png, id=161, 642.4pt x 487.8225pt>
+ [10 <./two-torus-hilbert.png>]
+<./helicoid.png, id=169, 642.4pt x 487.8225pt>
 File: ./helicoid.png Graphic file (type png)
 <use ./helicoid.png>
-Package pdftex.def Info: ./helicoid.png  used on input line 698.
+Package pdftex.def Info: ./helicoid.png  used on input line 771.
 (pdftex.def)             Requested size: 256.0748pt x 194.46306pt.
-<./2-oriented.png, id=162, 395.4775pt x 161.60374pt>
+<./2-oriented.png, id=170, 395.4775pt x 161.60374pt>
 File: ./2-oriented.png Graphic file (type png)
 <use ./2-oriented.png>
-Package pdftex.def Info: ./2-oriented.png  used on input line 722.
+Package pdftex.def Info: ./2-oriented.png  used on input line 795.
 (pdftex.def)             Requested size: 256.0748pt x 104.64171pt.
- [10 <./helicoid.png> <./2-oriented.png>] [11] [12]
-Overfull \hbox (3.72075pt too wide) in paragraph at lines 957--963
+ [11 <./helicoid.png> <./2-oriented.png>] [12] [13]
+Overfull \hbox (3.72075pt too wide) in paragraph at lines 1030--1036
 []\OT1/cmr/m/n/10 We now must de-fine a topol-ogy on $[]$. Ob-serve first that the col-lec-tion $\U/rsfs/m/n/10 U \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 U \OMS/cmsy/m/n/10 j \OML/cmm/m/it/10 ^^Y[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 U\OT1/cmr/m/n/10 ) [] []\OMS/cmsy/m/n/10 g$
  []
 
-[13]
-Overfull \hbox (15.3025pt too wide) in paragraph at lines 1119--1121
+[14]
+Overfull \hbox (15.3025pt too wide) in paragraph at lines 1192--1194
 []\OT1/cmr/bx/n/10 Note \OT1/cmr/m/n/10 (Real pro-jec-tive plane)\OT1/cmr/bx/n/10 . []$\U/msb/m/n/10 R\OML/cmm/m/it/10 P[]$ \OT1/cmr/m/n/10 Awe-some ex-pla-na-tion. https://www.youtube.com/watch?v=B6vEdfk7SWU 
  []
 
-[14] [15] [16] [17] (./1.aux)
+[15] [16] [17] [18] (./1.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -699,18 +741,18 @@ Package rerunfilecheck Info: File `1.out' has not changed.
 (rerunfilecheck)             Checksum: 72E87A58528992AF5689FE5BF6205EF7;1554.
  ) 
 Here is how much of TeX's memory you used:
- 24780 strings out of 474116
- 477771 string characters out of 5743682
+ 24791 strings out of 474116
+ 478041 string characters out of 5743682
  1950187 words of memory out of 5000000
- 46609 multiletter control sequences out of 15000+600000
+ 46616 multiletter control sequences out of 15000+600000
  567890 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,15n,111p,691b,1056s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on 1.pdf (17 pages, 741908 bytes).
+Output written on 1.pdf (18 pages, 760798 bytes).
 PDF statistics:
- 342 PDF objects out of 1000 (max. 8388607)
- 273 compressed objects within 3 object streams
- 106 named destinations out of 1000 (max. 500000)
- 129 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 352 PDF objects out of 1000 (max. 8388607)
+ 281 compressed objects within 3 object streams
+ 110 named destinations out of 1000 (max. 500000)
+ 134 words of extra memory for PDF output out of 10000 (max. 10000000)
 
