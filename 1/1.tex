@@ -334,7 +334,7 @@ Then continuous $(x, y, z) \mapsto (x, y)$, always maps $(x, y, z)$ and $(-x,
 \end{proof}
 
 \begin{exercise}[1.1.10]
-	From the isomorphism $\pi_1(X \times Y, (x_0, y_0) \cong \pi_1(X, x_0) \times
+	From the isomorphism $\pi_1(X \times Y, (x_0, y_0)) \cong \pi_1(X, x_0) \times
 	\pi_1(Y, y_0)$, it follows that loops in $X \times \{y_0\}$ and $\{x_0\}
 	\times Y$ represent commuting elements in $\pi_1(X \times Y, (x_0, y_0))$.
 	Construct an explicit homotopy demonstrating this.
@@ -349,7 +349,7 @@ Then continuous $(x, y, z) \mapsto (x, y)$, always maps $(x, y, z)$ and $(-x,
 	([g], [1]) \cdot ([1], [h])$. This element is equivalent to $([g \cdot 1], [1
 	\cdot h] = ([1], [h]) \cdot ([g], [1])$ by the homotopy $(F_X, F_Y): (I
 	\times I \to X, I \times I \to Y)$. Because $\phi([(1, h)]\cdot[(g, 1)]) =
-	([1], [h]) \cdot ([g], [1]), F_{X\timesY}: I \times (I \times I) \to X \times
+	([1], [h]) \cdot ([g], [1]), F_{X\times Y}: I \times (I \times I) \to X \times
 	Y = (t, (s_g, s_h)) \mapsto (F_X((t, s_g)), F_Y((t, s_h))$ is the explicit
 	homotopy in $\pi(X \times Y, (x_0, y_0))$ (where $t$ is some point in time
 	$I$ and $s_g, s_h$ are points in the domain of loops $g$ and $h$) that shows
@@ -398,8 +398,59 @@ group of the original shape. Some examples follow.
 	[g] \cdot [h] = 1$ for any $f$.
 \end{proof}
 
-\begin{exeercise}[1.1.12]
+\begin{exercise}[1.1.12]
+	Show that every homomorphism $\phi: \pi_1(S^1) \to \pi_1(S^1)$ can be realized as the
+	induced homomorphism of the map $\varphi: S^1 \to S^1$.
 \end{exercise}
+
+\begin{proof}
+	We can consider the set of homomorphisms $\{\phi: \pi_1(S^1) \to \pi_1(S^1)\}$
+	as the equivalent set of homomorphisms $\{\phi: \Z \to \Z\}$.
+
+	First we see that the set of homomorphisms $\{\phi: \Z \to \Z\}$ are described by
+	the set of maps $\{ \phi' = x \mapsto mx ~|~ m \in \Z \}$. This set includes the identity and 0
+	map, but also all homomorphisms that scale group elements by an integer factor.
+
+	We then claim the set of maps $\{f_m: S^1 \to S^1 ~|~ m \in \Z\}$ where $f_m = (x, y) \mapsto (mx, my)$
+	can be realized as $\{ \phi' \}$ as induced homomorphisms.
+
+	To see this, consider a loop in $S^1$, $\omega_n$, where $n$ denotes the
+	number of turns around the circle (formally $s \mapsto (\cos 2\pi ns, \sin
+	2\pi ns)$) and examine its transormation under $f_m$. $f_m$ stretches (or
+	shrinks) $\omega_n$ to a loop $\omega_{mn}$. This is clear by looking
+	at the lifts of $\omega_n$ and $f_m\omega_n$, which are maps over $\R \to S^1$
+	defined as $\omega_{n*} = x \mapsto (\cos
+	2\pi x, \sin 2\pi x)$ and $f_m\omega_{n*} = x \mapsto (\cos m 2\pi x, \sin m
+	2\pi x)$, to see that $f_m$ indeed stretches (or shrinks) a "$n$ turn" loop to
+	an "$n*m$" turn loop. Then $f_m* = [\omega_n] \mapsto [\omega_{n*m}]$
+	corresponds to a $\phi': x \mapsto mx$ as desired and $\{f_m\}$ and
+	$\{\phi'\}$ are in one-to-one correspondence.
+\end{proof}
+
+\begin{exercise}[1.1.13]
+	Consider a space $X$ and a path connected subspace $A$ with basepoint $x_0
+	\in A \subseteq X$. Show that every map $\pi_1(A) \xhookrightarrow{} \pi_1(X)$ is surjective iff each path in $X$ that has its endpoints in $A$ is
+	homotopic to a path in $A$.
+\end{exercise}
+
+\begin{proof}
+	We begin with the reverse direction. A loop $g$ in $X$ with basepoint $x_0$ is
+	certainly a path in $X$ with its endpoints in $A$, so it is homotopic to a
+	path in $A$ with the same endpoints, a loop, $f$ in $A$. Then for every $\theta:
+	\pi_1(A) \xhookrightarrow{} \pi_1(X)$, $[g] \in \pi_1(X, x_0)$ must be equal
+	to some $\theta([f])$ as $f \simeq g$.
+
+	To see the forward direction, define $h$ as the path in $X$ with endpoints in
+	$A$. We can turn $h$ into a loop with the product $\eta h \bar{\mu}$ where
+	$\eta$, $\mu$ are the paths from $x_0$ to the first and second endpoint
+	respectively. Recall $A$ is path connected so we can always construct such
+	paths. Because all $\pi_1(A) \xhookrightarrow{} \pi_1(X)$ are surjective,
+	$\eta h \bar{\mu} \simeq h'$, where $h'$ is a loop entirely contained in $A$.
+	If we restrict the homotopy $F_t: I \to X$ to the closed subset of $I$ that
+	is $h$ at time 0, the restricted homotopy shrinks $h$ to a path in $A$, as
+	desired.
+
+\end{proof}
 
 \begin{proposition}[]
 	For a given retraction $r: X \to A$, the induced homomorphism for the associated inclusion $i_*$ is injective. If $r$ is a deformation retraction, $i_*$ is also an isomorphism.
