@@ -370,13 +370,17 @@ We can briefly check some properties of this homomorphism. Let $\varphi, \psi$ b
 	\item{$(\varphi\psi)_* = \varphi_*\psi_*$}
 	\item{$\mathds{1}_* = \mathds{1}$}
 \end{itemize}
-These properties of the induced homomorphism make the fundamental group a functor.
+The first comes from the associativity of the composition of maps ($(\varphi
+\phi) f = \varphi (\phi f)$). The second
+is straightforward from the definition. These properties of the induced homomorphism make the fundamental group a functor.
 
 The induced homomorphism allows us to describe relationships between
-topological spaces as relationships between fundamental groups. Showing there
-exist continuous maps between shapes of interest and a shape that admits a
-trivial fundamental group is then a useful tool in computing the fundamental
-group of the original shape. Some examples follow.
+topological spaces as relationships between fundamental groups. Geometrical
+structure is informed by algebraic and vice-versa.
+
+For instance, showing there exist continuous maps between a shape of interest
+and a shape that admits a trivial fundamental group is a useful method to
+compute the fundamental group of the original shape. Some examples follow.
 
 \begin{theorem}
 	$\pi_1(S^n)$ is trivial if $n \geq 2$
@@ -453,14 +457,16 @@ group of the original shape. Some examples follow.
 \end{proof}
 
 \begin{proposition}[]
-	For a given retraction $r: X \to A$, the induced homomorphism for the associated inclusion $i_*$ is injective. If $r$ is a deformation retraction, $i_*$ is also an isomorphism.
+	If $X$ retracts to $A$, then $i_*$ for $i: A \xhookrightarrow X$ is
+	injective. If $X$ deformation retracts to $A$, then $i$ is an isomomorphism.
 \end{proposition}
 
 \begin{proof}
-	Because $ri = \mathds{1}_A$, $r_*i_* = \mathds{1}_{A*}$ so $i_*$ is
-	injective. To see $i_*: \pi(A) \to \pi(X)$ is also surjective, see that any
-	loop $[x] \in \pi_1(X)$ homotopes to a loop in $A$ by $r_t$ if $r_t$ is a deformation
-	retract, so $i_*^{-1}([r_tx]) \in \pi_1(A)$.
+	If $X$ retracts to $A$, $ri = 1$ (where $r$ is the retraction). Because
+	$(ri)_* = r_*i_* = 1_*$, $i_*$ must be injective. If $X$ deformation retracts
+	to $A$, there exists some homotopy $F_t$ where $\restr{F_t}{A} = 1$ and $F_0
+	= 1$. Then any loop $g$ in $X$ with basepoint in $A$ homotopes to some loop
+	in $A$ and $[g] = i_*([f])$ for some $f$.
 \end{proof}
 
 So spaces that are deformation retracts have isomorphic fundamental groups.
@@ -473,19 +479,34 @@ restrict to the identity map over their retracting space for all $I$
 Lets work towards an induced isomorphism under the more general condition of
 homotopy equivalence.
 
-Consider a homotopy $\varphi_t: X \times I \to Y$ that is not a deformation retract but fixes the basepoint in $X$ ($\varphi_t(x_0) = y_0$ for all $t$). Then $\varphi_{0*} = \varphi_{1*}$ as $[\varphi_0f] = [\varphi_1f]$. Any pair of induced homomorphisms under a basepoint preserving homotopy are equivalent.
+Consider a homotopy $\varphi_t: X \times I \to Y$ that is not a deformation
+retract but fixes the basepoint in $X$ ($\varphi_t(x_0) = y_0$ for all $t$).
+Then $\varphi_{0*} = \varphi_{1*}$ as $[\varphi_0f] = [\varphi_1f]$. Any pair
+of induced homomorphisms under a basepoint preserving homotopy are equivalent.
 
-Now consider homotopy equivalences that are also basepoint preserving. Let $\varphi: X \to Y$ and $\psi: Y \to X$ be such equivalences. Then $\psi\varphi \simeq \mathds{1}$ but we just saw then $(\psi\varphi)_* = \mathds{1}_*$ so $\varphi_*$ is injective. $\varphi_*$ is also surjective as $(\varphi\psi)_*$ = $\mathds{1}_*$
+Now consider homotopy equivalences that are also basepoint preserving. Let
+$\varphi: X \to Y$ and $\psi: Y \to X$ be such equivalences. Then $\psi\varphi
+\simeq \mathds{1}$ but we just saw then $(\psi\varphi)_* = \mathds{1}_*$ so
+$\varphi_*$ is injective. $\varphi_*$ is also surjective as $(\varphi\psi)_*$ =
+$\mathds{1}_*$
 
-	We can actually see this is true even if our homotopy equivalence does not fix our basepoint.
+We can actually see this is true even if our homotopy equivalence does not fix
+our basepoint. First lets show that induced homomorphisms are invariant under
+arbitrary homotopy when conjugated by path of basepoints.
 
 \begin{lemma}[]
 	Let $\varphi_t: X \to Y$ be a homotopy and $\restr{h}{x_0 \times I}$ be a path between $\varphi_0(x_0)$ and $\varphi_1(x_0)$. Then $\varphi_{0*} = \beta_h \varphi_{1*}$
 \end{lemma}
 
 \begin{note}
-	To see this, for a given loop $f$ in $X$, we can build a new homotopy $\bar{h_t} \cdot \varphi_tf \cdot h_t$. Then $\beta_h(\varphi_0([f]))$ is homotopic to $\varphi_1([f])$.
+	To see this, for a given loop $f$ in $X$, we can build a new homotopy $h_t
+	\cdot \varphi_tf \cdot \bar{h_t}$ of loops at $\varphi_0(x_0)$. Then by
+	fixing timepoints 0 and 1, $\beta_h(\varphi_{0*}([f])) = \varphi_{1*}([f])$.
 \end{note}
+
+Now lets use this to show the pair of composition of maps, given by both
+directions of the homotopy equivalence, are isomorphic and then each
+constituent map is isomorphic.
 
 \begin{theorem}[The choice of basepoint between homotopy equivalent spaces is not important]
 Consider the homotopy equivalence $\varphi: X \to Y$, then $\pi_1(X, x_0) \cong \pi_1(Y, \varphi(x_0))$.
