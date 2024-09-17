@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1721147847 "1.tex" "1.pdf" "1" 1721147848 0
+["pdflatex"] 1726592159 "1.tex" "1.pdf" "1" 1726592161 0
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -195,14 +195,17 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1714407426 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1714407195 8221422 ef3448b8ffffb750bb5eadd3592c809e ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "1.aux" 1721147848 2520 af2597070281931886db16764e058813 "pdflatex"
-  "1.out" 1721147848 1554 72e87a58528992af5689fe5bf6205ef7 "pdflatex"
-  "1.pre" 1721147847 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "1.tex" 1721147837 75723 9487bbc157e9f3d8c8b2c78c34e6a6d8 ""
+  "1.aux" 1726592160 2929 69564d7807583fb62f98bb07741fd9f8 "pdflatex"
+  "1.out" 1726592160 1554 72e87a58528992af5689fe5bf6205ef7 "pdflatex"
+  "1.pre" 1726592159 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "1.tex" 1726592158 90174 a12cc97ad0af4d3e7755bc87abf8e644 ""
   "2-oriented.png" 1711919119 31326 c3801acee2a6b9cd4b09b00bd1aee6fd ""
+  "3-component-covering-spaces-of-s1.png" 1726591948 40071 c1c102e1246077eed133ed4bf46d6337 ""
+  "algebraic_relationship_stereo.pdf" 1723218275 3983 6008caa654b30ea035beeba8b78af1d6 ""
   "helicoid.png" 1711919119 248956 c34fddecc61fb5bc045ba68f3cc179b1 ""
-  "kennyworkman.sty" 1714491054 3441 c206e123715beae8be06ca59b7a136ac ""
+  "kennyworkman.sty" 1723218100 3491 f7899f7ecb460eadd5e106b9b076f040 ""
   "meridian-longitude-torus.jpeg" 1717604803 7589 269f51a9ab5e93c46181fbdd9431615e ""
+  "torus.png" 1725296934 1210 de80b05b29e6f1cac86ca5c3ea4c54e5 ""
   "torus_parameterization.jpg" 1719772608 13827 add8d752090efba4b885d7e727de95a3 ""
   "two-torus-hilbert.png" 1711919085 172604 cbb0716c2b1703153ef9a67d4ee8e2ef ""
   (generated)
