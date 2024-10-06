@@ -17,8 +17,7 @@ Notes and solutions from Allen Hatcher's Algebraic Topology.
 
 [Link](https://math.berkeley.edu/~nadler/215afall2022.html)
 
-1.1 - 8, 9, 10, 12, 13
-
-14
+1.1 - 8, 9, 10, 12, 13, 14
+1.3 - 4, 5, 7, 8, 10
 
 Send corrections to kenny@latch.bio.
