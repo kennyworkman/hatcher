@@ -1394,12 +1394,12 @@ that $p_*$ is always injective, it is sufficient to construct a simply-connected
 
 \begin{example}[Constructing the universal cover]
 	What follows is a rather abstract procedure for building this
-	simply-connected space, called the \textbf{universial cover}, for a
+	simply-connected space, called the \textbf{universal cover}, for a
 	path-connected, locally path-connected and semilocally simply-connected space
 	$X$.
 
 	First, recall that there is a single homotopy class of paths for fixed
-	endpoints in a simply connected space. If $tilde{X}$ is simply-connected and 
+	endpoints in a simply connected space. If $\tilde{X}$ is simply-connected and 
 	we fix some basepoint $\tilde{x_0}$, then for each point $x \in \tilde{X}$, a path
 	$\gamma$ from $x_0$ to $X$ uniquely defines $[\gamma]$. The set of $[\gamma]$ is
 	bijective with $\tilde{X}$. By the homotopy lifting property, homotopy
@@ -1528,6 +1528,12 @@ is by permutations of the fiber $p^{-1}(x_0)$ for a suitable basepoint. We
 motivate this with a few specific examples before deriving a general construction
 similar to the one used to build the universal cover.
 
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=20mm]{3-component-covering-spaces-of-s1.png}
+\caption{The three different 3 component covering spaces of the circle}
+\end{figure}
+
 \begin{note}
 	For some space $X$ and baspoint $x_0$, consider the 3 component covering
 	spaces of $S^1$, denoted $\tilde{X_1}, \tilde{X_2}, \tilde{X_3}$, where the
@@ -1536,7 +1542,7 @@ similar to the one used to build the universal cover.
 	covering space, the lift of the generator of $\pi_1(S^1)$ induces a
 	permutation of the fiber. There are three starting points in $p^{-1}(x_0)$ it
 	may start and the end of the lift is another point in $p^{-1}(x_0)$,
-	potentially the same point. o
+	potentially the same point.
 
 	Notice the types of permutations $p$ induces is different for each
 	$\tilde{X_n}$. $\tilde{X_3}$ induces cyclical permutations on all three points.
@@ -1544,14 +1550,14 @@ similar to the one used to build the universal cover.
 	fixed. $\tilde{X_1}$ induces only the identity permutation.
 \end{note}
 
-\begin{note}
-\end{note}
+In fact, disconnected covering spaces of $S^1$ are efficient graphical
+representations of the different permutations of the fiber $p^{-1}(x)$.
+This is also true for $S^1 \wedge S^1$ (and perhaps true for all such spaces
+where the fundamental group is free on some generators). 
 
-\begin{figure}[ht!]
-\centering
-\includegraphics[width=90mm]{3-component-covering-spaces-of-s1.png}
-\caption{A figure of the three different 3 component covering spaces of the circle}
-\end{figure}
+This is no longer true if the covering space must be connected. For example,
+with the 3 component covering space of $S^1$, the generator must lift to some
+permutation of all basepoints otherwise the space is disconnected.
 
 \begin{exercise}
 	Let $Y$ be a subset of $\R^2$ that consists of a portion of the function
