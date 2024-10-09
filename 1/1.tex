@@ -1552,12 +1552,33 @@ similar to the one used to build the universal cover.
 
 In fact, disconnected covering spaces of $S^1$ are efficient graphical
 representations of the different permutations of the fiber $p^{-1}(x)$.
-This is also true for $S^1 \wedge S^1$ (and perhaps true for all such spaces
+This is also true for $S^1 \vee S^1$ (and perhaps true for all such spaces
 where the fundamental group is free on some generators). 
 
 This is no longer true if the covering space must be connected. For example,
 with the 3 component covering space of $S^1$, the generator must lift to some
 permutation of all basepoints otherwise the space is disconnected.
+
+We can generalize this idea that "covering spaces are just permutations" with
+the following idea. Consider $\gamma \in \pi_1(X, x_0)$, and notice each
+$\tilde{gamma}$ (there can be many) starts at some $p^{-1}(\gamma(0))$ and this
+choice of starting point defines where it ends in $p^{-1}(\gamma(1))$. We can
+define a bijective function $L_{\gamma}: p^{-1}(\gamma(0)) \to p^{-1}(\gamma(1))$.
+
+In fact, each $\tilde{X}$ defines a unique set of $L_{\gamma}$ that correspond
+to each $[\gamma] \in \pi_1(X)$. All we have done is formalized the idea that
+we can construct many unique covering spaces from the same space using
+different ways of connecting the points in the fiber.
+
+One important modification is to make composition of $L_{\gamma}$ respect the
+direction of path composition. $\gamma \cdot \eta$ goes left to right, but
+$L_{\gamma \eta} = L_{\gamma}\cdot L_{\eta}$ is the opposite direction. If we
+define $L_{\gamma}$ as $p^{-1}{\gamma(1)} \to p^{-1}{\gamma(0)}$ instead,
+composition of functions respects composition of paths.
+
+The n-sheeted covering spaces of $X$ are then described by the homomorphisms
+$\pi_1(X, x_0) \to Sym(n)$ defined as $\gamma \mapsto L_{\gamma}$. Here
+$Sym(n)$ is the permutation group of $n$ items.
 
 \begin{exercise}
 	Let $Y$ be a subset of $\R^2$ that consists of a portion of the function
@@ -1655,6 +1676,21 @@ X \arrow[rr, "f", bend left] \arrow[rruu, "\tilde{f}", bend left] &  & Y \arrow[
 	$fgp_Y \simeq p_Y$ we recover the relation $\tilde{f}p_X\tilde{g}p_Y \simeq
 	1_{\tilde{Y}}$. So $p_X\tilde{f}: \tilde{X} \to \tilde{Y}$ and $p_Y\tilde{g}:
 	\tilde{Y} \to \tilde{X}$ are homotopy inverses.
+\end{proof}
+
+
+\begin{exercise}
+	Find all the 2-sheeted and 3-sheeted connected covering spaces of $S^1 \vee
+	S^1$, up to isomorphism of the covering spaces without basepoints.
+\end{exercise}
+
+\begin{proof}
+	For the 2-sheeted covering spaces, we will try to use the different
+	permutations of the fiber $p^{-1}(x)$ to identify possibilities. Let $Sym(2)$
+	be the permutation group of order $2$ that contains just the identity map and
+	transposition. Because $\pi_1(S^1 \vee S^1) \cong a \star b$, we can
+	construct homomorphisms into $Sym(2)$ be mapping each of the generators, $a$
+	and $b$ onto 
 \end{proof}
 
 \section{Appendix}
