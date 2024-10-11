@@ -1580,6 +1580,28 @@ The n-sheeted covering spaces of $X$ are then described by the homomorphisms
 $\pi_1(X, x_0) \to Sym(n)$ defined as $\gamma \mapsto L_{\gamma}$. Here
 $Sym(n)$ is the permutation group of $n$ items.
 
+--
+
+For a given covering space $\tilde{X} \to X$, the set of isomorphisms,
+$\tilde{X} \to \tilde{X}$, actually have a name and themselves form a group
+$G(\tilde{X})$. We call these \textbf{deck transformations}.
+
+Note that each deck transformation is uniquely determined by where it maps a
+single point, so we will often work with basepoints without losing information.
+
+We call a covering space \textbf{normal} if for each point $x \in X$, there
+exists a deck transformation between each pair of lifted points $\tilde{x},
+\tilde{x'} \in \tilde{X}$. We will now show a correspondence between this
+geometric concept and the familiar algebraic property.
+
+\begin{definition}
+	Let $p: \tilde{X} \to X$ be a covering space. Let $H = p_*(\pi_1(\tilde{X},
+	\tilde{x_0}))$ be a subgroup of $\pi_1(X, x_0)$.
+	\begin{itemize}
+		\item{$\tilde{X}$ is a normal covering space iff $H \trianglelefteq \pi_1(X, x_0)$}
+	\end{itemize}
+\end{definition}
+
 \begin{exercise}
 	Let $Y$ be a subset of $\R^2$ that consists of a portion of the function
 	$\sin(\frac{1}{x})$, the segment $L = [-1, 1]$ in the y-axis and an arc
