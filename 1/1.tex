@@ -1523,6 +1523,52 @@ rest of the subgroups.
 
 \end{proof}
 
+We are interested in constructing isomorphisms between different covering
+spaces so we can use these to classify them. When do basepoint conjugating
+isomorphisms exist?
+
+\begin{exercise}
+	If $p_1: \tilde{X_1} \to X$ and $p_2: \tilde{X_2} \to X$ are two covering
+	spaces for the path-connected and locally path-connected $X$ with basepoint
+	$x_0$. Then we can construct an isomorphism $f: \tilde{X_1} \to \tilde{X_2}$, mapping
+	$\tilde{x_1} \in p_1^{-1}(x_0)$ to $\tilde{x_2} \in p_2^{-1}(x_0)$, iff
+	$p_1*(\pi_1(\tilde{X_1}, \tilde{x_1})) = p_2*(\pi_1(\tilde{X_2}, \tilde{x_2}))$.
+\end{exercise}
+
+\begin{proof}
+	To see the forward direction, consider the existence of $f$:
+	\[
+	\begin{tikzcd}
+	\tilde{X_1} \arrow[r, "p_1"] \arrow[d, "f" description] & X \\
+	\tilde{X_2} \arrow[ru, "p_2"']                          &  
+	\end{tikzcd}
+	\]
+
+	Because $p_1f = p_2$, $p_1*(\pi_1(\tilde{X_1}, \tilde{x_1})) \subseteq
+	p_2*(\pi_1(\tilde{X_2}, \tilde{x_2}))$. Using a symmetric argument with
+	$p_2f^{-1} = p_1$, see $p_1*(\pi_1(\tilde{X_1}, \tilde{x_1})) = p_2*(\pi_1(\tilde{X_2},
+	\tilde{x_2}))$.
+
+	To see the reverse, notice that $p_1*(\pi_1(\tilde{X_1}, \tilde{x_1})) = p_2*(\pi_1(\tilde{X_2}, \tilde{x_2}))$ gives us lifts of both $p_1$ and $p_2$
+	by the lifting criterion.
+
+		\[
+	\begin{tikzcd}
+	\tilde{X_1} \arrow[r, "p_1"] \arrow[d, "\tilde{p_1}"', bend right]   & X \\
+	\tilde{X_2} \arrow[ru, "p_2"'] \arrow[u, "\tilde{p_2}"', bend right] &  
+	\end{tikzcd}
+	\]
+
+	Because $p_1 = p_2 \tilde{p_1}$ and $p_2 = p_1 \tilde{p_2}$, substitution gives
+	us $p_2 = p_2 \tilde{p_1}\tilde{p_2}$ so $\tilde{p_1}\tilde{p_2} = 1$. A
+	symmetric substituion gives us $\tilde{p_2}\tilde{p_1} = 1$, so the lifts are
+	inverse isomorphisms and we have our result.
+
+\end{proof}
+
+% TODO - finish the classification theorem.
+
+
 Another way to classify \textbf{disconnected} covering spaces of a space $X$
 is by permutations of the fiber $p^{-1}(x_0)$ for a suitable basepoint. We
 motivate this with a few specific examples before deriving a general construction
@@ -1587,7 +1633,9 @@ $\tilde{X} \to \tilde{X}$, actually have a name and themselves form a group
 $G(\tilde{X})$. We call these \textbf{deck transformations}.
 
 Note that each deck transformation is uniquely determined by where it maps a
-single point, so we will often work with basepoints without losing information.
+single point, if \tilde{X} is path connected, so we will often work with basepoints without losing information.
+To see this, consider $f: \tilde{X_1} \to \tilde{X_2}$ as lift $p_2f$ and use
+the unique lifting criterion.
 
 We call a covering space \textbf{normal} if for each point $x \in X$, there
 exists a deck transformation between each pair of lifted points $\tilde{x},
@@ -1601,6 +1649,56 @@ geometric concept and the familiar algebraic property.
 		\item{$\tilde{X}$ is a normal covering space iff $H \trianglelefteq \pi_1(X, x_0)$}
 	\end{itemize}
 \end{definition}
+
+\begin{proof}
+	For some $[\gamma] \in \pi_1(X, x_0)$, that lifts to the path $\tilde{\gamma}$ in
+	$\tilde{X}$ traveling from $\tilde{x_0}$ to $\tilde{x_1}$, the basepoint
+	conjugating isomorphism mapping $\tilde{x_0}$ to $\tilde{x_1}$ exists iff
+	$[\gamma]H[\bar{\gamma}] = H$. This is equivalent to saying $[\gamma] \in
+	N(G)$ iff $p_*(\pi_1(\tilde{X}, \tilde{x_0}) = p_*(\pi_1(\tilde{X},
+	\tilde{x_1})$. (Check this. The reverse direction follows from the existence
+	of isomorphisms from the classification proof). ...
+
+	To see the second claim, it is useful to start with the map $\varphi: N(G) \to
+	G(\tilde{X})$, mapping each $[\gamma]$ to its deck transformation induced by the
+	lifted loop. This is a surjective map because, as we just showed, all such deck
+	transformations are exactly the members of $N(G)$. It is also a homomorphism.
+
+	Let $\gamma$ lift to $\tilde{\gamma}$ from $\tilde{x_0}$ to $\tilde{x_1}$
+	corresponding to deck transformation $\tau$ and
+	consider another $\gamma'$ that lifts to $\tilde{\gamma'}$ from $\tilde{x_0}$
+	to $\tilde{x_1'}$ corresponding to deck transformation $\tau'$.
+	$\varphi([\gamma][\gamma'])$ 
+	$\varphi([\gamma])\varphi([\gamma']) = \tau\tau'$ which agrees on $x_0$.
+
+	% TODO - finish
+\end{proof}
+
+Notice that deck transformations, as group of homeomorphisms on a topological
+space, are a special case of the familiar algebraic notion of group actions.
+There is a homomorphism $p: G \to Homeo(Y)$, $g \mapsto Y \to Y$, and assuming
+$Y$ is path-connected and therefore deck transformations are unique, $p$ is
+injective and $G$ is a subgroup of $Homeo(Y)$.
+
+There is an important property that deck tranformations intuitively satisfy.
+They map the sheets of the covering space to completely different sheets.
+
+% TODO describe
+
+It turns out that 
+
+\begin{definition}
+	For a group $G$ acting on $Y$ and satisfying $(*)$.
+	\begin{itemize}
+		\item{$p: Y \to Y\G$ is a normal covering space}
+		\item{$G$ is exactly the deck transformation group of $p$ if $Y$ is path-connected}
+	  \item{If $Y$ is also locally path-connected, then $\pi_1(Y\G)/p_*(\pi_1(Y)) \cong G$
+	\end{itemize}
+\begin{definition}
+
+\begin{proof}
+% TODO describe
+\end{proof}
 
 \begin{exercise}
 	Let $Y$ be a subset of $\R^2$ that consists of a portion of the function
@@ -1713,6 +1811,18 @@ X \arrow[rr, "f", bend left] \arrow[rruu, "\tilde{f}", bend left] &  & Y \arrow[
 	transposition. Because $\pi_1(S^1 \vee S^1) \cong a \star b$, we can
 	construct homomorphisms into $Sym(2)$ be mapping each of the generators, $a$
 	and $b$ onto 
+	
+	% TODO
+\end{proof}
+
+\begin{exercise}
+	Construct finite graphs $X_1$ and $X_2$ that have a common, finite-sheeted
+	covering space $\tilde{X}$ but themselves are not covering spaces for a
+	single space.
+\end{exercise}
+
+\begin{proof}
+	Use quotient spaces induced by the group action.
 \end{proof}
 
 \section{Appendix}
