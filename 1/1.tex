@@ -1524,8 +1524,13 @@ rest of the subgroups.
 \end{proof}
 
 We are interested in constructing isomorphisms between different covering
-spaces so we can use these to classify them. When do basepoint conjugating
-isomorphisms exist?
+spaces so we can use these to classify them. We define an isomorphism between
+covering spaces $p_1: \tilde{X_1} \to X$ and $p_2: \tilde{X_2} \to X$ as a
+homeomorphism $f: \tilde{X_1} \to \tilde{X_2}$ where $p_1 = p_2 \cdot f$.
+Notice that this homeomorphism preserves the covering space structure, eg.
+fibers $p_1^{-1}(x_0)$ are mapped to fibers $p_2^{-1}(x_0)$.
+
+When do these isomorphisms exist?
 
 \begin{exercise}
 	If $p_1: \tilde{X_1} \to X$ and $p_2: \tilde{X_2} \to X$ are two covering
@@ -1566,7 +1571,19 @@ isomorphisms exist?
 
 \end{proof}
 
-% TODO - finish the classification theorem.
+We conclude with the final classification theorem.
+
+\begin{theorem}
+	There is a bijection associating the basepoint-preserving isomorphism classes
+	of path-connected covering spaces $p: (\tilde{X}, \tilde{x_0}) \to (X, x_0)$
+	with the set of subgroups of $\pi_1(X, x_0)$ obtained by associating the
+	subgroup $p_*(\pi_1(\tilde{X}, \tilde{x_0}))$ with the covering space
+	$(\tilde{X}, \tilde{x_0})$. 
+
+	If we ignore basepoints, we obtain an association with conjugacy classes of
+	subgroups of $\pi_1(X, x_0)$ and (basepoint-changing) isomorphism classes $p:
+	\tilde{X} \to X$.
+\end{theorem}
 
 
 Another way to classify \textbf{disconnected} covering spaces of a space $X$
@@ -1632,10 +1649,11 @@ For a given covering space $\tilde{X} \to X$, the set of isomorphisms,
 $\tilde{X} \to \tilde{X}$, actually have a name and themselves form a group
 $G(\tilde{X})$. We call these \textbf{deck transformations}.
 
-Note that each deck transformation is uniquely determined by where it maps a
-single point, if \tilde{X} is path connected, so we will often work with basepoints without losing information.
-To see this, consider $f: \tilde{X_1} \to \tilde{X_2}$ as lift $p_2f$ and use
-the unique lifting criterion.
+Note that, assuming $\tilde{X}$ is path connected, each deck transformation is
+uniquely determined by where it maps a single point, if $\tilde{X}$ is path
+connected, so we will often work with basepoints without losing information.
+(To see this, consider the isomorphism as a lift and use the unique lifting
+criterion to show it is uniquely determined by where it maps one point).
 
 We call a covering space \textbf{normal} if for each point $x \in X$, there
 exists a deck transformation between each pair of lifted points $\tilde{x},
@@ -1651,13 +1669,16 @@ geometric concept and the familiar algebraic property.
 \end{definition}
 
 \begin{proof}
-	For some $[\gamma] \in \pi_1(X, x_0)$, that lifts to the path $\tilde{\gamma}$ in
-	$\tilde{X}$ traveling from $\tilde{x_0}$ to $\tilde{x_1}$, the basepoint
-	conjugating isomorphism mapping $\tilde{x_0}$ to $\tilde{x_1}$ exists iff
-	$[\gamma]H[\bar{\gamma}] = H$. This is equivalent to saying $[\gamma] \in
-	N(G)$ iff $p_*(\pi_1(\tilde{X}, \tilde{x_0}) = p_*(\pi_1(\tilde{X},
-	\tilde{x_1})$. (Check this. The reverse direction follows from the existence
-	of isomorphisms from the classification proof). ...
+	We have already shown in the classification theorem that basepoint changes in
+	a covering space correspond to a conjugate subgroup of $H$. In particular,
+	for some $[\gamma] \in \pi_1(X, x_0)$, that lifts to the path $\tilde{\gamma}$ in
+	$\tilde{X}$ traveling from $\tilde{x_0}$ to $\tilde{x_1}$,
+	$[\gamma]H[\bar{\gamma]} = p_*(\pi_1(\tilde{X}, \tilde{x_1}))$. Then
+	$[\gamma]$ is in the normalizer of $\pi_1(X)$, $N(G)$, iff 
+	$p_*(\pi_1(\tilde{X}, \tilde{x_0}) = p_*(\pi_1(\tilde{X}, \tilde{x_1})$.
+	We know from the unique lifting criterion that this relation induces a deck
+	transformation mapping $\tilde{x_0}$ to $\tilde{x_1}$. Then if $N(G) =
+	\pi_1(X)$ or $H \trianglelefteq \pi_1(X)$.
 
 	To see the second claim, it is useful to start with the map $\varphi: N(G) \to
 	G(\tilde{X})$, mapping each $[\gamma]$ to its deck transformation induced by the
@@ -1671,7 +1692,8 @@ geometric concept and the familiar algebraic property.
 	$\varphi([\gamma][\gamma'])$ 
 	$\varphi([\gamma])\varphi([\gamma']) = \tau\tau'$ which agrees on $x_0$.
 
-	% TODO - finish
+	Consider $\ker \varphi$, and notice these are exactly the loops that lift to
+	loops, so $\ker \varphi = H$. Then $N(G) / H \simeq G$.
 \end{proof}
 
 Notice that deck transformations, as group of homeomorphisms on a topological
@@ -1690,11 +1712,11 @@ It turns out that
 \begin{definition}
 	For a group $G$ acting on $Y$ and satisfying $(*)$.
 	\begin{itemize}
-		\item{$p: Y \to Y\G$ is a normal covering space}
+		\item{$p: Y \to Y\ G$ is a normal covering space}
 		\item{$G$ is exactly the deck transformation group of $p$ if $Y$ is path-connected}
-	  \item{If $Y$ is also locally path-connected, then $\pi_1(Y\G)/p_*(\pi_1(Y)) \cong G$
+	  \item{If $Y$ is also locally path-connected, then $\pi_1(Y\ G)/p_*(\pi_1(Y)) \cong G$}
 	\end{itemize}
-\begin{definition}
+\end{definition}
 
 \begin{proof}
 % TODO describe
