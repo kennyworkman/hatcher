@@ -1827,15 +1827,32 @@ X \arrow[rr, "f", bend left] \arrow[rruu, "\tilde{f}", bend left] &  & Y \arrow[
 \end{exercise}
 
 \begin{proof}
-	For the 2-sheeted covering spaces, we will try to use the different
-	permutations of the fiber $p^{-1}(x)$ to identify possibilities. Let $Sym(2)$
-	be the permutation group of order $2$ that contains just the identity map and
-	transposition. Because $\pi_1(S^1 \vee S^1) \cong a \star b$, we can
-	construct homomorphisms into $Sym(2)$ be mapping each of the generators, $a$
-	and $b$ onto 
-	
-	% TODO
+	We procced by identifying all the oriented graphs with two and three vertices
+	that obey covering space properties. 
+
+	For the wedge point $x_0$, note that $p^{-1}(x_0)$ has two and
+	three elements in a two-sheeted and three-sheeted covering space
+	respectively. 
+
+	There are two such two vertex graphs distinct up to isomorphism. They are
+	pictured as example graphs $(1)$ and $(2)$ in Hatcher. The orientation of the
+	edges is important to preserve disjointness of sheets (try swapping the
+	direction of one of the $a$ paths and observe how sheets are no longer
+	disjoint). There are different labelings possible for each of these graphs
+	with generators $a$ and $b$, but this is not important because it is possible
+	to swap them with isomorphisms as long as orientation is respected to
+	preserve the local structure of $S^1 \vee S^1$ around the wedge point.
+
+	Similarly, there are two distinct graphs up to isomorphism for the 3-sheeted
+	covers, represented by the isomorphism class $(3)$ and $(4)$, and the class
+	$(5)$ and $(6)$.
 \end{proof}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=90mm]{example-covers-of-s1-vee-s1.png}
+\caption{Pictures from Hatcher of 2 and 3-sheeted covering spaces}
+\end{figure}
 
 \begin{exercise}
 	Construct finite graphs $X_1$ and $X_2$ that have a common, finite-sheeted
@@ -1847,6 +1864,9 @@ X \arrow[rr, "f", bend left] \arrow[rruu, "\tilde{f}", bend left] &  & Y \arrow[
 	% TODO construct the specific space from hatcher's answer. go through what i
 	% initially thought were valid convering spaces and why this is incorrect
 \end{proof}
+
+To solve the next problem on different covering spaces of wedged projective
+planes, it is important to review some facts:
 
 \begin{note}
 

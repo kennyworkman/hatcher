@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1731690918 "1.tex" "1.pdf" "1" 1731690919 0
+["pdflatex"] 1731882630 "1.tex" "1.pdf" "1" 1731882632 0
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -195,13 +195,14 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1714407426 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1714407195 8221422 ef3448b8ffffb750bb5eadd3592c809e ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "1.aux" 1731690919 2917 200a2a782981cb9422d6ddb253f6aeda "pdflatex"
-  "1.out" 1731690919 1554 72e87a58528992af5689fe5bf6205ef7 "pdflatex"
-  "1.pre" 1731690918 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "1.tex" 1731690913 108184 9ab6426adf0873341d30f0a0fdd5ebc5 ""
+  "1.aux" 1731882631 3085 720a2c3eb5b2081872d74941cf5d4c5e "pdflatex"
+  "1.out" 1731882631 1554 72e87a58528992af5689fe5bf6205ef7 "pdflatex"
+  "1.pre" 1731882630 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "1.tex" 1731882629 109118 166a74e85d31f988590809b99c7e247a ""
   "2-oriented.png" 1711919119 31326 c3801acee2a6b9cd4b09b00bd1aee6fd ""
   "3-component-covering-spaces-of-s1.png" 1726591948 40071 c1c102e1246077eed133ed4bf46d6337 ""
   "algebraic_relationship_stereo.pdf" 1723218275 3983 6008caa654b30ea035beeba8b78af1d6 ""
+  "example-covers-of-s1-vee-s1.png" 1731882016 196120 97b920f8b0d1913111e40489a51a32ae ""
   "helicoid.png" 1711919119 248956 c34fddecc61fb5bc045ba68f3cc179b1 ""
   "kennyworkman.sty" 1723218100 3491 f7899f7ecb460eadd5e106b9b076f040 ""
   "meridian-longitude-torus.jpeg" 1717604803 7589 269f51a9ab5e93c46181fbdd9431615e ""
